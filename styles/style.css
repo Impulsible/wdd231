@@ -1,8 +1,8 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
-    --primary-color: #003366;       /* Dark Blue */
-    --secondary-color: #00509E;     /* Medium Blue */
-    --accent-color: #007BFF;        /* Bright Blue Accent */
+    --primary-color: #002244;       /* Improved Dark Blue */
+    --secondary-color: #004080;     /* Improved Medium Blue */
+    --accent-color: #0066CC;        /* Improved Bright Blue Accent */
     --background-color: #f0f8ff;    /* Light Blue-White */
     --white: #ffffff;
     --light-gray: #f5f7fa;
@@ -66,7 +66,6 @@ header {
     height: 100px;
     margin-right: 10px;
 }
-
 
 .name-text h1, .name-text p {
     color: var(--white);
@@ -199,7 +198,6 @@ footer {
 }
 
 /*=============== COURSE CARD STYLES ===============*/
-/* Container for the main content */
 .container {
     display: flex;
     justify-content: center;
@@ -209,7 +207,6 @@ footer {
     height: 100vh;
 }
 
-/* Section to display the total number of courses */
 #selected-courses-count {
     font-weight: bold;
     margin-bottom: 20px;
@@ -218,7 +215,6 @@ footer {
     font-family: Arial, sans-serif;
 }
 
-/* Grid layout for course cards */
 #course-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -228,7 +224,6 @@ footer {
     padding: 20px;
 }
 
-/* Styles for each course card */
 .course-card {
     background-color: var(--white);
     border: 2px solid #ddd;
@@ -246,19 +241,16 @@ footer {
     box-shadow: var(--box-shadow);
 }
 
-/* Styling for completed courses */
 .completed {
     background-color: #d4f7d4;
     border-color: var(--primary-color);
 }
 
-/* Styling for not completed courses */
 .not-completed {
     background-color: #f7d4d4;
     border-color: #F44336;
 }
 
-/* Styling for the course details section */
 .course-details {
     margin-top: 10px;
     background-color: var(--light-gray);
@@ -269,25 +261,25 @@ footer {
     font-size: 14px;
 }
 
-/* Small adjustments for course names */
 .course-card h3 {
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: bold;
 }
+
 .course-card.completed {
-    background-color: #d4f7d4;  /* Light green for completed courses */
+    background-color: #d4f7d4;
     border-color: var(--primary-color);
 }
 
 .course-card.not-completed {
-    background-color: #f7d4d4;  /* Light red for not completed courses */
+    background-color: #f7d4d4;
     border-color: #F44336;
 }
 
 .course-card.selected {
-    border: 2px solid #4caf50;  /* Green border for selected courses */
-    background-color: #e8f5e9;  /* Light green background for selected */
+    border: 2px solid #4caf50;
+    background-color: #e8f5e9;
 }
 
 .course-details {
