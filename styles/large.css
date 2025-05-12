@@ -1,0 +1,14 @@
+.hamburger {
+  display: none;
+}
+
+.navigation {
+  display: flex !important;
+  justify-content: center;
+  background-color: var(--primary-color);
+}
+
+.navigation ul {
+  display: flex;
+  gap: 20px;
+}
