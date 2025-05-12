@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henry Osuagwu - WDD 231</title>
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Responsive Styles -->
+    <link rel="stylesheet" href="css/small.css" media="(max-width: 639px)">
+    <link rel="stylesheet" href="css/large.css" media="(min-width: 640px)">
+    <script src="js/course.js" defer></script>
+    <script src="js/date.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+</head>
+<body>
+    <header>
+            <!-- Profile Section: Image, Name, and Navigation -->
+            <div class="profile-container">
+                <img src="images/Profile1_optimized_100.jpg" alt="Henry Osuagwu" class="profile-img">
+                <div class="name-text">
+                    <h1>Henry Osuagwu</h1>
+                    <p>Empowering Growth Through Web Development</p>
+                </div>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav>
+                  <button id="hamburger" class="hamburger">☰</button>
+                    <nav id="navMenu" class="navigation">
+                <ul class="navigation">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#">Chamber</a></li>
+                    <li><a href="#">Final</a></li>
+                    <li><a href="https://github.com/your-username" target="_blank">GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Welcome!</h2>
+            <p>This is my WDD 231 Home Page. I'm excited to showcase my progress.</p>
+        </section>
+
+        <section class="main-content">
+            <div class="coursework">
+                <h2>Course Work</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name</th>
+                            <th># of Credits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CSE 110</td>
+                            <td>Intro to Programming</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>WDD 130</td>
+                            <td>Web Fundamentals</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>CSE 111</td>
+                            <td>Programming with Functions</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>CSE 210</td>
+                            <td>Programming with Classes</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>WDD 131</td>
+                            <td>Dynamic Web Fundamentals</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>WDD 231</td>
+                            <td>Web Frontend Development I</td>
+                            <td>2</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2">Total Credits</td>
+                            <td>12</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="location">
+                <h2>Lagos, Nigeria</h2>
+                <img src="images/20180708ar1_optimized_100.jpg" alt="Lagos: Hope and Warning | City Journal Economy Magazine Articles">
+                <p class="img-caption">Lagos: Hope and Warning | City Journal Economy</p>
+            </div>
+        </section>
+
+        <div class="filter-buttons">
+    <button onclick="filterCourses('all')">All Courses</button>
+    <button onclick="filterCourses('wdd')">WDD Courses</button>
+    <button onclick="filterCourses('cse')">CSE Courses</button>
+</div>
+
+<div id="selected-courses-count">The total number of courses listed below is: 0</div>
+
+<div id="course-cards" class="courses-container">
+    <!-- Courses will be dynamically generated here -->
+</div>
+
+<div id="total-credits">Total Credit Units: 0</div>
+
+    </main>
+<script>
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('navMenu').classList.toggle('active');
+  });
+</script>
+
+    <footer>
+        <p>&copy; <span id="currentYear">2025</span> Henry Osuagwu, Lagos, Nigeria 🇳🇬</p>
+        <p>Last Update: <span id="lastModified">January 1, 2025</span></p>
+    </footer>
+</body>
+</html>
