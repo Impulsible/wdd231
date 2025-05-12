@@ -1,0 +1,55 @@
+:root {
+  --primary-color: darkblue;
+  --text-color: white;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: var(--text-color);
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px;
+  position: relative;
+}
+
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+}
+
+.navigation {
+  display: none;
+  background-color: var(--primary-color);
+  width: 100%;
+  text-align: center;
+}
+
+.navigation.active {
+  display: block;
+}
+
+.navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation li {
+  padding: 10px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+}
