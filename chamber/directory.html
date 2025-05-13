@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Welcome to Crescent City Chamber of Commerce - Your local business hub">
+  <meta name="author" content="Crescent City Chamber of Commerce">
+
+  <!-- Open Graph for Facebook -->
+  <meta property="og:title" content="Crescent City Chamber of Commerce">
+  <meta property="og:description" content="Empowering Crescent City's local businesses with resources, connections, and growth opportunities.">
+  <meta property="og:image" content="https://www.crescentcitychamber.com/images/download.png">
+  <meta property="og:url" content="https://www.crescentcitychamber.com">
+  <meta property="og:type" content="website">
+
+  <title>Crescent City Chamber of Commerce - Business Directory</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/download (1).png" type="image/png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Scripts -->
+  <script src="scripts/scripts.js" defer></script>
+  <script src="scripts/toggleView.js" defer></script>
+</head>
+
+<body class="chamber-directory">
+  <header>
+    <div class="header-logo" style="padding-left: 10px;">
+      <img src="images/download.png" alt="Chamber of Commerce Logo">
+      <div>
+        <span>Crescent City</span><br />
+        <span class="sub-text">Chamber of Commerce</span>
+      </div>
+    </div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="directory.html"> Business Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="discover.html">Discover</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-banner">
+    <div class="hero-image-overlay">
+      <img src="images/buildings.jpg" alt="Crescent City skyline view with office buildings and local businesses" class="hero-image">
+      <h1 class="hero-heading">Explore the Future with Us</h1>
+      <p class="hero-subtext">Connecting local businesses under one stellar network.</p>
+      <h2 class="hero-title">Chamber of Commerce Directory</h2>
+      <p class="hero-description">
+        Your one-stop source for discovering local businesses and organizations that contribute to our vibrant community.
+        Browse by category or search for specific listings to find the right services and opportunities near you.
+      </p>
+    </div>
+  </section>
+
+  <div class="toggle-buttons">
+    <button id="gridBtn">Grid View</button>
+    <button id="listBtn">List View</button>
+  </div>
+
+  <section class="directory-search">
+    <div class="container">
+      <input type="text" id="search-input" placeholder="Type Keywords...">
+      <div class="categories">
+        <span>Popular Categories:</span>
+        <ul>
+          <li><a href="#" rel="nofollow">Healthcare</a></li>
+          <li><a href="#" rel="nofollow">Real Estate</a></li>
+          <li><a href="#" rel="nofollow">Food & Breverages </a></li>
+          <li><a href="#" rel="nofollow">Hospitality</a></li>
+          <li><a href="#" rel="nofollow">Design & Consulting</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="directory-content grid-view" id="directoryContent">
+  <div class="directory-section">
+
+    <h2 class="directory-category-title">Healthcare</h2>
+    <div class="directory-category-row directory-list grid-view">
+      <div class="business-card">
+        <h3>FirstLight Home Care of Carlsbad & La Jolla</h3>
+        <p>Gold Member</p>
+        <p>1234 Main St, Carlsbad, CA 92008</p>
+        <a href="https://www.firstlighthomecare.com" target="_blank">Visit Website</a>
+      </div>
+    </div>
+
+    <h2 class="directory-category-title">Real Estate</h2>
+    <div class="directory-category-row directory-list grid-view">
+      <div class="business-card">
+        <h3>Coastal Living Realty</h3>
+        <p>Silver Member</p>
+        <p>5678 Beach Blvd, Carlsbad, CA 92009</p>
+        <a href="https://www.coastallivingrealty.com" target="_blank">Visit Website</a>
+      </div>
+    </div>
+
+    <h2 class="directory-category-title">Food & Beverage</h2>
+    <div class="directory-category-row directory-list grid-view">
+      <div class="business-card">
+        <h3>Bay Area Coffee Roasters</h3>
+        <p>Bronze Member</p>
+        <p>789 Coffee St, San Francisco, CA 94102</p>
+        <a href="https://www.bayareacoffee.com" target="_blank">Visit Website</a>
+      </div>
+      <div class="business-card">
+        <h3>Fresh Farms Market</h3>
+        <p>Bronze Member</p>
+        <p>456 Green St, San Diego, CA 92101</p>
+        <a href="https://www.freshfarmsmarket.com" target="_blank">Visit Website</a>
+      </div>
+    </div>
+
+    <h2 class="directory-category-title">Hospitality</h2>
+    <div class="directory-category-row directory-list grid-view">
+      <div class="business-card">
+        <h3>Sunny Beach Resort</h3>
+        <p>Gold Member</p>
+        <p>1012 Beach Ave, Malibu, CA 90265</p>
+        <a href="https://www.sunnybeachresort.com" target="_blank">Visit Website</a>
+      </div>
+      <div class="business-card">
+        <h3>Ocean View Hotel</h3>
+        <p>Platinum Member</p>
+        <p>345 Ocean Blvd, Santa Monica, CA 90401</p>
+        <a href="https://www.oceanviewhotel.com" target="_blank">Visit Website</a>
+      </div>
+    </div>
+
+    <h2 class="directory-category-title">Design & Consulting</h2>
+    <div class="directory-category-row directory-list grid-view">
+      <div class="business-card">
+        <h3>Creative Design Studio</h3>
+        <p>Silver Member</p>
+        <p>234 Design Rd, Los Angeles, CA 90001</p>
+        <a href="https://www.creativedesignstudio.com" target="_blank">Visit Website</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Crescent City Chamber of Commerce. All rights reserved.</p>
+      <p>Last updated: <span id="last-modified"></span></p>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle Grid/List View
+    const gridBtn = document.getElementById('gridBtn');
+    const listBtn = document.getElementById('listBtn');
+    const directoryContent = document.getElementById('directoryContent');
+
+    gridBtn.addEventListener('click', () => {
+      directoryContent.classList.add('grid-view');
+      directoryContent.classList.remove('list-view');
+      gridBtn.classList.add('active');
+      listBtn.classList.remove('active');
+    });
+
+    listBtn.addEventListener('click', () => {
+      directoryContent.classList.add('list-view');
+      directoryContent.classList.remove('grid-view');
+      listBtn.classList.add('active');
+      gridBtn.classList.remove('active');
+    });
+
+    // Footer Year and Last Modified Script
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('last-modified').textContent = document.lastModified;
+  </script>
+</body>
+
+</html>
