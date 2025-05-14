@@ -465,19 +465,24 @@ button.active {
 footer {
     background-color: #2E3A59;
     color: white;
-    padding: 20px 0;
+    padding: 30px 0;
     text-align: center;
     font-size: 14px;
+    margin-top: 40px; /* ⬅️ This moves the footer down */
 }
+
 footer p {
-    margin: 10px 0;
+    margin: 10px -10px;
 }
+
 footer #year {
     font-weight: bold;
 }
+
 footer #last-modified {
     font-style: italic;
 }
+
 
 /* Hero Banner */
 .logo {
@@ -574,5 +579,13 @@ footer #last-modified {
 }
 .header-logo {
   padding-left: 10px;
+}
+.business-card img {
+  width: 100%;        /* Makes the image fit the width of the container */
+  height: auto;       /* Maintains the aspect ratio of the image */
+  max-width: 300px;   /* You can adjust the max-width as needed */
+  object-fit: cover;  /* Ensures the image covers the container without distortion */
+  border-radius: 8px; /* Optional: Adds rounded corners to the images */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow around the images */
 }
 
