@@ -4,19 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="<meta name="description" content="Empowering Crescent City businesses with tools, networking, and support to thrive in a dynamic local economy. Join our growing community.">
-">
+  <meta name="description" content="Empowering Crescent City businesses with tools, networking, and support to thrive in a dynamic local economy. Join our growing community.">
   <meta name="author" content="Crescent City Chamber of Commerce">
+
+  <title>Crescent City Chamber of Commerce | Business Directory</title>
 
   <!-- Open Graph for Facebook -->
   <meta property="og:title" content="Crescent City Chamber of Commerce">
   <meta property="og:description" content="Empowering Crescent City's local businesses with resources, connections, and growth opportunities.">
-<meta property="og:description" content="Connecting local businesses under one stellar network. We provide resources, visibility, and opportunities for growth in Crescent City.">
-<meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Crescent+City+Chamber">
-<meta property="og:url" content="https://www.crescentareachamber.com">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-  <title>Crescent City Chamber of Commerce - Business Directory</title>
+  <meta property="og:image" content="https://impulsible.github.io/wdd231/chamber/images/city.jpeg">
+  <meta property="og:url" content="https://impulsible.github.io/wdd231/chamber/directory.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crescent City Chamber of Commerce">
+  <meta name="twitter:description" content="Discover opportunities, build connections, and grow your business within a vibrant local network.">
+  <meta name="twitter:image" content="https://impulsible.github.io/wdd231/chamber/images/city.jpeg">
 
   <!-- Favicon -->
   <link rel="icon" href="images/download_1.png" type="image/png">
@@ -27,7 +31,7 @@
 
   <!-- Scripts -->
   <script src="scripts/scripts.js" defer></script>
-  <script src="scripts/toggleView.js" defer></script>
+  <script src="scripts/toggleview.js" defer></script>
 </head>
 
 <body class="chamber-directory">
@@ -42,7 +46,7 @@
     <nav>
       <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html"> Business Directory</a></li>
+        <li><a href="directory.html" class="active">Business Directory</a></li>
         <li><a href="join.html">Join</a></li>
         <li><a href="membership.html">Membership</a></li>
         <li><a href="discover.html">Discover</a></li>
@@ -64,21 +68,21 @@
     </div>
   </section>
 
-  <div class="toggle-buttons">
-    <button id="gridBtn">Grid View</button>
-    <button id="listBtn">List View</button>
+  <div class="toggle-buttons" aria-label="Toggle directory view">
+    <button id="gridBtn" aria-pressed="true">Grid View</button>
+    <button id="listBtn" aria-pressed="false">List View</button>
   </div>
 
   <section class="directory-search">
     <div class="container">
-  <h2>Directory Search</h2>
-      <input type="text" id="search-input" placeholder="Type Keywords...">
+      <h2>Directory Search</h2>
+      <input type="text" id="search-input" placeholder="Type Keywords..." aria-label="Search businesses">
       <div class="categories">
         <span>Popular Categories:</span>
         <ul>
           <li><a href="#" rel="nofollow">Healthcare</a></li>
           <li><a href="#" rel="nofollow">Real Estate</a></li>
-          <li><a href="#" rel="nofollow">Food & Breverages </a></li>
+          <li><a href="#" rel="nofollow">Food & Beverages</a></li>
           <li><a href="#" rel="nofollow">Hospitality</a></li>
           <li><a href="#" rel="nofollow">Design & Consulting</a></li>
         </ul>
@@ -87,72 +91,63 @@
   </section>
 
   <div class="directory-content grid-view" id="directoryContent">
-  <div class="directory-section">
+    <div class="directory-section">
 
-    <h2 class="directory-category-title">Healthcare</h2>
-    <div class="directory-category-row directory-list grid-view">
-      <div class="business-card">
-        <h3>FirstLight Home Care of Carlsbad & La Jolla</h3>
-        <p>Gold Member</p>
-        <p>1234 Main St, Carlsbad, CA 92008</p>
-        <a href="https://www.firstlighthomecare.com" target="_blank">Visit Website</a>
+      <!-- Repeat for each category -->
+      <h2 class="directory-category-title">Healthcare</h2>
+      <div class="directory-category-row directory-list">
+        <div class="business-card">
+          <h3>FirstLight Home Care of Carlsbad & La Jolla</h3>
+          <p>Gold Member</p>
+          <p>1234 Main St, Carlsbad, CA 92008</p>
+          <a href="https://www.firstlighthomecare.com" target="_blank" rel="noopener">Visit Website</a>
+        </div>
       </div>
-    </div>
 
-    <h2 class="directory-category-title">Real Estate</h2>
-    <div class="directory-category-row directory-list grid-view">
-      <div class="business-card">
-        <h3>Coastal Living Realty</h3>
-        <p>Silver Member</p>
-        <p>5678 Beach Blvd, Carlsbad, CA 92009</p>
-        <a href="https://www.coastallivingrealty.com" target="_blank">Visit Website</a>
+      <h2 class="directory-category-title">Food & Beverage</h2>
+      <div class="directory-category-row directory-list grid-view">
+        <div class="business-card">
+          <h3>Bay Area Coffee Roasters</h3>
+          <p>Bronze Member</p>
+          <p>789 Coffee St, San Francisco, CA 94102</p>
+          <a href="https://www.bayareacoffee.com" target="_blank">Visit Website</a>
+        </div>
+        <div class="business-card">
+          <h3>Fresh Farms Market</h3>
+          <p>Bronze Member</p>
+          <p>456 Green St, San Diego, CA 92101</p>
+          <a href="https://www.freshfarmsmarket.com" target="_blank">Visit Website</a>
+        </div>
       </div>
-    </div>
 
-    <h2 class="directory-category-title">Food & Beverage</h2>
-    <div class="directory-category-row directory-list grid-view">
-      <div class="business-card">
-        <h3>Bay Area Coffee Roasters</h3>
-        <p>Bronze Member</p>
-        <p>789 Coffee St, San Francisco, CA 94102</p>
-        <a href="https://www.bayareacoffee.com" target="_blank">Visit Website</a>
+      <h2 class="directory-category-title">Hospitality</h2>
+      <div class="directory-category-row directory-list grid-view">
+        <div class="business-card">
+          <h3>Sunny Beach Resort</h3>
+          <p>Gold Member</p>
+          <p>1012 Beach Ave, Malibu, CA 90265</p>
+          <a href="https://www.sunnybeachresort.com" target="_blank">Visit Website</a>
+        </div>
+        <div class="business-card">
+          <h3>Ocean View Hotel</h3>
+          <p>Platinum Member</p>
+          <p>345 Ocean Blvd, Santa Monica, CA 90401</p>
+          <a href="https://www.oceanviewhotel.com" target="_blank">Visit Website</a>
+        </div>
       </div>
-      <div class="business-card">
-        <h3>Fresh Farms Market</h3>
-        <p>Bronze Member</p>
-        <p>456 Green St, San Diego, CA 92101</p>
-        <a href="https://www.freshfarmsmarket.com" target="_blank">Visit Website</a>
-      </div>
-    </div>
 
-    <h2 class="directory-category-title">Hospitality</h2>
-    <div class="directory-category-row directory-list grid-view">
-      <div class="business-card">
-        <h3>Sunny Beach Resort</h3>
-        <p>Gold Member</p>
-        <p>1012 Beach Ave, Malibu, CA 90265</p>
-        <a href="https://www.sunnybeachresort.com" target="_blank">Visit Website</a>
+      <h2 class="directory-category-title">Design & Consulting</h2>
+      <div class="directory-category-row directory-list grid-view">
+        <div class="business-card">
+          <h3>Creative Design Studio</h3>
+          <p>Silver Member</p>
+          <p>234 Design Rd, Los Angeles, CA 90001</p>
+          <a href="https://www.creativedesignstudio.com" target="_blank">Visit Website</a>
+        </div>
       </div>
-      <div class="business-card">
-        <h3>Ocean View Hotel</h3>
-        <p>Platinum Member</p>
-        <p>345 Ocean Blvd, Santa Monica, CA 90401</p>
-        <a href="https://www.oceanviewhotel.com" target="_blank">Visit Website</a>
-      </div>
-    </div>
-    <h2 class="directory-category-title">Design & Consulting</h2>
-    <div class="directory-category-row directory-list grid-view">
-      <div class="business-card">
-        <h3>Creative Design Studio</h3>
-        <p>Silver Member</p>
-        <p>234 Design Rd, Los Angeles, CA 90001</p>
-        <a href="https://www.creativedesignstudio.com" target="_blank">Visit Website</a>
-      </div>
-    </div>
 
+    </div>
   </div>
-</div>
-
 
   <footer>
     <div class="container">
