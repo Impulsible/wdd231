@@ -259,7 +259,7 @@ body {
 
 /* Header */
 header {
-    background-color: #2E3A59;
+    background-color: #061539;
     color: white;
     padding: 20px 0;
     text-align: center;
@@ -289,20 +289,23 @@ header nav ul li a {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
+/* Header Navigation Hover Fix */
 header nav ul li a:hover {
-    background-color: #042d04;
+    background-color: #0a66c2; /* More contrast than #dbecf4 */
+    color: white; /* Ensure text is visible */
 }
 
 /* Intro Section */
 .directory-intro {
-    background-color: #ffffff;
+    background-color: #f5dada;
     padding: 40px 0;
     text-align: center;
 }
 .directory-intro h1 {
     font-size: 36px;
-    color: #2E3A59;
+    color: #2a2a2a; /* Darker text for readability against #f5dada */
 }
+
 .directory-intro p {
     color: #777;
     margin-bottom: 20px;
@@ -338,13 +341,10 @@ header nav ul li a:hover {
     list-style-type: none;
 }
 .categories ul li a {
-    text-decoration: none;
-    font-size: 16px;
-    color: #2E3A59;
-    font-weight: bold;
+    color: #333366; /* Changed from #e1d8f9 for better contrast */
 }
 .categories ul li a:hover {
-    color: #032303;
+    color: #0a7e8c; /* Still distinct, but accessible */
 }
 
 /* Toggle Buttons */
@@ -355,7 +355,7 @@ header nav ul li a:hover {
 .toggle-buttons button {
     padding: 10px 20px;
     margin: 5px;
-    background-color: #2E3A59;
+    background-color: #5fc7ff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -364,7 +364,7 @@ header nav ul li a:hover {
 }
 .toggle-buttons button:hover,
 button.active {
-    background-color: #021207;
+    background-color: #e9e0e0;
 }
 
 /* Directory Content Section */
@@ -409,25 +409,19 @@ button.active {
 }
 .business-card h3 {
     font-size: 1.4rem;
-    color: #005a87;
-    margin-top: 0;
+    color: #1a1a1a; /* Changed from #fafcfc (too light) */
 }
 .business-card p {
     margin: 0.5rem 0;
     color: #444;
 }
 .business-card a {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 8px 16px;
-    background-color: #021401;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
+    background-color: #f0f4f9; /* Deeper color for contrast */
+    color: #ffffff;
 }
+
 .business-card a:hover {
-    background-color: #2E3A59;
+    background-color: #163b66; /* Still high contrast */
 }
 
 /* Directory Member Card */
@@ -441,20 +435,25 @@ button.active {
     padding: 15px;
     width: 300px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+    background-color: #073a24;
 }
 .member-card img {
     width: 100%;
     height: auto;
 }
+.member-card {
+    background-color: #073a24;
+    color: #ffffff; /* Ensure all text is visible */
+}
+
 .member-card h3 {
-    margin-top: 10px;
+    color: #ffffff;
 }
 
 /* Category Titles */
 .directory-category-title {
     font-size: 24px;
-    color: #2E3A59;
+    color: #252932;
     margin: 40px 0 20px;
     text-align: left;
     border-bottom: 2px solid #ccc;
@@ -525,10 +524,8 @@ footer #last-modified {
     animation-delay: 0.5s;
 }
 .hero-subtext {
-  color: #0f2d05;
-  background-color: rgba(0, 0, 0, 0.6); /* adds contrast */
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
+    color: #f2f2f2; /* Light text for contrast */
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .hero-title {
@@ -574,6 +571,18 @@ footer #last-modified {
         font-size: 1rem;
     }
 }
+
+.hero-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: -0.8rem; /* raise it up by reducing space above */
+    animation-delay: 2s;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    font-weight: 600;
+}
+
 .directory-search h2 {
   color: #2c3e50; /* or any color you like */
 }
@@ -588,4 +597,516 @@ footer #last-modified {
   border-radius: 8px; /* Optional: Adds rounded corners to the images */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow around the images */
 }
+.nav-menu a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+  display: inline-block;
+}
 
+.nav-menu a.active {
+  background-color: #fff;
+  color: #2E3A59;
+  border-radius: 5px;
+}
+:root {
+  --accent: #123447;
+  --inactive: #e0e0e0;
+  --card-bg: #fff;
+  --card-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  --card-radius: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Toggle Button Styles */
+.toggle-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-buttons button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: white;
+  color: var(--accent);
+  font-size: 1rem;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Toggle Buttons Active Fix */
+.toggle-buttons .active {
+    background: var(--accent);
+    color: #ffffff; /* Ensure contrast against dark background */
+}
+
+/* Grid View - Horizontal 3 per row */
+.cards.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Force 3 items per row */
+  gap: 1.5rem;
+}
+
+/* List View - Vertical 3 per group */
+.cards.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Grouping 3 per list block */
+.cards.list .card-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Card Styling */
+.card {
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--card-radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.cards.grid .card {
+  flex-direction: column;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  max-width: 160px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+
+.card p {
+  margin: 0.25rem 0;
+  color: #555;
+}
+
+.card a {
+  color: #09141f;
+  text-decoration: underline;
+}
+/* List view groups */
+.directory-category-row.list-view {
+  display: block; /* normal block flow */
+}
+
+.card-group {
+  display: flex;
+  flex-direction: column; /* stack cards vertically */
+  gap: 1rem;
+  margin-bottom: 2rem; /* space between groups */
+}
+
+/* Cards inside list view stacked */
+.card-group .member-card {
+  /* Optional styling for list view cards */
+  width: 100%;
+}
+/* Container for cards in grid view */
+.directory-category-row.grid-view {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 1rem;
+}
+
+/* Container for cards in list view */
+.directory-category-row.list-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Cards styling for both views */
+.member-card {
+  background: #051945;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  box-sizing: border-box;
+  width: calc((100% / 3) - (1rem * 2 / 3)); /* 3 cards per row minus gap compensation */
+}
+   /* Base styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .directory-category-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .business-card {
+      background: #192b31;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      flex: 1 1 30%;
+      box-sizing: border-box;
+    }
+
+    .business-image {
+      width: 100%;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    /* Grid/List Toggle */
+    .toggle-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .toggle-buttons button {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    /* Grid View */
+    .grid-view .directory-category-row {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* List View */
+    .list-view .directory-category-row {
+      display: block;
+    }
+
+    .list-view .business-card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .categories {
+      margin: 20px 0;
+    }
+
+    .categories ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .categories li {
+      background: #eee;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+
+
+/* Container */
+.directory-category-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto;   /* Scroll if too many cards */
+  padding-bottom: 20px;
+}
+
+/* Business Card */
+.business-card {
+  background-color: #c2cef6;
+  width: 280px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image Styling */
+.business-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+/* Text Info */
+.business-card h3 {
+  margin: 16px 0 8px;
+  font-size: 1.2rem;
+  color: #b2dcfa;
+}
+
+.business-card p {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 4px 0;
+  padding: 0 10px;
+}
+
+.business-card a {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 16px;
+  color: #edf9e4;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Optional: Hide scrollbar for a cleaner look */
+.directory-category-row::-webkit-scrollbar {
+  display: none;
+}
+.directory-category-row {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.card {
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  width: 100%;
+  height: 200%;
+  display: flex;
+  object-fit: auto;
+  aspect-ratio: 16/9; /* or 1/1 for square */
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #555;
+}
+.directory-category-row {
+  display: flex;
+  gap: 20px; /* space between cards */
+  flex-wrap: wrap; /* wrap on smaller screens */
+}
+
+.business-card {
+  flex: 1 1 300px; /* flexible but minimum 300px width */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  box-sizing: border-box;
+  min-height: 420px; /* fix height so all cards equal */
+  background: #03254f;
+}
+
+.business-image {
+  width: 100%;
+  height: 180px; /* fixed height for images */
+  object-fit: contain; /* fit entire image inside */
+  margin: 15px 0;
+  background-color: #f9f9f9; /* optional for image bg */
+}
+.business-card {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 420px;
+  background: #c8e2e8;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.business-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #3f4953;
+  font-weight: 700;
+}
+
+.business-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 6px 0;
+  color: #555;
+}
+
+.business-card p strong {
+  color: #1f2a31;
+  font-weight: 600;
+}
+
+.business-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  margin: 15px 0;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.business-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #1a5aa0;;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.business-card a:hover {
+  color: #1c5980;
+  text-decoration: underline;
+}
+.directory-category-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.business-card {
+  flex: 1 1 300px;
+  background-color: #c8c3ed;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  text-align: center;
+  max-width: 300px;
+}
+
+.business-image {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  margin: 1rem 0;
+}
+.toggle-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.toggle-buttons button {
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.toggle-buttons button[aria-pressed="true"] {
+  background-color: #0066aa;
+  color: #beeded;
+  border-color: #0066aa;
+}
+
+.directory-category-row.grid-view {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.directory-category-row.list-view {
+  display: block;
+}
+
+.directory-category-row.list-view .business-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.directory-category-row.list-view .business-image {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.business-card {
+  background: #c2cdef;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 300px;
+  flex-shrink: 0;
+}
