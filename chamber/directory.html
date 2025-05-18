@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Empowering Crescent City businesses with tools, networking, and support to thrive in a dynamic local economy. Join our growing community.">
   <meta name="author" content="Crescent City Chamber of Commerce">
-
   <title>Crescent City Chamber of Commerce | Business Directory</title>
 
   <!-- Open Graph for Facebook -->
@@ -35,7 +34,7 @@
 </head>
 
 <body class="chamber-directory">
-  <header role="banner">
+  <header>
     <div class="header-logo">
       <img src="images/download.png" alt="Chamber of Commerce Logo">
       <div>
@@ -43,7 +42,7 @@
         <span class="sub-text">Chamber of Commerce</span>
       </div>
     </div>
-    <nav role="navigation" aria-label="Primary navigation">
+    <nav aria-label="Primary navigation">
       <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
         <li><a href="directory.html" class="active" aria-current="page">Business Directory</a></li>
@@ -54,112 +53,115 @@
     </nav>
   </header>
 
-  <main id="main-content" role="main" tabindex="-1">
-  <section class="hero-banner" aria-label="Introduction to Chamber Business Directory">
-    <div class="hero-image-overlay">
-      <img src="images/buildings.jpg" alt="Crescent City skyline view" class="hero-image">
-      <div class="hero-text-content">
-        <h1 class="hero-heading">Explore the Future with Us</h1>
-        <p class="hero-subtext">Connecting local businesses under one stellar network.</p>
-        <h2 class="hero-title">Chamber of Commerce Directory</h2>
-        <p class="hero-description">
-          Your one-stop source for discovering local businesses and organizations that contribute to our vibrant community.
-          Browse by category or search for specific listings to find the right services and opportunities near you.
-        </p>
+ <main id="main-content" tabindex="-1">
+    <section class="hero-banner" aria-label="Introduction to Chamber Business Directory">
+      <div class="hero-image-overlay">
+        <img src="images/buildings.jpg" alt="Crescent City skyline view" class="hero-image">
+        <div class="hero-text-content">
+          <h1 class="hero-heading">Explore the Future with Us</h1>
+          <p class="hero-subtext">Connecting local businesses under one stellar network.</p>
+          <h2 class="hero-title">Chamber of Commerce Directory</h2>
+          <p class="hero-description">
+            Your one-stop source for discovering local businesses and organizations that contribute to our vibrant community.
+            Browse by category or search for specific listings to find the right services and opportunities near you.
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
-</main>
+    </section>
 
-   <div class="toggle-buttons" aria-label="Toggle directory view">
-  <button id="gridBtn" aria-pressed="true">Grid View</button>
-  <button id="listBtn" aria-pressed="false">List View</button>
-</div>
+    <div class="toggle-buttons" aria-label="Toggle directory view">
+      <button id="gridBtn" aria-pressed="true">Grid View</button>
+      <button id="listBtn" aria-pressed="false">List View</button>
+    </div>
 
     <section class="directory-search">
-  <div class="container">
-    <h2>Directory Search</h2>
-    <input type="text" id="search-input" placeholder="Type Keywords..." aria-label="Search businesses">
-    <div class="categories">
-      <span>Popular Categories:</span>
-      <ul>
-        <li><a href="#">Healthcare</a></li>
-        <li><a href="#">Real Estate</a></li>
-        <li><a href="#">Food & Beverages</a></li>
-        <li><a href="#">Hospitality</a></li>
-        <li><a href="#">Design & Consulting</a></li>
-      </ul>
-    </div>
-  </div>
-</section>
+      <div class="container">
+        <h2>Directory Search</h2>
+        <input type="text" id="search-input" placeholder="Type Keywords..." aria-label="Search businesses">
+        <div class="categories">
+          <span>Popular Categories:</span>
+          <ul>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">Real Estate</a></li>
+            <li><a href="#">Food & Beverages</a></li>
+            <li><a href="#">Hospitality</a></li>
+            <li><a href="#">Design & Consulting</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
+   <div class="directory-content grid-view" id="directoryContent">
+   <div class="directory-section">
 
-<div class="directory-content grid-view" id="directoryContent">
-  <div class="directory-section">
+        <!-- Healthcare -->
+        <h2 class="directory-category-title">Healthcare</h2>
+        <div class="directory-category-row">
+          <div class="business-card">
+            <h3>FirstLight Home Care of Carlsbad & La Jolla</h3>
+            <p><strong>Gold Member</strong></p>
+            <p>1234 Main St, Carlsbad, CA 92008</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Providing personalized care to the elderly and disabled.</p>
+            <img src="images/firstlight-home.png" alt="FirstLight Home Care" class="business-image">
+            <a href="https://www.firstlighthomecare.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+           </div>
 
-    <!-- Healthcare -->
-    <h2 class="directory-category-title">Healthcare</h2>
-    <div class="directory-category-row">
-      <div class="business-card">
-        <h3>FirstLight Home Care of Carlsbad & La Jolla</h3>
-        <p><strong>Gold Member</strong></p>
-        <p>1234 Main St, Carlsbad, CA 92008</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>Providing personalized care to the elderly and disabled.</p>
-        <img src="images/firstlight-home-care-logo.png" alt="FirstLight Home Care" class="business-image">
-        <a href="https://www.firstlighthomecare.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
-      </div>
-      <div class="business-card">
-        <h3>Sunrise Wellness Center</h3>
-        <p><strong>Silver Member</strong></p>
-        <p>221 Wellness Dr, Encinitas, CA 92024</p>
-        <p>Phone: (760) 123-4567</p>
-        <p>Holistic wellness and rehabilitation services.</p>
-        <img src="images/sunrise.webp" alt="Sunrise Wellness Center" class="business-image">
-        <a href="https://www.sunrisewellness.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
-      </div>
-      <div class="business-card">
-        <h3>Harmony Medical Clinic</h3>
-        <p><strong>Bronze Member</strong></p>
-        <p>890 Harmony Rd, Vista, CA 92083</p>
-        <p>Phone: (760) 987-6543</p>
-        <p>Affordable medical care focused on community wellness.</p>
-        <img src="images/harmony.jpg" alt="Harmony Medical Clinic" class="business-image">
-        <a href="https://www.harmonymedical.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
-      </div>
-    </div>
+          <div class="business-card">
+            <h3>Sunrise Wellness Center</h3>
+            <p><strong>Silver Member</strong></p>
+            <p>221 Wellness Dr, Encinitas, CA 92024</p>
+            <p>Phone: (760) 123-4567</p>
+            <p>Holistic wellness and rehabilitation services.</p>
+            <img src="images/sunrise.webp" alt="Sunrise Wellness Center" class="business-image">
+            <a href="https://www.sunrisewellness.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
 
-    <!-- Real Estate -->
-    <h2 class="directory-category-title">Real Estate</h2>
-    <div class="directory-category-row">
-      <div class="business-card">
-        <h3>Coastal Living Realty</h3>
-        <p><strong>Silver Member</strong></p>
-        <p>5678 Beach Blvd, Carlsbad, CA 92009</p>
-        <p>Phone: (987) 654-3210</p>
-        <p>Helping clients find their dream homes on the coast.</p>
-        <img src="images/coastal-living.jpg" alt="Coastal Living Realty" class="business-image">
-        <a href="https://www.coastallivingrealty.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
-      </div>
-      <div class="business-card">
-        <h3>Pacific Horizon Properties</h3>
-        <p><strong>Gold Member</strong></p>
-        <p>1020 Pacific St, Oceanside, CA 92054</p>
-        <p>Phone: (760) 888-1234</p>
-        <p>Expert agents specializing in coastal properties.</p>
-        <img src="images/pacific.png" alt="Pacific Horizon Properties" class="business-image">
-        <a href="https://www.pacifichorizon.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
-      </div>
-      <div class="business-card">
-        <h3>Urban Nest Realty</h3>
-        <p><strong>Bronze Member</strong></p>
-        <p>321 Metro Ave, San Diego, CA 92103</p>
-        <p>Phone: (619) 123-9876</p>
-        <p>Modern solutions for city living and investment properties.</p>
-        <img src="images/nests.png" alt="Urban Nest Realty" class="business-image">
-        <a href="https://www.urbannestrealty.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
-      </div>
-    </div>
+          <div class="business-card">
+            <h3>Harmony Medical Clinic</h3>
+            <p><strong>Bronze Member</strong></p>
+            <p>890 Harmony Rd, Vista, CA 92083</p>
+            <p>Phone: (760) 987-6543</p>
+            <p>Affordable medical care focused on community wellness.</p>
+            <img src="images/harmony.jpg" alt="Harmony Medical Clinic" class="business-image">
+            <a href="https://www.harmonymedical.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+        </div>
+
+        <!-- Real Estate -->
+        <h2 class="directory-category-title">Real Estate</h2>
+        <div class="directory-category-row">
+          <div class="business-card">
+            <h3>Coastal Living Realty</h3>
+            <p><strong>Silver Member</strong></p>
+            <p>5678 Beach Blvd, Carlsbad, CA 92009</p>
+            <p>Phone: (987) 654-3210</p>
+            <p>Helping clients find their dream homes on the coast.</p>
+            <img src="images/coastal-living.jpg" alt="Coastal Living Realty" class="business-image">
+            <a href="https://www.coastallivingrealty.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+
+          <div class="business-card">
+            <h3>Pacific Horizon Properties</h3>
+            <p><strong>Gold Member</strong></p>
+            <p>1020 Pacific St, Oceanside, CA 92054</p>
+            <p>Phone: (760) 888-1234</p>
+            <p>Expert agents specializing in coastal properties.</p>
+            <img src="images/pacific.png" alt="Pacific Horizon Properties" class="business-image">
+            <a href="https://www.pacifichorizon.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+
+          <div class="business-card">
+            <h3>Urban Nest Realty</h3>
+            <p><strong>Bronze Member</strong></p>
+            <p>321 Metro Ave, San Diego, CA 92103</p>
+            <p>Phone: (619) 123-9876</p>
+            <p>Modern solutions for city living and investment properties.</p>
+            <img src="images/nests.png" alt="Urban Nest Realty" class="business-image">
+            <a href="https://www.urbannestrealty.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+        </div>
+
 
     <!-- Food & Beverage -->
     <h2 class="directory-category-title">Food & Beverage</h2>
@@ -179,7 +181,7 @@
         <p>456 Green St, San Diego, CA 92101</p>
         <p>Phone: (619) 555-3456</p>
         <p>Fresh, organic produce and groceries from local farms.</p>
-        <img src="images/farm-fresh-logo-is-green.avif" alt="Fresh Farms Market" class="business-image">
+        <img src="images/farm-fresh.avif"Fresh Farms Market" class="business-image">
         <a href="https://www.freshfarmsmarket.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
       </div>
       <div class="business-card">
@@ -202,7 +204,7 @@
         <p>1012 Beach Ave, Malibu, CA 90265</p>
         <p>Phone: (310) 555-1212</p>
         <p>Luxury beach resort offering premium accommodations.</p>
-        <img src="images/thethreecorners_redsea_hurghada_sunny_beach_resort_splash_pool_4-scaled_optimized_100.jpg" alt="Sunny Beach Resort" class="business-image">
+        <img src="images/corners.jpg" alt="Sunny Beach Resort" class="business-image">
         <a href="https://www.sunnybeachresort.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
       </div>
       <div class="business-card">
@@ -261,7 +263,7 @@
 </div>
 
 
-   <footer role="contentinfo">
+   <footer>
     <div class="container">
       <p>&copy; <span id="year"></span> Crescent City Chamber of Commerce. All rights reserved.</p>
       <p>Last updated: <span id="last-modified"></span></p>
@@ -310,7 +312,6 @@ const container = document.getElementById('membersContainer');
     }
   });
 </script>
-
 </body>
 
 </html>
