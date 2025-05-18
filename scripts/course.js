@@ -73,11 +73,21 @@ function displayCourses(filteredCourses) {
 
     filteredCourses.forEach(course => {
         const courseCard = createCourseCard(course);
+
+        // If course is selected, add 'selected' class to highlight
+        const courseNumber = `${course.subject} ${course.number}`;
+        if (selectedCourses.includes(courseNumber)) {
+            courseCard.classList.add('selected');
+        }
+
         courseContainer.appendChild(courseCard);
     });
 
     // Update the total selected courses count after filtering
-    updateSelectedCoursesCount(filteredCourses.length);
+    updateSelectedCoursesCount(selectedCourses.length);
+
+    // Recalculate total credits based on selectedCourses
+    recalculateTotalCredits();
 }
 
 // Create Course Card Element
@@ -101,18 +111,39 @@ function createCourseCard(course) {
 // Toggle Credit Units and Selection for a Course
 function toggleCourseSelection(course) {
     const courseNumber = `${course.subject} ${course.number}`;
+    const courseCards = document.querySelectorAll('.course-card');
 
     if (selectedCourses.includes(courseNumber)) {
-        // If course is already selected, remove it
+        // Remove selection
         selectedCourses = selectedCourses.filter(item => item !== courseNumber);
-        totalCredits -= course.credits; // Subtract credits
     } else {
-        // If course is not selected, add it
+        // Add selection
         selectedCourses.push(courseNumber);
-        totalCredits += course.credits; // Add credits
     }
 
+    // Update total credits based on selection
+    recalculateTotalCredits();
+
+    // Update count
     updateSelectedCoursesCount(selectedCourses.length);
+
+    // Update the course card's visual selected state
+    courseCards.forEach(card => {
+        if (card.getAttribute('data-course-number') === courseNumber) {
+            card.classList.toggle('selected');
+        }
+    });
+}
+
+// Recalculate total credits from selectedCourses
+function recalculateTotalCredits() {
+    totalCredits = 0;
+    selectedCourses.forEach(courseNum => {
+        const course = courses.find(c => `${c.subject} ${c.number}` === courseNum);
+        if (course) {
+            totalCredits += course.credits;
+        }
+    });
     updateTotalCredits();
 }
 
