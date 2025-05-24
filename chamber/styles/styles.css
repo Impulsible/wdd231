@@ -1,4 +1,5 @@
 /* ===== CSS VARIABLES ===== */
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 :root {
   --primary-color: #003366;
   --secondary-color: #f9f9f9;
@@ -45,28 +46,6 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-
-/* ===== SKIP LINK (for screen reader + keyboard users) ===== */
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  z-index: 100;
-}
-.skip-link:focus {
-  left: 10px;
-  top: 10px;
-  width: auto;
-  height: auto;
-  padding: 0.5rem 1rem;
-  background: #003366;
-  color: white;
-  border-radius: 4px;
-  text-decoration: none;
-}
 
 /* ===== BUTTONS, LINKS, TAP TARGETS ===== */
 button, .btn-primary, a {
@@ -132,6 +111,19 @@ button, a, .btn-primary {
   .spotlight-container > div {
     max-width: 100%;
     margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .hero-text-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .btn-primary {
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
@@ -535,6 +527,63 @@ header {
   }
 }
 
+/* ===== MOBILE VIEW ENHANCEMENTS ===== */
+@media screen and (max-width: 768px) {
+  /* General body and typography tweaks */
+  body {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 0 1rem;
+  }
+  h2, h3 {
+    font-size: 1.4rem;
+  }
+  main section {
+    padding: 1.5rem 0;
+  }
+
+  /* Navigation: stack links vertically with spacing */
+  .primary-nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .primary-nav a {
+    padding: 0.75rem 1rem;
+    font-size: 1.1rem;
+  }
+
+  /* Hero section: stack image below text */
+  .hero {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+  .hero img {
+    max-width: 100%;
+    margin-top: 1rem;
+  }
+
+  /* Cards container: stack cards vertically on small screens */
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Buttons: larger tap targets */
+  .button,
+  button,
+  input[type="submit"] {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+  }
+
+  /* Accessibility: clear focus outlines */
+  a:focus, button:focus {
+    outline-offset: 3px;
+    outline-color: var(--clr-accent);
+  }
+}
 
 
 /* ===== SPOTLIGHT ===== */
