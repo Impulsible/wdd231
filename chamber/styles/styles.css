@@ -514,6 +514,75 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
+/* Mobile Touch Target Enhancement */
+/* Ensure tappable elements meet 44x44px minimum size for accessibility */
+button, .btn-primary, a {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.125rem; /* Slightly larger for readability */
+  min-height: 44px;
+  min-width: 44px; /* Add width for consistent tap area */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px; /* Easier on the eyes and fingers */
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none; /* Avoid accidental text selection on tap */
+}
+
+button:hover, button:focus,
+.btn-primary:hover, .btn-primary:focus,
+a:hover, a:focus {
+  outline-offset: 3px;
+  outline: 3px solid #3f80ff; /* Clear visible focus outline */
+  background-color: #2f61d1; /* Darker on hover/focus */
+  text-decoration: none;
+}
+
+/* Image Responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Add subtle rounding for polish */
+  user-select: none; /* Prevent accidental drag/selection */
+}
+
+/* Responsive Layout Enhancements for Mobile */
+@media (max-width: 500px) {
+  .cards-container,
+  .spotlight-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .card,
+  .spotlight-container > div {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+
+  .hero-text-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-text-content p {
+    font-size: 1.125rem; /* Slightly bigger for readability */
+    line-height: 1.4;
+  }
+
+  /* Improve spacing for touch */
+  .btn-primary {
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+    min-height: 50px;
+    min-width: 50px;
+  }
+}
 
 
 
