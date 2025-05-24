@@ -4,6 +4,8 @@
   --secondary-color: #f9f9f9;
   --text-color: #333333;
   --font-family: 'Lora', serif;
+  --text-color: #222222; /* darker than #333333 */
+  --primary-color: #002244; /* deeper blue for better contrast */
 }
 
 /* ===== RESET ===== */
@@ -39,9 +41,10 @@ img {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid #0077cc;
-  outline-offset: 2px;
+  outline: 3px solid #005fa3;
+  outline-offset: 3px;
 }
+
 
 /* ===== SKIP LINK (for screen reader + keyboard users) ===== */
 .skip-link {
@@ -89,6 +92,13 @@ a:hover, a:focus {
   background-color: #2f61d1;
   text-decoration: none;
 }
+
+button, a, .btn-primary {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.8rem 1.2rem;
+}
+
 
 /* ===== HERO TEXT CONTENT (Mobile font scaling) ===== */
 @media (max-width: 500px) {
