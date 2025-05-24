@@ -31,7 +31,7 @@ function displayWeather(data) {
   // Show current weather nicely
   weatherDiv.innerHTML = `
     <div class="current-weather-content">
-      <img src="https://openweathermap.org/img/wn/${currentIconCode}@2x.png" alt="${currentDesc}" />
+      <img src="https://openweathermap.org/img/wn/${currentIconCode}@2x.png" alt="${currentDesc}">
       <p><strong>Temperature:</strong> ${currentTemp}°C</p>
       <p><strong>Conditions:</strong> ${currentDesc}</p>
     </div>
@@ -69,7 +69,7 @@ function displayWeather(data) {
     card.innerHTML = `
       <div class="day-name">${dayName}</div>
       <div class="date">${monthDay}</div>
-      <img src="https://openweathermap.org/img/wn/${day.icon}@2x.png" alt="${day.description}" class="forecast-icon" />
+      <img src="https://openweathermap.org/img/wn/${day.icon}@2x.png" alt="${day.description}" class="forecast-icon">
       <div class="temp">${day.temp}°C</div>
       <div class="desc">${day.description}</div>
     `;
@@ -127,7 +127,7 @@ function displayWeather(data) {
   ">
     <img src="https://openweathermap.org/img/wn/${currentIconCode}@4x.png" 
          alt="${currentDesc}" 
-         style="width: 96px; height: 96px; filter: drop-shadow(0 0 5px rgba(233, 226, 226, 0.7));" />
+         style="width: 96px; height: 96px; filter: drop-shadow(0 0 5px rgba(233, 226, 226, 0.7));">
     <div class="weather-info" style="line-height: 1.3;">
       <p style="font-size: 3rem; font-weight: 700; margin: 0 0 8px 0;">${currentTemp}°C</p>
       <p style="font-size: 1.25rem; font-weight: 600; margin: 0 0 12px 0;">${currentDesc}</p>
@@ -175,7 +175,7 @@ function displayWeather(data) {
     card.innerHTML = `
       <div class="day-name">${dayName}</div>
       <div class="date">${monthDay}</div>
-      <img src="https://openweathermap.org/img/wn/${day.icon}@2x.png" alt="${day.description}" class="forecast-icon" />
+      <img src="https://openweathermap.org/img/wn/${day.icon}@2x.png" alt="${day.description}" class="forecast-icon">
       <div class="temp">${day.temp}°C</div>
       <div class="desc">${day.description}</div>
     `;
