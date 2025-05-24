@@ -27,6 +27,135 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 8px;
+  user-select: none;
+}
+
+/* ===== ACCESSIBILITY: FOCUS OUTLINES ===== */
+:focus {
+  outline: 3px solid #1a48c9;
+  outline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #0077cc;
+  outline-offset: 2px;
+}
+
+/* ===== SKIP LINK (for screen reader + keyboard users) ===== */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 100;
+}
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: #003366;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* ===== BUTTONS, LINKS, TAP TARGETS ===== */
+button, .btn-primary, a {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.125rem;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+button:hover, button:focus,
+.btn-primary:hover, .btn-primary:focus,
+a:hover, a:focus {
+  outline-offset: 3px;
+  outline: 3px solid #3f80ff;
+  background-color: #2f61d1;
+  text-decoration: none;
+}
+
+/* ===== HERO TEXT CONTENT (Mobile font scaling) ===== */
+@media (max-width: 500px) {
+  .hero-text-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-text-content p {
+    font-size: 1.125rem;
+    line-height: 1.4;
+  }
+
+  .btn-primary {
+    padding: 1rem 1.5rem;
+    font-size: 1.25rem;
+    min-height: 50px;
+    min-width: 50px;
+  }
+}
+
+/* ===== CARDS AND SPOTLIGHT CONTAINERS (Responsive column to stacked) ===== */
+@media (max-width: 950px) {
+  .cards-container,
+  .spotlight-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .card,
+  .spotlight-container > div {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ===== FORECAST CARDS (Stack single column on very small screens) ===== */
+@media (max-width: 500px) {
+  .forecast-cards > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
+}
+
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  font-family: var(--font-family);
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a, button {
