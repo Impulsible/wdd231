@@ -1212,12 +1212,9 @@ body {
 }
 
 .card-img {
-  width: 100%;
-  height: 200%;
-  display: flex;
-  object-fit: auto;
-  aspect-ratio: 16/9; /* or 1/1 for square */
+  object-fit: cover; /* or contain/fill as needed */
 }
+
 
 .card-body {
   padding: 16px;
