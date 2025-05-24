@@ -1,11 +1,12 @@
+/* ===== CSS VARIABLES ===== */
 :root {
-  --primary-color: #003366;      /* Dark blue */
-  --secondary-color: #f9f9f9;    /* Light background */
-  --text-color: #333333;         /* Dark text */
-  --font-family: 'Lora', serif;  /* Elegant font */
+  --primary-color: #003366;
+  --secondary-color: #f9f9f9;
+  --text-color: #333333;
+  --font-family: 'Lora', serif;
 }
 
-/* Reset */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
@@ -15,96 +16,25 @@
 html, body {
   overflow-x: hidden;
   width: 100%;
-  font-family: var(--font-family), serif;
+  font-family: var(--font-family);
   background-color: var(--secondary-color);
   color: var(--text-color);
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
-/* Hero Banner Section */
-.hero-banner {
-  position: relative;
-  height: 75vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  overflow: hidden;
-  color: white;
-  margin-top: 80px; /* space for fixed header */
-}
-
-.hero-image {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.35);
-  z-index: 1;
-}
-
-.hero-text-content {
-  position: relative;
-  z-index: 10;
-  max-width: 1200px; /* match header max-width */
-  margin: 0 auto;
-  padding: 2rem 3rem;
-  border-radius: 12px;
-  line-height: 1.5;
-}
-
-/* Force all children to block + margin-bottom to prevent overlap */
-.hero-text-content > * {
+img {
+  max-width: 100%;
+  height: auto;
   display: block;
-  margin-bottom: 1.5rem;
 }
 
-.hero-text-content > *:last-child {
-  margin-bottom: 0;
+a, button {
+  min-height: 44px;
+  min-width: 44px;
 }
 
-.hero-text-content h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.hero-text-content p {
-  font-size: 1.3rem;
-}
-
-.btn-primary {
-  background-color: #d32f2f;
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  padding: 0.8rem 2.2rem;
-  border-radius: 6px;
-  display: inline-block;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: #a92323;
-}
-
-/* Responsive Hero */
-@media (max-width: 768px) {
-  .hero-text-content {
-    padding: 1.5rem 2rem;
-  }
-
-  .hero-text-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-text-content p {
-    font-size: 1.1rem;
-  }
-}
-
-/* Header styling */
+/* ===== HEADER ===== */
 header {
   position: absolute;
   top: 0;
@@ -113,296 +43,30 @@ header {
   background-color: rgba(0, 0, 139, 0.85);
   z-index: 700;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  padding: 0.2rem 0rem;
+  padding: 0.5rem 1rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
+  font-size: 0.95rem;
+  height: auto;
 }
-/* Container for header content */
 
 .header-container {
   max-width: 1400px;
   margin: 0 auto;
   width: 95%;
   display: flex;
-  justify-content: space-between; /* pushes logo left and nav right */
+  justify-content: space-between;
   align-items: center;
-  padding: 0.3rem ; /* Optional: add a little spacing inside container */
+  padding: 0.3rem;
 }
 
-/* Logo on left */
 .header-logo {
   display: flex;
   align-items: center;
   gap: 0.7rem;
   color: white;
   flex-shrink: 0;
-}
-
-
-
-/* Container to hold the cards side by side */
-.cards-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap; /* allows wrapping on small screens */
-}
-
-/* Base card style */
-.card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 24px 32px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  color: #222;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  flex: 1 1 320px; /* flexible with a minimum width */
-  min-width: 280px;
-  max-width: 350px;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Headings */
-.card h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #1a1a1a;
-  border-bottom: 3px solid #3f80ff;
-  padding-bottom: 6px;
-  font-weight: 700;
-}
-
-/* Events List */
-.events-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-grow: 1;
-  overflow-y: auto;
-}
-.events-list li {
-  background: #f0f5ff;
-  border-left: 6px solid #3f80ff;
-  padding: 14px 18px;
-  margin-bottom: 14px;
-  border-radius: 8px;
-  font-size: 1rem;
-  line-height: 1.4;
-  transition: background 0.3s ease;
-}
-.events-list li:hover {
-  background: #d1deff;
-  cursor: default;
-}
-
-/* Current Weather Card */
-.current-weather-card #weather {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px 24px;
-  color: #333;
-  font-weight: 600;
-  font-size: 1.2rem;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-}
-
-/* Weather icon styling */
-.current-weather-card #weather img {
-  width: 60px;
-  height: 60px;
-}
-
-
-/* Weather Icon SVG container */
-.current-weather-card #weather svg {
-  width: 80px;
-  height: 80px;
-  flex-shrink: 0;
-}
-
-/* Weather description container */
-.current-weather-card #weather .weather-details {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-/* Forecast Cards Container */
-.forecast-cards {
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  flex-grow: 1;
-  width: 100%;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
-}
-
-/* Individual forecast card */
-.forecast-card .forecast-cards > div {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  padding: 14px 12px;
-  text-align: center;
-  flex: 1 1 30%; /* Grow/Shrink and set minimum width for responsiveness */
-  cursor: default;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 33%;
-}
-
-/* Optional: Add hover effect for better UX */
-.forecast-card .forecast-cards > div:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-
-.forecast-card .forecast-cards > div:hover {
-  box-shadow: 0 10px 25px rgba(63,128,255,0.3);
-  transform: translateY(-6px);
-}
-
-/* Forecast icon */
-.forecast-card svg {
-  width: 42px;
-  height: 42px;
-  margin-bottom: 8px;
-  fill: #1a1e26;
-}
-
-/* Forecast date */
-.forecast-card .date {
-  font-weight: 700;
-  margin-bottom: 5px;
-  color: #1a1a1a;
-  font-size: 0.9rem;
-}
-
-/* Forecast temp */
-.forecast-card .temp {
-  font-weight: 600;
-  font-size: 1rem;
-  margin-bottom: 4px;
-}
-
-/* Forecast description */
-.forecast-card .desc {
-  font-size: 0.85rem;
-  color: #555;
-}
-
-/* Responsive: stack on smaller screens */
-@media (max-width: 950px) {
-  .cards-container {
-    flex-direction: column;
-    padding: 12px;
-  }
-  .card {
-    max-width: 100%;
-    margin-bottom: 32px;
-  }
-  .forecast-cards {
-    flex-direction: row;
-  }
-}
-
-@media (max-width: 400px) {
-  .forecast-cards {
-    flex-direction: column;
-  }
-  .forecast-card .forecast-cards > div {
-    margin-bottom: 18px;
-  }
-}
-
-#spotlight-title {
-  text-align: center;
-  font-family: 'Lora', serif;
-  font-weight: 700; /* Lora uses 700 for bold */
-  font-size: 2.5rem;
-  color: #2c3e50;
-  letter-spacing: 1.2px;
-  margin-bottom: 1rem;
-}
-.spotlight-container {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.spotlight-container > div {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 20px;
-  flex: 1 1 280px; /* flexible width, min 280px */
-  max-width: 320px;
-  font-family: 'Lora', serif;
-  color: #333;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.spotlight-container > div:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-.spotlight-container > div h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #2c3e50;
-}
-
-.spotlight-container > div p {
-  margin: 0.25rem 0 0;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-header {
-  padding: 0.5rem 1rem;
-  background-color: #0077cc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.95rem; /* smaller text */
-  height: auto;
-}
-
-header h1,
-header .logo {
-  font-size: 1.9rem; /* smaller logo/title */
-  margin: 0;
-}
-
-nav a {
-  margin: 0 0.2rem;
-  font-size: 0.85rem;
-  padding: 0.7rem 0.2rem;
-}
-
-
-.header-logo {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75px;
 }
 
 .nav-menu {
@@ -418,6 +82,8 @@ nav a {
   font-weight: 600;
   color: #333;
   transition: color 0.3s ease;
+  font-size: 0.85rem;
+  padding: 0.7rem 0.2rem;
 }
 
 .nav-menu a:hover,
@@ -425,7 +91,32 @@ nav a {
   color: #0077cc;
 }
 
+/* ===== HERO SECTION ===== */
+.hero-banner {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  margin-top: 80px;
+  color: white;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.35);
+  z-index: 1;
+}
+
 .hero-text-content {
+  position: relative;
+  z-index: 10;
   text-align: center;
   color: rgb(15, 15, 15);
   padding: 2rem 1rem;
@@ -437,15 +128,16 @@ nav a {
 
 .hero-text-content h1 {
   font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
   margin-bottom: 0.2rem;
 }
 
 .hero-text-content .subheading {
   font-size: 1.3rem;
   font-weight: 600;
-  color: #ffd700; /* golden accent */
+  color: #ffd700;
   margin-bottom: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -473,6 +165,232 @@ nav a {
   background-color: #005fa3;
   outline: none;
 }
+
+/* ===== CARDS SECTION ===== */
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 32px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex: 1 1 320px;
+  min-width: 280px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  border-bottom: 3px solid #3f80ff;
+  padding-bottom: 6px;
+  font-weight: 700;
+}
+
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.events-list li {
+  background: #f0f5ff;
+  border-left: 6px solid #3f80ff;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.4;
+  transition: background 0.3s ease;
+}
+
+.events-list li:hover {
+  background: #d1deff;
+  cursor: default;
+}
+
+/* ===== WEATHER ===== */
+.current-weather-card #weather {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px 24px;
+  color: #333;
+  font-weight: 600;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.current-weather-card #weather img {
+  width: 60px;
+  height: 60px;
+}
+
+.current-weather-card #weather .weather-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.forecast-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  width: 100%;
+}
+
+.forecast-cards > div {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  padding: 14px 12px;
+  text-align: center;
+  flex: 1 1 100%;
+  max-width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.forecast-cards > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.forecast-cards svg {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 8px;
+  fill: #1a1e26;
+}
+
+.date {
+  font-weight: 700;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+  font-size: 0.9rem;
+}
+
+.temp {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.desc {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* ===== SPOTLIGHT ===== */
+#spotlight-title {
+  text-align: center;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  letter-spacing: 1.2px;
+  margin-bottom: 1rem;
+}
+
+.spotlight-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.spotlight-container > div {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 20px;
+  flex: 1 1 280px;
+  max-width: 320px;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spotlight-container > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.spotlight-container > div h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.spotlight-container > div p {
+  margin: 0.25rem 0 0;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+@media (max-width: 950px) {
+  .cards-container,
+  .spotlight-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .card,
+  .spotlight-container > div {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .forecast-cards > div {
+    flex: 1 1 45%;
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 500px) {
+  .forecast-cards > div {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
+  .hero-text-content h1 {
+    font-size: 2rem;
+  }
+  .hero-text-content p {
+    font-size: 1rem;
+  }
+}
+
+/* ===== FOCUS VISIBLE ===== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #0077cc;
+  outline-offset: 2px;
+}
+
 
 
 
@@ -1211,9 +1129,6 @@ body {
   flex-direction: column;
 }
 
-.card-img {
-  object-fit: cover; /* or contain/fill as needed */
-}
 
 
 .card-body {
