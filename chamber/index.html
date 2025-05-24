@@ -1,102 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Welcome to Crescent City Chamber of Commerce - Your local business hub">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Empowering Crescent City businesses with tools, networking, and support to thrive in a dynamic local economy. Join our growing community.">
   <meta name="author" content="Crescent City Chamber of Commerce">
+  <title>Crescent City Chamber of Commerce | Home</title>
+
+  <!-- Open Graph for Facebook -->
   <meta property="og:title" content="Crescent City Chamber of Commerce">
   <meta property="og:description" content="Empowering Crescent City's local businesses with resources, connections, and growth opportunities.">
-  <meta property="og:image" content="images/logo.png">
-  <meta property="og:url" content="http://www.crescentcitychamber.com">
-  <title>Crescent City Chamber of Commerce - Home</title>
-  <link rel="icon" href="images/favicon.ico">
-  <link rel="stylesheet" href="styles/styles.css">
-  <script src="scripts/scripts.js" defer></script>
+  <meta property="og:image" content="https://impulsible.github.io/wdd231/chamber/images/city.jpeg">
+  <meta property="og:url" content="https://impulsible.github.io/wdd231/chamber/index.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Crescent City Chamber of Commerce">
+  <meta name="twitter:description" content="Discover opportunities, build connections, and grow your business within a vibrant local network.">
+  <meta name="twitter:image" content="https://impulsible.github.io/wdd231/chamber/images/city.jpeg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/download_1.png" type="image/png">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/styles.css">
+
+  <!-- Scripts -->
+  <script src="scripts/scripts.js" defer></script>
+  <script src="scripts/toggleview.js" defer></script>
+  <script src="scripts/weather.js" defer></script>
+  <script src="scripts/spotlight.js" defer></script>
 </head>
-<body>
+
+<body class="chamber-home">
 
   <header>
-    <div class="header-logo">
-      <img src="images/logo.png" alt="Crescent City Chamber of Commerce Logo">
-      <div>
-        <span>Crescent City</span><br>
-        <span class="sub-text">Chamber of Commerce</span>
+    <div class="header-container">
+      <div class="header-logo">
+        <img src="images/download.png" alt="Crescent City Chamber Logo">
+        <div class="logo-text">
+          <span class="main-text">Crescent City</span><br>
+          <span class="sub-text">Chamber of Commerce</span>
+        </div>
       </div>
+
+      <nav aria-label="Primary navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+          <li><a href="directory.html">Business Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html">Directory</a></li>
-        <li><a href="join.html">Events</a></li>
-        <li><a href="membership.html">Membership</a></li>
-        <li><a href="discover.html">Contact</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section id="hero">
-  <img src="images/buildings.jpg" alt="Hero Image" class="hero-image">
-  <div class="hero-content">
+  <main id="main-content" tabindex="-1">
+
+    <!-- Hero Banner -->
+   <section class="hero-banner" aria-label="Welcome to Crescent City Chamber of Commerce">
+  <img src="images/blog.jpg" alt="Crescent City skyline view" class="hero-image">
+  <div class="hero-text-content">
     <h1>Welcome to Crescent City</h1>
-    <h2>Chamber of Commerce</h2>
-    <p>Your trusted resource for local businesses, growth, and networking opportunities.</p>
-    <a href="membership.html" class="cta-button">Join Us Today</a>
+    <h2 class="subheading">Chamber of Commerce</h2>
+    <p>Empowering our local businesses through connection, resources, and growth opportunities.</p>
+    <a href="join.html" class="btn-primary" aria-label="Join the Crescent City Chamber of Commerce">Join the Chamber</a>
   </div>
 </section>
 
 
-    <!-- Community Information Section -->
-<section id="community-info">
-  <div class="section-title">
-    <h2>Community Information</h2>
-  </div>
-  <div class="community-content">
-    <div class="community-card">
-      <h3>Local Events</h3>
-      <p>Stay updated on local events that will help you connect and grow your business.</p>
-      <a href="events.html" class="cta-button">View Events</a>
-    </div>
-    <div class="community-card">
-      <h3>Business Resources</h3>
-      <p>Access a variety of resources, including funding options and growth strategies for local businesses.</p>
-      <a href="directory.html" class="cta-button">Browse Resources</a>
-    </div>
-    <div class="community-card">
-      <h3>Local Weather</h3>
-      <div id="weather">Loading weather...</div>
+    <!-- Events & Weather -->
+    <div class="cards-container">
+
+      <!-- Upcoming Events -->
+      <section class="card events-card" aria-label="Upcoming events">
+        <h2>Upcoming Events</h2>
+        <ul class="events-list">
+          <li>
+            <strong>Business Networking Mixer</strong> - June 10, 2025 at 6:00 PM<br>
+            Join local entrepreneurs for an evening of networking and business growth.
+          </li>
+          <li>
+            <strong>Annual Chamber Awards Gala</strong> - July 15, 2025 at 7:00 PM<br>
+            Celebrate outstanding local businesses and leaders.
+          </li>
+          <li>
+            <strong>Small Business Workshop Series</strong> - Every Wednesday in August<br>
+            Free workshops on marketing, finance, and more.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Current Weather -->
+      <section id="current-weather" class="card current-weather-card" aria-labelledby="current-weather-title">
+  <h2 id="current-weather-title">Current Weather</h2>
+  <div id="weather" class="weather-details">
+    <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="Weather Icon" class="weather-icon">
+    <div class="weather-info">
+      <p class="temp-main">21°C</p>
+      <p>High: 25°C | Low: 18°C</p>
+      <p>Humidity: 67%</p>
+      <p>Sunrise: 6:12 AM</p>
+      <p>Sunset: 6:54 PM</p>
     </div>
   </div>
 </section>
 
-<!-- Business Spotlights Section -->
-<section id="business-spotlights">
-  <div class="section-title">
-    <h2>Business Spotlights</h2>
-  </div>
-  <div class="spotlight-container">
-    <div class="spotlight-card">
-      <h3>City Bakery</h3>
-      <p>Local bakery serving delicious pastries and breads. Known for its community focus and fresh ingredients.</p>
-      <a href="directory.html#city-bakery" class="cta-button">Learn More</a>
-    </div>
-    <div class="spotlight-card">
-      <h3>Crescent Auto</h3>
-      <p>A trusted auto repair and service shop in Crescent City, keeping vehicles in top shape for over 20 years.</p>
-      <a href="directory.html#crescent-auto" class="cta-button">Learn More</a>
-    </div>
-  </div>
-</section>
 
+      <!-- Weather Forecast -->
+      <section id="weather-forecast" class="card forecast-card" aria-labelledby="forecast-title">
+        <h2 id="forecast-title">3-Day Forecast</h2>
+        <div id="forecast" class="forecast-cards">
+          <!-- JS inserts forecast cards here -->
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Member Spotlights -->
+    <section id="member-spotlights" aria-labelledby="spotlight-title">
+      <h2 id="spotlight-title">Member Spotlights</h2>
+      <div class="spotlight-container" role="list">
+        <!-- Spotlight cards dynamically inserted here -->
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    <p>Contact: <a href="mailto:info@crescentcitychamber.com">info@crescentcitychamber.com</a> | Copyright &copy; <span id="year"></span> Crescent City Chamber of Commerce</p>
-    <p>Last modified: <span id="lastModified"></span></p>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Crescent City Chamber of Commerce. All rights reserved.</p>
+      <p>Last updated: <span id="last-modified"></span></p>
+    </div>
   </footer>
 
-  <script src="scripts/scripts.js"></script>
+  <script>
+    // Footer Year and Last Modified Script
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('last-modified').textContent = document.lastModified;
+
+    // Highlight current page in nav
+    const currentPage = window.location.pathname.split('/').pop();
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+
 </body>
 </html>

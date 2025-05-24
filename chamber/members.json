@@ -70,3 +70,40 @@
         "description": "Providing fresh, organic produce and groceries from local farms."
     }
 ]
+
+{
+  "members": [
+    {
+      "name": "BrightTech Solutions",
+      "logo": "images/members/brighttech.png",
+      "phone": "+234 803 123 4567",
+      "address": "123 Innovation Road, Lagos",
+      "website": "https://brighttech.com",
+      "membership": "Gold"
+    },
+    {
+      "name": "Green Earth Foods",
+      "logo": "images/members/greenearth.png",
+      "phone": "+234 802 765 4321",
+      "address": "45 Organic Blvd, Lagos",
+      "website": "https://greenearthfoods.com",
+      "membership": "Silver"
+    },
+    {
+      "name": "Naija Finance Group",
+      "logo": "images/members/naijafinance.png",
+      "phone": "+234 701 987 6543",
+      "address": "88 Treasury Street, Lagos",
+      "website": "https://naijafinance.com",
+      "membership": "Gold"
+    },
+    {
+      "name": "Urban Wear",
+      "logo": "images/members/urbanwear.png",
+      "phone": "+234 806 555 3344",
+      "address": "10 Fashion Ave, Lagos",
+      "website": "https://urbanwear.ng",
+      "membership": "Bronze"
+    }
+  ]
+}
