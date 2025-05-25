@@ -52,18 +52,20 @@
           <span class="sub-text">Chamber of Commerce</span>
         </div>
       </div>
+<button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+  ☰
+</button>
 
-      <nav aria-label="Primary navigation">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="active" aria-current="page">Home</a></li>
-          <li><a href="directory.html">Business Directory</a></li>
-          <li><a href="join.html">Join</a></li>
-          <li><a href="membership.html">Membership</a></li>
-          <li><a href="discover.html">Discover</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<nav id="nav-menu" hidden aria-label="Primary navigation">
+  <ul class="nav-menu">
+    <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+    <li><a href="directory.html">Business Directory</a></li>
+    <li><a href="join.html">Join</a></li>
+    <li><a href="membership.html">Membership</a></li>
+    <li><a href="discover.html">Discover</a></li>
+  </ul>
+</nav>
+
 
   <main id="main-content" tabindex="-1">
     <!-- Hero Banner -->
@@ -119,7 +121,8 @@
           />
           <div class="weather-info">
             <p class="temp-main">21°C</p>
-            <p>High: 25°C | Low: 18°C</p>
+            <p>High: 25°C </p>
+            <p>Low: 18°</p>
             <p>Humidity: 67%</p>
             <p>Sunrise: 6:12 AM</p>
             <p>Sunset: 6:54 PM</p>
