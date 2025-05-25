@@ -65,7 +65,7 @@ header {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  color: white;
+  color: rgb(188, 185, 185);
   flex-shrink: 0;
 }
 
@@ -572,41 +572,90 @@ button:focus-visible {
     margin-right: 0;
   }
 }
-/* Hide hamburger button on desktop */
+this has white constrast issues /* Basic header container layout */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+/* Logo and text */
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logo-text .main-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.logo-text .sub-text {
+  font-size: 0.9rem;
+  color: #c5bfbf;
+}
+
+/* Navigation menu */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation links */
+.nav-menu li a {
+  text-decoration: none;
+  color: #e7d4fa;
+  font-weight: 600;
+}
+
+/* Active link styling */
+.nav-menu li a.active {
+  color: #fff; /* Example active color */
+}
+
+/* Hamburger button styles */
 .hamburger {
-  display: none;
-  font-size: 2rem;
+  display: none; /* Hidden by default on desktop */
+  font-size: 1.8rem;
   background: none;
   border: none;
   cursor: pointer;
 }
 
-/* Mobile styles */
+/* Responsive: On small screens */
 @media (max-width: 768px) {
+  /* Show hamburger */
   .hamburger {
     display: block;
   }
 
+  /* Hide nav menu by default on mobile */
   #primaryNav {
     display: none;
-    width: 100%;
+    position: absolute;
+    top: 60px; /* Adjust to header height */
+    right: 20px;
+    background: rgb(164, 163, 163);
+    border: 1px solid #ffffff;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border-radius: 5px;
   }
 
-  #primaryNav.open {
+  /* Nav menu shown when active */
+  #primaryNav.active {
     display: block;
   }
 
+  /* Vertical nav links on mobile */
   .nav-menu {
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: white;
-  }
-
-  .header-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 0.4px;
   }
 }
 
@@ -1043,10 +1092,11 @@ footer #last-modified {
 }
 
 .nav-menu a.active {
-  background-color: #fff;
-  color: #2E3A59;
+  background-color: #0303fc; /* more saturated and darker */
+  color: #1b253b; /* darker text */
   border-radius: 2px;
 }
+
 
 
 body {
