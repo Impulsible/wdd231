@@ -342,7 +342,8 @@ header {
 }
 
 .forecast-day {
-  flex: 1 1 px; /* allow cards to grow and shrink, minimum width 100px */
+  flex: 1 1 0px; /* or another valid value */
+ /* allow cards to grow and shrink, minimum width 100px */
   margin: 10px;
   background: #f0f6f6;
   padding: 15px 12px;
