@@ -93,7 +93,7 @@ header {
 
 .hero-banner {
   position: relative;
-  min-height: 130vh;
+  min-height: 95vh;
   display: flex;
   justify-content: center;  /* horizontal center */
   align-items: center;      /* vertical center */
