@@ -1,141 +1,10 @@
 /* ===== CSS VARIABLES ===== */
-@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 :root {
   --primary-color: #003366;
   --secondary-color: #f9f9f9;
   --text-color: #333333;
   --font-family: 'Lora', serif;
-  --text-color: #222222; /* darker than #333333 */
-  --primary-color: #002244; /* deeper blue for better contrast */
 }
-
-/* ===== RESET ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  font-family: var(--font-family);
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  line-height: 1.6;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  user-select: none;
-}
-
-/* ===== ACCESSIBILITY: FOCUS OUTLINES ===== */
-:focus {
-  outline: 3px solid #1a48c9;
-  outline-offset: 3px;
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid #005fa3;
-  outline-offset: 3px;
-}
-
-
-/* ===== BUTTONS, LINKS, TAP TARGETS ===== */
-button, .btn-primary, a {
-  padding: 0.8rem 1.2rem;
-  font-size: 1.125rem;
-  min-height: 44px;
-  min-width: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  user-select: none;
-}
-
-button:hover, button:focus,
-.btn-primary:hover, .btn-primary:focus,
-a:hover, a:focus {
-  outline-offset: 3px;
-  outline: 3px solid #3f80ff;
-  background-color: #2f61d1;
-  text-decoration: none;
-}
-
-button, a, .btn-primary {
-  min-width: 44px;
-  min-height: 44px;
-  padding: 0.8rem 1.2rem;
-}
-
-
-/* ===== HERO TEXT CONTENT (Mobile font scaling) ===== */
-@media (max-width: 500px) {
-  .hero-text-content h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero-text-content p {
-    font-size: 1.125rem;
-    line-height: 1.4;
-  }
-
-  .btn-primary {
-    padding: 1rem 1.5rem;
-    font-size: 1.25rem;
-    min-height: 50px;
-    min-width: 50px;
-  }
-}
-
-/* ===== CARDS AND SPOTLIGHT CONTAINERS (Responsive column to stacked) ===== */
-@media (max-width: 950px) {
-  .cards-container,
-  .spotlight-container {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  .card,
-  .spotlight-container > div {
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 350px) {
-  .hero-text-content h1 {
-    font-size: 1.6rem;
-  }
-
-  .btn-primary {
-    padding: 0.8rem 1.2rem;
-    font-size: 1rem;
-    min-height: 44px;
-    min-width: 44px;
-  }
-}
-
-/* ===== FORECAST CARDS (Stack single column on very small screens) ===== */
-@media (max-width: 500px) {
-  .forecast-cards > div {
-    flex: 1 1 100%;
-    max-width: 100%;
-    margin-bottom: 18px;
-  }
-}
-
 
 /* ===== RESET ===== */
 * {
@@ -362,7 +231,6 @@ header {
   cursor: default;
 }
 
-/* ===== CURRENT WEATHER CARD ===== */
 .current-weather-card {
   display: flex;
   flex-direction: column;
@@ -405,15 +273,14 @@ header {
   color: #003366;
 }
 
-/* ===== FORECAST CARDS ===== */
 .forecast-cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 equal columns */
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
   padding: 1rem 0;
-  max-width: 100%;
   width: 100%;
-  box-sizing: border-box;
+  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -423,17 +290,8 @@ header {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* align content to top */
-  align-items: center;
-  gap: 1rem;
-
-  height: auto;
-  min-height: 0;
-  box-sizing: border-box;
-
+  flex: 1 1 180px;
+  max-width: 200px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -469,136 +327,41 @@ header {
   line-height: 1.3;
 }
 
-/* ===== SPOTLIGHT ===== */
-#spotlight-title {
+.forecast-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+  gap: 1.3rem;                           /* Spacing between cards */
+  padding: 1rem 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.forecast-cards > div {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
   text-align: center;
-  font-family: 'Lora', serif;
-  font-weight: 700;
-  font-size: 2.5rem;
-  color: #2c3e50;
-  letter-spacing: 1.2px;
-  margin-bottom: 1rem;
-}
-
-.spotlight-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
-
-.spotlight-container > div {
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 20px;
-  flex: 1 1 280px;
-  max-width: 320px;
-  color: #333;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.spotlight-container > div:hover {
+/* Hover effect */
+.forecast-cards > div:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.spotlight-container > div h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #2c3e50;
-}
-
-.spotlight-container > div p {
-  margin: 0.25rem 0 0;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-/* ===== RESPONSIVE ===== */
+/* Responsive for smaller screens */
 @media (max-width: 900px) {
   .forecast-cards {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
-/* ===== MOBILE VIEW ENHANCEMENTS ===== */
-@media screen and (max-width: 768px) {
-  /* General body and typography tweaks */
-  body {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    padding: 0 1rem;
-  }
-  h2, h3 {
-    font-size: 1.4rem;
-  }
-  main section {
-    padding: 1.5rem 0;
-  }
-
-  /* Navigation: stack links vertically with spacing */
-  .primary-nav {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .primary-nav a {
-    padding: 0.75rem 1rem;
-    font-size: 1.1rem;
-  }
-
-  /* Hero section: stack image below text */
-  .hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-  }
-  .hero img {
-    max-width: 100%;
-    margin-top: 1rem;
-  }
-
-  /* Cards container: stack cards vertically on small screens */
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  /* Buttons: larger tap targets */
-  .button,
-  button,
-  input[type="submit"] {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
-    border-radius: 8px;
-  }
-
-  /* Accessibility: clear focus outlines */
-  a:focus, button:focus {
-    outline-offset: 3px;
-    outline-color: var(--clr-accent);
-  }
-}
-
-.hamburger {
-    font-size: 28px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    user-select: none;
-  }
-  nav ul {
-    list-style: none;
-    padding: 0;
-  }
-  nav li {
-    margin: 8px 0;
-  }
 
 /* ===== SPOTLIGHT ===== */
 #spotlight-title {
@@ -716,75 +479,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* Mobile Touch Target Enhancement */
-/* Ensure tappable elements meet 44x44px minimum size for accessibility */
-button, .btn-primary, a {
-  padding: 0.8rem 1.2rem;
-  font-size: 1.125rem; /* Slightly larger for readability */
-  min-height: 44px;
-  min-width: 44px; /* Add width for consistent tap area */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px; /* Easier on the eyes and fingers */
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  user-select: none; /* Avoid accidental text selection on tap */
-}
-
-button:hover, button:focus,
-.btn-primary:hover, .btn-primary:focus,
-a:hover, a:focus {
-  outline-offset: 3px;
-  outline: 3px solid #3f80ff; /* Clear visible focus outline */
-  background-color: #2f61d1; /* Darker on hover/focus */
-  text-decoration: none;
-}
-
-/* Image Responsiveness */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px; /* Add subtle rounding for polish */
-  user-select: none; /* Prevent accidental drag/selection */
-}
-
-/* Responsive Layout Enhancements for Mobile */
-@media (max-width: 500px) {
-  .cards-container,
-  .spotlight-container {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .card,
-  .spotlight-container > div {
-    max-width: 100%;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  }
-
-  .hero-text-content h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-  }
-
-  .hero-text-content p {
-    font-size: 1.125rem; /* Slightly bigger for readability */
-    line-height: 1.4;
-  }
-
-  /* Improve spacing for touch */
-  .btn-primary {
-    padding: 1rem 1.5rem;
-    font-size: 1.25rem;
-    min-height: 50px;
-    min-width: 50px;
-  }
-}
 
 
 
