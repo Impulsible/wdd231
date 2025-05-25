@@ -479,36 +479,6 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* Mobile performance improvements */
-@media (max-width: 500px) {
-  /* Remove box shadows on cards for faster rendering */
-  .card,
-  .spotlight-container > div {
-    box-shadow: none;
-  }
-
-  /* Simplify button and link hover/focus to avoid heavy repaints */
-  button:hover,
-  button:focus,
-  .btn-primary:hover,
-  .btn-primary:focus,
-  a:hover,
-  a:focus {
-    background-color: transparent;
-    outline: 3px solid #3f80ff;
-    outline-offset: 3px;
-    text-decoration: none;
-    box-shadow: none;
-  }
-
-  /* Keep tap targets comfortably large */
-  .btn-primary {
-    padding: 1rem 1.5rem;
-    font-size: 1.25rem;
-    min-height: 50px;
-    min-width: 50px;
-  }
-}
 
 
 
