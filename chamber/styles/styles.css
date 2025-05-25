@@ -93,12 +93,12 @@ header {
 
 .hero-banner {
   position: relative;
-  min-height: 100vh;
+  min-height: 130vh;
   display: flex;
   justify-content: center;  /* horizontal center */
   align-items: center;      /* vertical center */
   text-align: center;
-  overflow: visible;
+  overflow: hidden;
   /* REMOVE margin-top to avoid pushing content down */
   /* margin-top: 80px; */
   padding: 1rem;
@@ -1777,3 +1777,42 @@ body {
   }
 }
 
+.hamburger {
+  display: none; /* Hidden by default on desktop */
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive: On small screens */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide nav menu by default on mobile */
+  #primaryNav {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust to header height */
+    right: 20px;
+    background: rgb(164, 163, 163);
+    border: 1px solid #ffffff;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border-radius: 5px;
+  }
+
+  /* Nav menu shown when active */
+  #primaryNav.active {
+    display: block;
+  }
+
+  /* Vertical nav links on mobile */
+  .nav-menu {
+    flex-direction: column;
+    gap: 0.4px;
+  }
+}
