@@ -65,7 +65,7 @@ header {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  color: rgb(188, 185, 185);
+  color: #ffffff;
   flex-shrink: 0;
 }
 
@@ -80,7 +80,7 @@ header {
 .nav-menu a {
   text-decoration: none;
   font-weight: 600;
-  color: #333;
+  color: #f0f0f0;
   transition: color 0.3s ease;
   font-size: 0.85rem;
   padding: 0.7rem 0.2rem;
@@ -437,11 +437,12 @@ header {
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  flex: 1 1 280px;
-  max-width: 320px;
+  width: 400px; /* 🔁 Fixed width for equal sizing */
+  flex: 0 0 auto; /* Prevent growing/shrinking */
   color: #333;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .spotlight-container > div:hover {
   transform: translateY(-6px);
@@ -583,6 +584,7 @@ this has white constrast issues /* Basic header container layout */
 
 /* Logo and text */
 .header-logo {
+  color: #ffffff;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -658,6 +660,44 @@ this has white constrast issues /* Basic header container layout */
     flex-direction: column;
     gap: 0.4px;
   }
+}
+
+/* Theme toggle button */
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Light theme (default) */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark theme styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode .nav-menu a {
+  color: #e0e0e0;
+}
+
+body.dark-mode #primaryNav {
+  background-color: #1a1a1a;
+}
+
+body.dark-mode #themeToggle {
+  color: #e0e0e0;
 }
 
 
@@ -901,7 +941,7 @@ footer {
     padding: 30px 0;
     text-align: center;
     font-size: 14px;
-    margin-top: 40px; /* ⬅️ This moves the footer down */
+    margin-top: 20px; /* ⬅️ This moves the footer down */
 }
 
 footer p {
@@ -1087,7 +1127,7 @@ footer #last-modified {
 }
 .nav-menu a {
   text-decoration: none;
-  color: #fff;
+  color: #f0f0f0;
   padding:10px 20px;
   display: inline-block;
 }
@@ -1236,10 +1276,7 @@ body {
   box-sizing: border-box;
   width: calc((100% / 3) - (1rem * 2 / 3)); /* 3 cards per row minus gap compensation */
 }
-   /* Base styles */
-    body {
-      font-family: Arial, sans-serif;
-    }
+
 
     .container {
       max-width: 1100px;
