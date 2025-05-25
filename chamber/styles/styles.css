@@ -231,69 +231,152 @@ header {
   cursor: default;
 }
 
-.current-weather-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-.current-weather-card #weather {
-  background: linear-gradient(to right, #f0f8ff, #e0f7fa);
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  padding: 1.8rem;
+/* ===== CURRENT WEATHER CARD ===== */
+.current-weather-content {
   display: flex;
   align-items: center;
-  gap: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 1rem;
-  width: 100%;
-  max-width: 600px;
+  gap: 15px;
+  background: linear-gradient(135deg, #fff, #e9f0f0);
+  padding: 20px 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(2, 37, 11, 0.3);
+  max-width: 400px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1f1902;
+  /* Added to prevent text overlapping */
+  word-wrap: break-word;
 }
 
-.current-weather-card #weather:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+.current-weather-content img {
+  width: 96px;
+  height: 96px;
+  filter: drop-shadow(0 0 5px rgba(233, 226, 226, 0.7));
 }
 
-.current-weather-card #weather img {
-  width: 70px;
-  height: 70px;
+.current-weather-content p {
+  margin: 3px 0;
 }
 
-.current-weather-card #weather .weather-details {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  font-size: 1.1rem;
-  color: #003366;
+.current-weather-content p:first-child {
+  font-size: 3rem;
+  font-weight: 700;
 }
 
+.current-weather-content p:nth-child(2) {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.current-weather-content p:last-child {
+  font-size: 1rem;
+  color: #444;
+}
+
+
+/* ===== FORECAST CARDS ===== */
+/* Container for all forecast cards */
 .forecast-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  padding: 1rem 0;
+  /* Make it a single card container */
+  background: #f0f6f6;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+  box-sizing: border-box;
+
+  /* Layout for the 3 forecasts inside */
+  display: flex;
+  flex-direction: row;       /* horizontal layout */
+  justify-content: space-between;
+  gap: 1rem;
 }
 
-.forecast-cards > div {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+.forecast-day {
+  flex: 1 1 30%; /* each forecast inside takes about 1/3 */
+  background: transparent; /* no background, since parent has it */
+  padding: 0; /* no padding inside the smaller forecasts */
+  border-radius: 0; /* no rounding inside */
+  box-shadow: none; /* no shadow inside */
   text-align: center;
-  flex: 1 1 180px;
-  max-width: 200px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  box-sizing: border-box;
+  min-width: 0;
 }
+
+/* Keep your icons and text styling as is */
+.forecast-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 0.5rem;
+}
+
+.forecast-day .day-name,
+.forecast-day .date,
+.forecast-day .desc {
+  margin: 0.5rem 0;
+  white-space: normal;
+  font-weight: 600;
+}
+
+.forecast-day .temp {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+
+@media (max-width: 360px) {
+  .forecast-cards > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+  .forecast-cards > div > * {
+    white-space: normal;
+    text-align: left;
+  }
+  .forecast-cards > div > .weather-description {
+    margin-left: 0;
+  }
+}
+
+.forecast-day {
+  flex: 1 1 px; /* allow cards to grow and shrink, minimum width 100px */
+  margin: 10px;
+  background: #f0f6f6;
+  padding: 15px 12px;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  word-wrap: break-word; /* allow long text to wrap */
+  overflow-wrap: break-word; /* for better support */
+}
+
+.forecast-day .day-name,
+.forecast-day .date,
+.forecast-day .desc {
+  margin: 6px 0;
+  white-space: normal; /* Allow wrapping */
+  font-weight: 600;
+}
+
+.forecast-day .temp {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 8px 0;
+}
+
+.forecast-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  display: block;
+}
+
+
 
 .forecast-cards > div:hover {
   transform: translateY(-6px);
@@ -327,42 +410,6 @@ header {
   line-height: 1.3;
 }
 
-.forecast-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Three equal columns */
-  gap: 1.3rem;                           /* Spacing between cards */
-  padding: 1rem 0;
-  max-width: 100%;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.forecast-cards > div {
-  background: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hover effect */
-.forecast-cards > div:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Responsive for smaller screens */
-@media (max-width: 900px) {
-  .forecast-cards {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-}
-
-
 /* ===== SPOTLIGHT ===== */
 #spotlight-title {
   text-align: center;
@@ -387,7 +434,7 @@ header {
 .spotlight-container > div {
   background-color: #ffffff;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   flex: 1 1 280px;
   max-width: 320px;
@@ -397,12 +444,11 @@ header {
 
 .spotlight-container > div:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .spotlight-container > div h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin: 0 0 0.5rem;
   font-weight: 700;
   font-size: 1.5rem;
   color: #2c3e50;
@@ -413,13 +459,15 @@ header {
   font-size: 1rem;
   line-height: 1.4;
 }
+
+/* ===== CARDS CONTAINER ===== */
 .cards-container {
   display: flex;
-  justify-content: space-between; /* even spacing without extra gaps */
+  justify-content: space-between;
   padding: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: nowrap; /* keep items on a single row */
+  flex-wrap: nowrap;
 }
 
 .card {
@@ -429,8 +477,7 @@ header {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   color: #222;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: calc((100% - 3rem) / 3); /* perfectly divide in 3 with 1.5rem gaps */
-  max-width: none;
+  width: calc((100% - 3rem) / 3);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -440,6 +487,7 @@ header {
   margin-right: 1.5rem;
 }
 
+
 /* ===== RESPONSIVE MEDIA QUERIES ===== */
 @media (max-width: 950px) {
   .cards-container,
@@ -447,14 +495,15 @@ header {
     flex-direction: column;
     padding: 1rem;
   }
+
   .card,
   .spotlight-container > div {
     max-width: 100%;
     margin-bottom: 1.5rem;
   }
-  .forecast-cards > div {
-    flex: 1 1 45%;
-    max-width: 48%;
+
+  .forecast-cards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 }
 
@@ -464,15 +513,17 @@ header {
     max-width: 100%;
     margin-bottom: 18px;
   }
+
   .hero-text-content h1 {
     font-size: 2rem;
   }
+
   .hero-text-content p {
     font-size: 1rem;
   }
 }
 
-/* ===== FOCUS VISIBLE ===== */
+/* ===== ACCESSIBILITY & FOCUS ===== */
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid #0077cc;
@@ -493,19 +544,33 @@ button:focus-visible {
   position: fixed;
   left: 10px;
   top: 10px;
-  width: auto;
-  height: auto;
   padding: 8px 16px;
   background-color: #3f80ff;
   color: white;
-  text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
   z-index: 1001;
 }
+
 .hamburger:focus {
   outline: 3px solid #3f80ff;
   outline-offset: 3px;
+}
+@media (max-width: 950px) {
+  .cards-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100% !important; /* force full width */
+    margin-bottom: 1.5rem;
+  }
+
+  /* Remove right margin on cards when stacked */
+  .card:not(:last-child) {
+    margin-right: 0;
+  }
 }
 
 
