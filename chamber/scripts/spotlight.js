@@ -11,7 +11,7 @@ const members = [
   },
   {
     companyName: "Beta Builders",
-    logo: "images/beta.jpeg",  // updated path
+    logo: "images/betta_builder.jpg",  // updated path
     phone: "555-5678",
     address: "456 Build Rd, Crescent City",
     website: "https://betabuilders.com",
