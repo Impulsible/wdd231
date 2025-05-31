@@ -708,7 +708,6 @@ body.dark-mode #themeToggle {
 
 
 
-
 /* Reset & Base */
 * {
     margin: 0;
@@ -1816,3 +1815,242 @@ body {
     gap: 0.4px;
   }
 }
+
+
+.join-page body,
+.join-page {
+  font-family: 'Lora', serif;
+  margin: 0;
+  padding: 1rem;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+.join-page h1 {
+  margin-bottom: 4rem; /* more space below the header */
+}
+
+.join-page .container {
+  margin-top: 3rem; /* add more space before the form and cards */
+}
+
+
+
+.join-page form.join-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
+
+/* all other form styles prefixed */
+.join-page form.join-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.join-page form.join-form input[type="text"],
+.join-page form.join-form input[type="email"],
+.join-page form.join-form input[type="tel"],
+.join-page form.join-form select,
+.join-page form.join-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.join-page form.join-form textarea {
+  resize: vertical;
+}
+
+.join-page form.join-form input[type="submit"] {
+  background-color: #011d13fe;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.join-page form.join-form input[type="submit"]:hover,
+.join-page form.join-form input[type="submit"]:focus {
+  background-color: #305fd4;
+  outline: none;
+}
+
+/* Container for form + membership cards */
+.join-page .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;  /* reduced from 2rem to bring it up */
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Membership Cards */
+.join-page .membership-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 300px;
+  animation: fadeInScale 1s ease forwards;
+}
+
+.join-page .membership-card {
+  background-color: #fff;
+  border: 2px solid #0f0555;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.5s ease, box-shadow 0.3s ease;
+}
+
+.join-page .membership-card:hover,
+.join-page .membership-card:focus-within {
+  background-color: #e6f0ff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  outline: none;
+}
+
+.join-page .membership-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.join-page .membership-card a {
+  color: #031e53;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.join-page .membership-card a:focus,
+.join-page .membership-card a:hover {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Animation */
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Layout on wider screens */
+@media (min-width: 900px) {
+  .join-page .container {
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .join-page form.join-form {
+    flex: 1 1 600px;
+  }
+  .join-page .membership-cards {
+    flex: 0 0 320px;
+  }
+}
+
+/* Modal styles */
+.join-page .modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.join-page .modal.active {
+  display: flex;
+}
+
+.join-page .modal-content {
+  background: #fff;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.join-page .modal-content h2 {
+  margin-top: 0;
+}
+
+.join-page .modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.join-page .modal-close:focus {
+  outline: 2px solid #3f80ff;
+}
+
+  footer {
+      text-align: center;
+      padding: 1rem;
+      background: #f0f0f0;
+      margin-top: 2rem;
+    }
+  footer {
+  background-color: #021528; /* Dark blue chamber color */
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  border-top: 3px solid #f9b233; /* Gold accent color */
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+footer a {
+  color: #f9b233; /* Gold accent */
+  text-decoration: none;
+  font-weight: 700;
+}
+
+footer a:hover,
+footer a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+@media (min-width: 600px) {
+  footer {
+    font-size: 1rem;
+    padding: 1.5rem 3rem;
+  }
+}
+
