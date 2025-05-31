@@ -11,3 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
     hamburgerBtn.setAttribute('aria-expanded', !expanded);
   });
 });
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const primaryNav = document.getElementById('primaryNav');
+
+hamburgerBtn.addEventListener('click', () => {
+  const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+  hamburgerBtn.setAttribute('aria-expanded', !expanded);
+  primaryNav.setAttribute('aria-expanded', !expanded);
+});
