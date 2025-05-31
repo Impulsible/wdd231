@@ -3,12 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Empowering Crescent City businesses with tools, networking, and support to thrive in a dynamic local economy. Join our growing community.">
   <meta name="author" content="Crescent City Chamber of Commerce">
   <title>Crescent City Chamber of Commerce | Business Directory</title>
 
-  <!-- Open Graph for Facebook -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Crescent City Chamber of Commerce">
   <meta property="og:description" content="Empowering Crescent City's local businesses with resources, connections, and growth opportunities.">
   <meta property="og:image" content="https://impulsible.github.io/wdd231/chamber/images/city.jpeg">
@@ -21,134 +21,136 @@
   <meta name="twitter:description" content="Discover opportunities, build connections, and grow your business within a vibrant local network.">
   <meta name="twitter:image" content="https://impulsible.github.io/wdd231/chamber/images/city.jpeg">
 
-  <!-- Favicon -->
   <link rel="icon" href="images/download_1.png" type="image/png">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
 
   <!-- Scripts -->
   <script src="scripts/scripts.js" defer></script>
   <script src="scripts/toggleview.js" defer></script>
+
+  <meta name="theme-color" content="#3f80ff">
 </head>
 
 <body class="chamber-directory">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <header>
-<div class="header-logo">
-  <img src="images/download.png" alt="Crescent City Chamber of Commerce Logo">
-  <div class="logo-text">
-    <span class="main-text">Crescent City</span><br>
-    <span class="sub-text">Chamber of Commerce</span>
-  </div>
-</div>
-
-  <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
-      ☰
-    </button>
-
-   <nav id="primaryNav" aria-label="Primary navigation" role="navigation">
-      <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="directory.html" class="active" aria-current="page">Business Directory</a></li>
-        <li><a href="join.html">Join</a></li>
-        <li><a href="membership.html">Membership</a></li>
-        <li><a href="discover.html">Discover</a></li>
-      </ul>
-    </nav>
-  </header>
-<main id="main-content" tabindex="-1">
-  <!-- Hero Banner Section -->
-  <section class="hero-banner" aria-label="Introduction to Chamber Business Directory">
-    <div class="hero-image-overlay">
-      <img src="images/buildings.jpg" alt="Crescent City skyline view" class="hero-image">
-      <div class="hero-text-content">
-        <h1 class="hero-heading">Explore the Future with Us</h1>
-        <p class="hero-subtext">Connecting local businesses under one stellar network.</p>
-        <h2 class="hero-title">Chamber of Commerce Directory</h2>
-        <p class="hero-description">
-          Your one-stop source for discovering local businesses and organizations that contribute to our vibrant community.
-          Browse by category or search for specific listings to find the right services and opportunities near you.
-        </p>
+    <div class="header-container">
+      <!-- Logo and Text -->
+      <div class="header-logo">
+        <img src="images/download.png" alt="Crescent City Chamber Logo" width="150" height="50" loading="lazy">
+        <div class="logo-text">
+          <span class="main-text">Crescent City</span><br>
+          <span class="sub-text">Chamber of Commerce</span>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- View Toggle Buttons -->
- <section class="view-toggle" aria-label="Toggle between grid and list views">
-    <div class="view-toggle-buttons">
-      <button id="gridBtn" aria-pressed="true">Grid View</button>
-      <button id="listBtn" aria-pressed="false">List View</button>
-    </div>
-  </section>
-  
-  <!-- Directory Search Section -->
-  <section class="directory-search" aria-label="Search the business directory">
-    <div class="container">
-      <h2>Directory Search</h2>
-      <input 
-        type="text" 
-        id="search-input" 
-        placeholder="Type Keywords..." 
-        aria-label="Search businesses"
-      >
-      <div class="categories">
-        <span>Popular Categories:</span>
-        <ul>
-          <li><a href="#">Healthcare</a></li>
-          <li><a href="#">Real Estate</a></li>
-          <li><a href="#">Food & Beverages</a></li>
-          <li><a href="#">Hospitality</a></li>
-          <li><a href="#">Design & Consulting</a></li>
+      <!-- Hamburger for Mobile -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
+        ☰
+      </button>
+
+      <nav id="primaryNav" aria-label="Primary navigation" role="navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html" class="active" aria-current="page">Business Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="membership.html">Membership</a></li>
+          <li><a href="discover.html">Discover</a></li>
         </ul>
-      </div>
+      </nav>
     </div>
-  </section>
-</main>
+  </header>
 
-<section>
-  <div class="directory-content grid-view" id="directoryContent">
-    <div class="directory-section">
-
-      <!-- Healthcare -->
-      <h2 class="directory-category-title">Healthcare</h2>
-      <div class="directory-category-row">
-        <!-- Business Cards for Healthcare -->
-        <!-- FirstLight -->
-        <div class="business-card">
-          <h3>FirstLight Home Care of Carlsbad & La Jolla</h3>
-          <p><strong>Gold Member</strong></p>
-          <p>1234 Main St, Carlsbad, CA 92008</p>
-          <p>Phone: (123) 456-7890</p>
-          <p>Providing personalized care to the elderly and disabled.</p>
-          <img src="images/firstlight-home.png" alt="FirstLight Home Care" class="business-image">
-          <a href="https://www.firstlighthomecare.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
-        </div>
-
-        <!-- Sunrise Wellness -->
-        <div class="business-card">
-          <h3>Sunrise Wellness Center</h3>
-          <p><strong>Silver Member</strong></p>
-          <p>221 Wellness Dr, Encinitas, CA 92024</p>
-          <p>Phone: (760) 123-4567</p>
-          <p>Holistic wellness and rehabilitation services.</p>
-          <img src="images/sunrise.webp" alt="Sunrise Wellness Center" class="business-image">
-          <a href="https://www.sunrisewellness.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
-        </div>
-
-        <!-- Harmony Medical -->
-        <div class="business-card">
-          <h3>Harmony Medical Clinic</h3>
-          <p><strong>Bronze Member</strong></p>
-          <p>890 Harmony Rd, Vista, CA 92083</p>
-          <p>Phone: (760) 987-6543</p>
-          <p>Affordable medical care focused on community wellness.</p>
-          <img src="images/harmony.jpg" alt="Harmony Medical Clinic" class="business-image">
-          <a href="https://www.harmonymedical.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+  <main id="main-content" tabindex="-1">
+    <!-- Hero Banner Section -->
+    <section class="hero-banner" aria-label="Introduction to Chamber Business Directory">
+      <div class="hero-image-overlay">
+        <img src="images/buildings.jpg" alt="Crescent City skyline view" class="hero-image">
+        <div class="hero-text-content">
+          <h1 class="hero-heading">Explore the Future with Us</h1>
+          <p class="hero-subtext">Connecting local businesses under one stellar network.</p>
+          <h2 class="hero-title">Chamber of Commerce Directory</h2>
+          <p class="hero-description">
+            Your one-stop source for discovering local businesses and organizations that contribute to our vibrant community.
+            Browse by category or search for specific listings to find the right services and opportunities near you.
+          </p>
         </div>
       </div>
+    </section>
 
-      <!-- Real Estate -->
+    <!-- View Toggle Buttons -->
+    <section class="view-toggle" aria-label="Toggle between grid and list views">
+      <div class="view-toggle-buttons">
+        <button id="gridBtn" aria-pressed="true">Grid View</button>
+        <button id="listBtn" aria-pressed="false">List View</button>
+      </div>
+    </section>
+
+    <!-- Directory Search Section -->
+    <section class="directory-search" aria-label="Search the business directory">
+      <div class="container">
+        <h2>Directory Search</h2>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Type Keywords..."
+          aria-label="Search businesses"
+        />
+        <div class="categories">
+          <span>Popular Categories:</span>
+          <ul>
+            <li><a href="#">Healthcare</a></li>
+            <li><a href="#">Real Estate</a></li>
+            <li><a href="#">Food & Beverages</a></li>
+            <li><a href="#">Hospitality</a></li>
+            <li><a href="#">Design & Consulting</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section>
+    <div class="directory-content grid-view" id="directoryContent">
+      <div class="directory-section">
+
+        <!-- Healthcare -->
+        <h2 class="directory-category-title">Healthcare</h2>
+        <div class="directory-category-row grid-view">
+          <!-- Business Cards for Healthcare -->
+          <div class="business-card">
+            <h3>FirstLight Home Care of Carlsbad & La Jolla</h3>
+            <p><strong>Gold Member</strong></p>
+            <p>1234 Main St, Carlsbad, CA 92008</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Providing personalized care to the elderly and disabled.</p>
+            <img src="images/firstlight-home.png" alt="FirstLight Home Care" class="business-image">
+            <a href="https://www.firstlighthomecare.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+
+          <div class="business-card">
+            <h3>Sunrise Wellness Center</h3>
+            <p><strong>Silver Member</strong></p>
+            <p>221 Wellness Dr, Encinitas, CA 92024</p>
+            <p>Phone: (760) 123-4567</p>
+            <p>Holistic wellness and rehabilitation services.</p>
+            <img src="images/sunrise.webp" alt="Sunrise Wellness Center" class="business-image">
+            <a href="https://www.sunrisewellness.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+
+          <div class="business-card">
+            <h3>Harmony Medical Clinic</h3>
+            <p><strong>Bronze Member</strong></p>
+            <p>890 Harmony Rd, Vista, CA 92083</p>
+            <p>Phone: (760) 987-6543</p>
+            <p>Affordable medical care focused on community wellness.</p>
+            <img src="images/harmony.jpg" alt="Harmony Medical Clinic" class="business-image">
+            <a href="https://www.harmonymedical.com" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          </div>
+        </div>
+<!-- Real Estate -->
       <h2 class="directory-category-title">Real Estate</h2>
       <div class="directory-category-row">
         <div class="business-card">
@@ -340,23 +342,3 @@ const container = document.getElementById('membersContainer');
 
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
