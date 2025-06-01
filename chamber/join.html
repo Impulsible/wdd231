@@ -62,8 +62,14 @@
   <main id="main-content" tabindex="-1">
     <h1>Join the Chamber</h1>
 
+    <section class="form-intro">
+  <h1>Join the Chamber</h1>
+  <p>Fill out the form below to become a member of the Crescent City Chamber of Commerce.</p>
+</section>
+
+
     <div class="container">
-      <form class="join-form" method="get" action="thankyou.html" novalidate>
+     <form class="join-form" method="get" action="thankyou.html" novalidate>
         <label for="firstName">
           First Name
           <input
@@ -161,7 +167,8 @@
 
         <input type="hidden" id="timestamp" name="timestamp">
 
-        <input type="submit" value="Submit Application">
+        <input type="submit" value="Submit Application" id="submitBtn">
+
       </form>
 
       <div class="membership-cards" aria-label="Membership level information">
@@ -313,13 +320,27 @@
       });
     });
   </script>
+
+  
   <script>
   // Set timestamp and save form data on submit
+
   document.addEventListener("DOMContentLoaded", () => {
     const form = document.querySelector(".join-form");
     const timestampField = document.getElementById("timestamp");
 
-    form.addEventListener("submit", function () {
+    form.addEventListener("submit", (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        alert("Please fill out all required fields.");
+
+        // Focus the first invalid field
+        const firstInvalid = form.querySelector(":invalid");
+        if (firstInvalid) firstInvalid.reportValidity();
+        return;
+      }
+
+      // Save form data to localStorage
       const formData = {
         firstName: form.elements["firstName"].value,
         lastName: form.elements["lastName"].value,
@@ -329,15 +350,17 @@
         businessName: form.elements["businessName"].value,
         membershipLevel: form.elements["membershipLevel"].value,
         businessDesc: form.elements["businessDesc"].value,
-        timestamp: new Date().toLocaleString() // ✅ LOCAL time
+        timestamp: new Date().toLocaleString()
       };
 
-      // Set hidden timestamp field to local time (optional redundancy)
       timestampField.value = formData.timestamp;
-
       localStorage.setItem("formData", JSON.stringify(formData));
     });
   });
+
+
+
+
 </script>
 
 
