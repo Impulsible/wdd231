@@ -97,7 +97,6 @@
   </div>
 </main>
 
-
   <footer>
     <div class="container">
       <p>&copy; <span id="year"></span> Crescent City Chamber of Commerce. All rights reserved.</p>
@@ -118,5 +117,21 @@
       }
     });
   </script>
+
+  <style>
+  @media (max-width: 640px) {
+    .discover-grid {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 1rem !important;
+    }
+
+    .discover-grid > .discover-card {
+      grid-area: auto !important;
+      width: 100% !important;
+    }
+  }
+</style>
+
 </body>
 </html>

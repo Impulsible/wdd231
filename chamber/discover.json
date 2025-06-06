@@ -1,9 +1,10 @@
-[{
-  "title": "Wild Life Safari Park",
-  "image": "images/photo.webp",
-  "address": "456 Safari Park Blvd, Crescent City",
-  "description": "A unique park experience featuring walking trails through natural habitats, exotic animals, and guided safari tours for families and nature enthusiasts."
-},
+[
+  {
+    "title": "Wild Life Safari Park",
+    "image": "images/photo.webp",
+    "address": "456 Safari Park Blvd, Crescent City",
+    "description": "A unique park experience featuring walking trails through natural habitats, exotic animals, and guided safari tours for families and nature enthusiasts."
+  },
   {
     "title": "Downtown Farmers Market",
     "image": "images/premium3.webp",
@@ -40,16 +41,16 @@
     "address": "202 Grind St, Crescent City",
     "description": "A popular spot for skaters and bikers, featuring ramps, rails, and graffiti art."
   },
- {
-  "title": "Historic Train Station",
-  "image": "images/photo6.webp",
-  "address": "123 Heritage Ave, Crescent City",
-  "description": "Step back in time at this beautifully restored train station showcasing vintage locomotives and artifacts, a favorite spot for history buffs and families alike."
-},
-{
-  "title": "Folk Dance Pavilion",
-  "image": "images/photo7.webp",
-  "address": "77 Festival Road, Crescent City",
-  "description": "Enjoy lively performances of traditional dances and music in this vibrant pavilion that celebrates the city’s cultural heritage."
-}
+  {
+    "title": "Historic Train Station",
+    "image": "images/photo6.webp",
+    "address": "123 Heritage Ave, Crescent City",
+    "description": "Step back in time at this beautifully restored train station showcasing vintage locomotives and artifacts, a favorite spot for history buffs and families alike."
+  },
+  {
+    "title": "Folk Dance Pavilion",
+    "image": "images/photo7.webp",
+    "address": "77 Festival Road, Crescent City",
+    "description": "Enjoy lively performances of traditional dances and music in this vibrant pavilion that celebrates the city’s cultural heritage."
+  }
 ]
