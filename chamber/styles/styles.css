@@ -2218,3 +2218,18 @@ footer a:focus {
       "card7 card8 card9";
   }
 }
+
+/* Force vertical stacking of discover cards on mobile */
+@media (max-width: 640px) {
+  .discover-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .discover-grid > .discover-card {
+    grid-area: auto !important;
+    width: 100% !important;
+  }
+}
+
