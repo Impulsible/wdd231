@@ -2,61 +2,92 @@ document.addEventListener("DOMContentLoaded", () => {
   const discoverGrid = document.querySelector(".discover-grid");
   const visitMessage = document.getElementById("visit-message");
 
-  // Fetch and build discover cards
+  let dataCache = []; // To keep fetched data accessible on resize
+
+  // Function to build cards
+  function buildCards(data) {
+    discoverGrid.innerHTML = ""; // Clear previous cards
+
+    data.forEach((item, index) => {
+      const card = document.createElement("div");
+      card.classList.add("discover-card");
+
+      // Title
+      const title = document.createElement("h2");
+      title.textContent = item.title;
+
+      // Figure with image
+      const figure = document.createElement("figure");
+      const img = document.createElement("img");
+      img.src = item.image;
+      img.alt = item.title;
+      img.width = 300;
+      img.height = 200;
+      img.loading = "lazy";
+      figure.appendChild(img);
+
+      // Content
+      const content = document.createElement("div");
+      content.classList.add("content");
+
+      const address = document.createElement("address");
+      address.textContent = item.address;
+
+      const description = document.createElement("p");
+      description.textContent = item.description;
+
+      const button = document.createElement("button");
+      button.textContent = "Learn More";
+      button.classList.add("learn-more-btn");
+
+      content.appendChild(address);
+      content.appendChild(description);
+      content.appendChild(button);
+
+      card.appendChild(title);
+      card.appendChild(figure);
+      card.appendChild(content);
+
+      discoverGrid.appendChild(card);
+    });
+  }
+
+  // Function to apply or remove grid-area inline styles based on viewport width
+  function applyGridAreas() {
+    const cards = discoverGrid.querySelectorAll(".discover-card");
+    const width = window.innerWidth;
+
+    if (width < 641) {
+      // Mobile - remove inline grid-area so CSS 1-col layout works
+      cards.forEach((card) => {
+        card.style.gridArea = "";
+      });
+    } else {
+      // Tablet+ - apply inline grid-area based on index
+      cards.forEach((card, index) => {
+        card.style.gridArea = `card${index + 1}`;
+      });
+    }
+  }
+
+  // Fetch data and build cards initially
   fetch("http://127.0.0.1:5500/discover.json")
     .then((response) => response.json())
     .then((data) => {
-      data.forEach((item, index) => {
-        // Create card container
-        const card = document.createElement("div");
-        card.classList.add("discover-card");
-        card.style.gridArea = `card${index + 1}`; // 🔹 Named grid area
-
-        // Title
-        const title = document.createElement("h2");
-        title.textContent = item.title;
-
-        // Figure with image
-        const figure = document.createElement("figure");
-        const img = document.createElement("img");
-        img.src = item.image;
-        img.alt = item.title;
-        img.width = 300;
-        img.height = 200;
-        img.loading = "lazy";
-        figure.appendChild(img);
-
-        // Content
-        const content = document.createElement("div");
-        content.classList.add("content");
-
-        const address = document.createElement("address");
-        address.textContent = item.address;
-
-        const description = document.createElement("p");
-        description.textContent = item.description;
-
-        const button = document.createElement("button");
-        button.textContent = "Learn More";
-        button.classList.add("learn-more-btn");
-
-        // Assemble card
-        content.appendChild(address);
-        content.appendChild(description);
-        content.appendChild(button);
-
-        card.appendChild(title);
-        card.appendChild(figure);
-        card.appendChild(content);
-
-        discoverGrid.appendChild(card);
-      });
+      dataCache = data;
+      buildCards(dataCache);
+      applyGridAreas();
     })
     .catch((error) => {
       console.error("Error loading discover data:", error);
     });
 
-  // Visit tracking
+  // Listen for window resize and update grid-area accordingly
+  window.addEventListener("resize", () => {
+    applyGridAreas();
+  });
+
+  // Visit tracking (same as before)
   const lastVisit = localStorage.getItem("lastVisit");
   const currentVisit = Date.now();
   const msInDay = 24 * 60 * 60 * 1000;
