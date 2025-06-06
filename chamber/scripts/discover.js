@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 }
 
-  fetch("http://127.0.0.1:5500/discover.json")
+  fetch("http://127.0.0.1:5500/chamber/discover.json")
     .then((response) => response.json())
     .then((data) => {
       dataCache = data;
