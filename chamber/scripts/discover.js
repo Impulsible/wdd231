@@ -2,21 +2,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const discoverGrid = document.querySelector(".discover-grid");
   const visitMessage = document.getElementById("visit-message");
 
-  let dataCache = []; // To keep fetched data accessible on resize
+  let dataCache = [];
 
-  // Function to build cards
   function buildCards(data) {
-    discoverGrid.innerHTML = ""; // Clear previous cards
+    discoverGrid.innerHTML = "";
 
     data.forEach((item, index) => {
       const card = document.createElement("div");
       card.classList.add("discover-card");
 
-      // Title
       const title = document.createElement("h2");
       title.textContent = item.title;
 
-      // Figure with image
       const figure = document.createElement("figure");
       const img = document.createElement("img");
       img.src = item.image;
@@ -26,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
       img.loading = "lazy";
       figure.appendChild(img);
 
-      // Content
       const content = document.createElement("div");
       content.classList.add("content");
 
@@ -52,25 +48,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Function to apply or remove grid-area inline styles based on viewport width
   function applyGridAreas() {
     const cards = discoverGrid.querySelectorAll(".discover-card");
     const width = window.innerWidth;
 
-    if (width < 641) {
-      // Mobile - remove inline grid-area so CSS 1-col layout works
-      cards.forEach((card) => {
-        card.style.gridArea = "";
-      });
-    } else {
-      // Tablet+ - apply inline grid-area based on index
+    if (width >= 641) {
       cards.forEach((card, index) => {
         card.style.gridArea = `card${index + 1}`;
+      });
+    } else {
+      cards.forEach((card) => {
+        card.style.gridArea = "auto"; // Let mobile CSS stack cards
       });
     }
   }
 
-  // Fetch data and build cards initially
   fetch("http://127.0.0.1:5500/discover.json")
     .then((response) => response.json())
     .then((data) => {
@@ -82,12 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error loading discover data:", error);
     });
 
-  // Listen for window resize and update grid-area accordingly
   window.addEventListener("resize", () => {
     applyGridAreas();
   });
 
-  // Visit tracking (same as before)
+  // Visit message logic
   const lastVisit = localStorage.getItem("lastVisit");
   const currentVisit = Date.now();
   const msInDay = 24 * 60 * 60 * 1000;
