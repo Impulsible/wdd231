@@ -63,20 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 }
 
-  fetch("http://127.0.0.1:5500/chamber/discover.json")
-    .then((response) => response.json())
-    .then((data) => {
-      dataCache = data;
-      buildCards(dataCache);
-      applyGridAreas();
-    })
-    .catch((error) => {
-      console.error("Error loading discover data:", error);
-    });
+  console.log("Starting fetch...");
 
-  window.addEventListener("resize", () => {
+fetch("discover.json")
+  .then((response) => {
+    console.log("Fetch status:", response.status);
+    return response.json();
+  })
+  .then((data) => {
+    console.log("Data received:", data);
+    buildCards(data);
     applyGridAreas();
+  })
+  .catch((error) => {
+    console.error("Error loading discover data:", error);
   });
+
 
   // Visit message logic
   const lastVisit = localStorage.getItem("lastVisit");
