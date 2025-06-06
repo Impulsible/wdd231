@@ -49,19 +49,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function applyGridAreas() {
-    const cards = discoverGrid.querySelectorAll(".discover-card");
-    const width = window.innerWidth;
+  const cards = discoverGrid.querySelectorAll(".discover-card");
+  const width = window.innerWidth;
 
-    if (width >= 641) {
-      cards.forEach((card, index) => {
-        card.style.gridArea = `card${index + 1}`;
-      });
-    } else {
-      cards.forEach((card) => {
-        card.style.gridArea = "auto"; // Let mobile CSS stack cards
-      });
-    }
+  if (width >= 641) {
+    cards.forEach((card, index) => {
+      card.style.gridArea = `card${index + 1}`;
+    });
+  } else {
+    cards.forEach((card) => {
+      card.style.gridArea = ""; // clear inline style to let CSS handle stacking
+    });
   }
+}
 
   fetch("http://127.0.0.1:5500/discover.json")
     .then((response) => response.json())
