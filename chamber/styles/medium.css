@@ -1,21 +1,24 @@
-/* Medium screens (641px to 1024px) */
-@media screen and (min-width: 641px) {
-  .grid-container {
+.discover-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+  grid-template-columns: 1fr; /* Mobile view: one column */
+
+  /* For medium+ screens override in media query */
+}
+
+@media (min-width: 600px) {
+  .discover-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "card1 card2"
-      "card3 card4"
-      "card5 card6"
-      "card7 card8";
   }
 }
 
-/* Large screens (1025px and above) */
-@media screen and (min-width: 1025px) {
-  .grid-container {
-    grid-template-columns: repeat(4, 1fr);
+@media (min-width: 900px) {
+  .discover-grid {
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      "card1 card2 card3 card4"
-      "card5 card6 card7 card8";
+      "card1 card2 card3"
+      "card4 card5 card6"
+      "card7 card8 card9";
   }
 }
