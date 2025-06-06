@@ -5,20 +5,15 @@
   grid-auto-flow: row;
 }
 
-/* 🔹 Mobile: 1 column layout */
+/* 🔹 Mobile: 1 column layout - no grid-template-areas */
 @media (max-width: 640px) {
   .discover-grid {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "card1"
-      "card2"
-      "card3"
-      "card4"
-      "card5"
-      "card6"
-      "card7"
-      "card8"
-      "card9";
+    grid-template-areas: none;
+  }
+
+  .discover-card {
+    grid-area: auto !important;
   }
 }
 
@@ -46,9 +41,8 @@
   }
 }
 
-/* Ensure each card respects its grid area */
+/* Optional card styling */
 .discover-card {
-  /* optional styling */
   background: #f9f9f9;
   border-radius: 6px;
   padding: 1rem;
