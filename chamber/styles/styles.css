@@ -2206,3 +2206,59 @@ footer a:focus {
 .hero-title {
   color: yellow;
 }
+
+
+.discover-grid {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Card styles */
+.discover-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 🔹 Mobile: 1 column layout */
+@media (max-width: 640px) {
+  .discover-grid {
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4"
+      "card5"
+      "card6"
+      "card7"
+      "card8"
+      "card9";
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 🔹 Tablet: 2 columns */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .discover-grid {
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8"
+      "card9 card9";
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 🔹 Desktop: 3 columns */
+@media (min-width: 1025px) {
+  .discover-grid {
+    grid-template-areas:
+      "card1 card2 card3"
+      "card4 card5 card6"
+      "card7 card8 card9";
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
