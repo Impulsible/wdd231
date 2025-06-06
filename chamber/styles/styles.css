@@ -2054,105 +2054,6 @@ footer a:focus {
   }
 }
 
-.discover-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  max-width: 1300px;  /* a bit wider container */
-  margin: 0 auto;
-}
-
-.discover-card {
-  display: flex;
-  flex-direction: column;
-  max-width: 380px;    /* increased width for wider card */
-  padding: 1.5rem;
-  background-color: #f9fbff;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin: 1.5rem auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden;
-}
-
-.discover-card figure {
-  width: 100%;
-  height: 320px;   /* increase image height for bigger card */
-  margin: 0 0 1.25rem 0;
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-.discover-card figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-  display: block;
-}
-
-/* Keep the rest as before */
-
-.discover-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.discover-card h2 {
-  font-size: 1.5rem;
-  margin: 0 0 1rem 0;
-  color: #04274a;               /* dark blue */
-  text-align: center;           /* center title */
-  font-weight: 600;
-  padding: 1rem 0;
-  background-color: #e0f7fa;    /* Soft cyan background */
-  border-radius: 8px;
-  width: 100%;
-}
-
-
-
-.discover-card address,
-.discover-card p {
-  padding: 0 0.5rem;
-  margin: 0.5rem 0;
-  color: #454343;
-  line-height: 1.4;
-  text-align: center;          /* center text to match title */
-}
-
-.discover-card address {
-  font-style: normal;
-  font-weight: 600;
-  color: #053438;              /* purple-ish for address */
-  margin-bottom: 0.75rem;
-}
-
-.learn-more-btn {
-  display: block;
-  width: fit-content;
-  padding: 0.65rem 2rem;
-  margin: 1rem auto 0 auto;
-  background-color: #042951;   /* bright blue */
-  border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-.learn-more-btn:hover {
-  background-color: #0056b3;   /* darker blue on hover */
-}
-
-/* Visit banner styles (kept as you had them) */
-
 .visit-banner {
   background: linear-gradient(90deg, #012211, #011e02); /* Green gradient */
   color: white;
@@ -2194,35 +2095,7 @@ footer a:focus {
   }
 }
 
-.hero-description {
-  padding: 0;
-  margin: 0;
-  max-width: none;
-  background: transparent;
-  border: none;
-  color: inherit;
-  font-size: 1rem;
-}
-.hero-title {
-  color: yellow;
-}
-
-
-.discover-grid {
-  display: grid;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-/* Card styles */
-.discover-card {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Base grid for .discover-grid - 1 column mobile */
+/* 🔹 Mobile-first: 1 column layout */
 .discover-grid {
   display: grid;
   gap: 1rem;
@@ -2238,14 +2111,110 @@ footer a:focus {
     "card7"
     "card8"
     "card9";
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
-/* Basic card styles */
+/* 🔹 Card layout */
 .discover-card {
-  border: 1px solid #ccc;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
   background-color: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 380px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
 }
 
-/* Other mobile base styles... */
+.discover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
 
+.discover-card figure {
+  width: 100%;
+  height: 320px;
+  margin: 0 0 1.25rem 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.discover-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  border: 1px solid #ddd;
+}
+
+.discover-card h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: #04274a;
+  text-align: center;
+  font-weight: 600;
+  padding: 1rem 0;
+  background-color: #e0f7fa;
+  border-radius: 8px;
+}
+
+.discover-card address,
+.discover-card p {
+  text-align: center;
+  margin: 0.5rem 0;
+  padding: 0 0.5rem;
+  color: #454343;
+}
+
+.discover-card address {
+  font-style: normal;
+  font-weight: 600;
+  color: #053438;
+}
+
+.learn-more-btn {
+  display: block;
+  width: fit-content;
+  margin: 1rem auto 0;
+  padding: 0.65rem 2rem;
+  background-color: #042951;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.learn-more-btn:hover {
+  background-color: #0056b3;
+}
+
+/* 🔹 Tablet view: 2 columns */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .discover-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8"
+      "card9 card9";
+  }
+}
+
+/* 🔹 Desktop view: 3 columns */
+@media (min-width: 1025px) {
+  .discover-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "card1 card2 card3"
+      "card4 card5 card6"
+      "card7 card8 card9";
+  }
+}
