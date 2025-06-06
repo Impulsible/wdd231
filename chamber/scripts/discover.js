@@ -6,12 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("http://127.0.0.1:5500/discover.json")
     .then((response) => response.json())
     .then((data) => {
-      data.forEach((item) => {
+      data.forEach((item, index) => {
         // Create card container
         const card = document.createElement("div");
         card.classList.add("discover-card");
+        card.style.gridArea = `card${index + 1}`; // 🔹 Named grid area
 
-        // Title (h2)
+        // Title
         const title = document.createElement("h2");
         title.textContent = item.title;
 
@@ -22,38 +23,32 @@ document.addEventListener("DOMContentLoaded", () => {
         img.alt = item.title;
         img.width = 300;
         img.height = 200;
-        img.loading = "lazy";  // <-- lazy loading added here
+        img.loading = "lazy";
         figure.appendChild(img);
 
-
-        // Content div
+        // Content
         const content = document.createElement("div");
         content.classList.add("content");
 
-        // Address
         const address = document.createElement("address");
         address.textContent = item.address;
 
-        // Description
         const description = document.createElement("p");
         description.textContent = item.description;
 
-        // Button
         const button = document.createElement("button");
         button.textContent = "Learn More";
         button.classList.add("learn-more-btn");
 
-        // Append elements to content
+        // Assemble card
         content.appendChild(address);
         content.appendChild(description);
         content.appendChild(button);
 
-        // Append title, figure, content to card
         card.appendChild(title);
         card.appendChild(figure);
         card.appendChild(content);
 
-        // Append card to grid container
         discoverGrid.appendChild(card);
       });
     })
@@ -61,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error loading discover data:", error);
     });
 
-  // Handle last visit message
+  // Visit tracking
   const lastVisit = localStorage.getItem("lastVisit");
   const currentVisit = Date.now();
   const msInDay = 24 * 60 * 60 * 1000;
@@ -80,7 +75,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Save current visit timestamp
   localStorage.setItem("lastVisit", currentVisit);
 });
-
