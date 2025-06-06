@@ -72,29 +72,28 @@
     </div>
   </header>
 
-  <main id="main-content" tabindex="-1">
-    <section class="hero-banner" aria-label="Discover Crescent City">
-      <img src="images/premium4.avif" alt="Crescent City skyline view" class="hero-image" width="1200" height="675" loading="lazy">
-      <div class="hero-text-content">
-        <h1>Discover Crescent City</h1>
-        <h2 class="subheading">Explore Our Community</h2>
-        <p>Learn about the attractions, demographics, and unique features that make Crescent City a great place to live and work.</p>
-      </div>
-    </section>
-
-   <div class="discover-layout">
-  <aside class="sidebar">
-    <div id="visit-message" class="visit-banner"></div>
-    <!-- Visit message inserted by JS -->
-  </aside>
-
-  <section class="discover-grid" aria-label="Points of Interest">
-    <!-- Cards will be dynamically inserted here by JavaScript -->
-  </section>
-</div>
-
+  <!-- VALID: no extra closing div -->
+<main id="main-content" tabindex="-1">
+  <section class="hero-banner" aria-label="Discover Crescent City">
+    <img src="images/premium4.jpg" alt="Crescent City skyline view" class="hero-image" width="1200" height="675" loading="lazy">
+    <div class="hero-text-content">
+      <h1>Discover Crescent City</h1>
+      <h2 class="subheading">Explore Our Community</h2>
+      <p>Learn about the attractions, demographics, and unique features that make Crescent City a great place to live and work.</p>
     </div>
-  </main>
+  </section>
+
+  <div class="discover-layout">
+    <aside class="sidebar">
+      <div id="visit-message" class="visit-banner"></div>
+    </aside>
+
+    <section class="discover-grid" aria-label="Points of Interest">
+      <!-- Cards loaded by JavaScript -->
+    </section>
+  </div>
+</main>
+
 
   <footer>
     <div class="container">
