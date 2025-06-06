@@ -2054,3 +2054,155 @@ footer a:focus {
   }
 }
 
+.discover-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1300px;  /* a bit wider container */
+  margin: 0 auto;
+}
+
+.discover-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 380px;    /* increased width for wider card */
+  padding: 1.5rem;
+  background-color: #f9fbff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 1.5rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.discover-card figure {
+  width: 100%;
+  height: 320px;   /* increase image height for bigger card */
+  margin: 0 0 1.25rem 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.discover-card figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  display: block;
+}
+
+/* Keep the rest as before */
+
+.discover-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.discover-card h2 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: #04274a;               /* dark blue */
+  text-align: center;           /* center title */
+  font-weight: 600;
+  padding: 1rem 0;
+  background-color: #e0f7fa;    /* Soft cyan background */
+  border-radius: 8px;
+  width: 100%;
+}
+
+
+
+.discover-card address,
+.discover-card p {
+  padding: 0 0.5rem;
+  margin: 0.5rem 0;
+  color: #454343;
+  line-height: 1.4;
+  text-align: center;          /* center text to match title */
+}
+
+.discover-card address {
+  font-style: normal;
+  font-weight: 600;
+  color: #053438;              /* purple-ish for address */
+  margin-bottom: 0.75rem;
+}
+
+.learn-more-btn {
+  display: block;
+  width: fit-content;
+  padding: 0.65rem 2rem;
+  margin: 1rem auto 0 auto;
+  background-color: #042951;   /* bright blue */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-btn:hover {
+  background-color: #0056b3;   /* darker blue on hover */
+}
+
+/* Visit banner styles (kept as you had them) */
+
+.visit-banner {
+  background: linear-gradient(90deg, #012211, #011e02); /* Green gradient */
+  color: white;
+  padding: 1rem 2rem;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.5s ease-out forwards;
+  opacity: 0;
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  animation-delay: 0.3s;
+  transform: translateY(10px);
+  animation-name: fadeSlideIn;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-description {
+  padding: 0;
+  margin: 0;
+  max-width: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: 1rem;
+}
+.hero-title {
+  color: yellow;
+}
