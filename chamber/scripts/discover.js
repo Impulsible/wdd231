@@ -70,5 +70,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
   displayLastVisitMessage();
 });
-
-
