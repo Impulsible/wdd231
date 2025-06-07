@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  fetch('http://127.0.0.1:5500/chamber/discover.json')  // relative path from root HTML file to chamber folder
+  // ✅ Use relative path so it works on any device or environment
+  fetch('https://impulsible.github.io/wdd231/chamber/discover.json')
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
