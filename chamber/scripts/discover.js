@@ -1,103 +1,74 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const discoverGrid = document.querySelector(".discover-grid");
-  const visitMessage = document.getElementById("visit-message");
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.discover-container');
+  const visitMsgEl = document.getElementById('visit-message');
 
-  let dataCache = [];
-
-  function buildCards(data) {
-    discoverGrid.innerHTML = "";
-
-    data.forEach((item, index) => {
-      const card = document.createElement("div");
-      card.classList.add("discover-card");
-
-      const title = document.createElement("h2");
-      title.textContent = item.title;
-
-      const figure = document.createElement("figure");
-      const img = document.createElement("img");
-      img.src = item.image;
-      img.alt = item.title;
-      img.width = 300;
-      img.height = 200;
-      img.loading = "lazy";
-      figure.appendChild(img);
-
-      const content = document.createElement("div");
-      content.classList.add("content");
-
-      const address = document.createElement("address");
-      address.textContent = item.address;
-
-      const description = document.createElement("p");
-      description.textContent = item.description;
-
-      const button = document.createElement("button");
-      button.textContent = "Learn More";
-      button.classList.add("learn-more-btn");
-
-      content.appendChild(address);
-      content.appendChild(description);
-      content.appendChild(button);
-
-      card.appendChild(title);
-      card.appendChild(figure);
-      card.appendChild(content);
-
-      discoverGrid.appendChild(card);
-    });
+  if (!container || !visitMsgEl) {
+    console.error('Required elements not found in the DOM.');
+    return;
   }
 
-  function applyGridAreas() {
-  const cards = discoverGrid.querySelectorAll(".discover-card");
-  const width = window.innerWidth;
+  fetch('http://127.0.0.1:5500/chamber/discover.json')  // relative path from root HTML file to chamber folder
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      container.innerHTML = ''; // clear container
 
-  if (width >= 641) {
-    cards.forEach((card, index) => {
-      card.style.gridArea = `card${index + 1}`;
+      data.forEach((item, index) => {
+        const card = document.createElement('article');
+        card.classList.add('card', `card${index + 1}`);
+
+        card.innerHTML = `
+          <h2>${item.title}</h2>
+          <figure>
+            <img src="${item.image}" alt="${item.title}" loading="lazy">
+          </figure>
+          <address>${item.address}</address>
+          <p>${item.description}</p>
+          <button type="button">Learn More</button>
+        `;
+
+        container.appendChild(card);
+      });
+    })
+    .catch(error => {
+      container.textContent = "Failed to load discover items. Check console.";
+      console.error('Fetch error:', error);
     });
-  } else {
-    cards.forEach((card) => {
-      card.style.gridArea = ""; // clear inline style to let CSS handle stacking
-    });
-  }
-}
 
-  console.log("Starting fetch...");
+  // Visit message code
+  function displayLastVisitMessage() {
+    const now = Date.now();
+    const lastVisit = localStorage.getItem('lastVisit');
 
-fetch("discover.json")
-  .then((response) => {
-    console.log("Fetch status:", response.status);
-    return response.json();
-  })
-  .then((data) => {
-    console.log("Data received:", data);
-    buildCards(data);
-    applyGridAreas();
-  })
-  .catch((error) => {
-    console.error("Error loading discover data:", error);
-  });
+    visitMsgEl.className = '';
 
-
-  // Visit message logic
-  const lastVisit = localStorage.getItem("lastVisit");
-  const currentVisit = Date.now();
-  const msInDay = 24 * 60 * 60 * 1000;
-
-  if (!lastVisit) {
-    visitMessage.textContent = "🎉 Welcome! Let us know if you have any questions.";
-  } else {
-    const days = Math.floor((currentVisit - Number(lastVisit)) / msInDay);
-
-    if (days < 1) {
-      visitMessage.textContent = "👋 Back so soon! Awesome!";
-    } else if (days === 1) {
-      visitMessage.textContent = "📅 You last visited 1 day ago.";
+    if (!lastVisit) {
+      visitMsgEl.textContent = "👋 Welcome! Let us know if you have any questions.";
+      visitMsgEl.classList.add('welcome');
     } else {
-      visitMessage.textContent = `📅 You last visited ${days} days ago.`;
+      const msPerDay = 24 * 60 * 60 * 1000;
+      const daysPassed = Math.floor((now - Number(lastVisit)) / msPerDay);
+
+      if (daysPassed === 0) {
+        visitMsgEl.textContent = "✨ Back so soon? Awesome!";
+        visitMsgEl.classList.add('soon');
+      } else if (daysPassed === 1) {
+        visitMsgEl.textContent = "📅 You last visited 1 day ago.";
+        visitMsgEl.classList.add('returning');
+      } else {
+        visitMsgEl.textContent = `📆 You last visited ${daysPassed} days ago.`;
+        visitMsgEl.classList.add('returning');
+      }
     }
+
+    localStorage.setItem('lastVisit', now);
   }
 
-  localStorage.setItem("lastVisit", currentVisit);
+  displayLastVisitMessage();
 });
+
+
