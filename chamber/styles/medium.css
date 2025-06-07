@@ -560,11 +560,11 @@
 .card address {
   grid-area: address;
   font-style: normal;
-  color: #555;
+  color: #131212;
   font-weight: 600;
   margin: 0 1rem;
   font-size: 1rem;
-  font-style: justify;
+ 
 }
 
 .card p {
@@ -629,7 +629,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   padding: 1rem;
-  min-height: px;
+  min-height: 300px;
 }
 
 .card img {
@@ -646,11 +646,13 @@
   flex-direction: column;
   justify-content: center;
   padding-left: 8rem;
+  text-align: justify; /* ✅ Correct property */
 }
 
 /* Optional: round right corners on content */
 .card .content > * {
   margin: 0.5rem 0;
+  
 }
 
 /* Responsive: stack on smaller screens */
@@ -668,6 +670,7 @@
   .card .content {
     padding-left: 0;
     padding: 1rem;
+    
   }
 }
 
@@ -689,3 +692,14 @@
   }
 }
 
+.toggle-buttons button[aria-pressed="true"] {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.card p {
+  text-align: justify;
+  hyphens: auto;
+  word-break: break-word;
+  line-height: 1.5;
+}
