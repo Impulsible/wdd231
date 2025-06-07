@@ -21,13 +21,10 @@
   <meta name="twitter:image" content="https://impulsible.github.io/wdd231/chamber/images/city.jpeg">
 
   <link rel="icon" href="images/download_1.png" type="image/png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Scripts -->
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/medium.css" media="(min-width: 641px)">
   <link rel="stylesheet" href="styles/large.css" media="(min-width: 1025px)">
@@ -42,7 +39,6 @@
 
   <header>
     <div class="header-container">
-      <!-- Logo and Text -->
       <div class="header-logo">
         <img src="images/download_1.webp" alt="Crescent City Chamber Logo" width="150" height="50" loading="lazy">
         <div class="logo-text">
@@ -51,13 +47,9 @@
         </div>
       </div>
 
-      <!-- Hamburger for Mobile -->
-      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">
-        ☰
-      </button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primaryNav">☰</button>
 
-      <!-- Navigation -->
-    <nav id="primaryNav" aria-label="Primary navigation">
+      <nav id="primaryNav" aria-label="Primary navigation">
         <ul class="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="directory.html">Business Directory</a></li>
@@ -68,24 +60,26 @@
     </div>
   </header>
 
-  <!-- VALID: no extra closing div -->
-<main id="main-content" tabindex="-1">
-  <section class="hero-banner" aria-label="Discover Crescent City">
-    <img src="images/premium4.jpg" alt="Crescent City skyline view" class="hero-image" width="1200" height="675" loading="lazy">
-    <div class="hero-text-content">
-      <h1>Discover Crescent City</h1>
-      <h2 class="subheading">Explore Our Community</h2>
-      <p>Learn about the attractions, demographics, and unique features that make Crescent City a great place to live and work.</p>
-    </div>
-  </section>
+  <!-- ✅ Only ONE <main> -->
+  <main id="main-content" tabindex="-1">
+    <section class="hero-banner" aria-label="Discover Crescent City">
+      <img src="images/premium4.jpg" alt="Crescent City skyline view" class="hero-image" width="1200" height="675" loading="lazy">
+      <div class="hero-text-content">
+        <h1>Discover Crescent City</h1>
+        <h2 class="subheading">Explore Our Community</h2>
+        <p>Learn about the attractions, demographics, and unique features that make Crescent City a great place to live and work.</p>
+      </div>
+    </section>
 
-<main class="main-content">
+    <!-- ✅ Sidebar message -->
     <aside id="visit-message" class="sidebar-message"></aside>
+
+    <!-- ✅ Discover container section -->
     <section class="discover-container">
-      <!-- Cards will be populated here by JS -->
+      <h2 class="visually-hidden">Attractions</h2>
+      <!-- Cards populated by JS -->
     </section>
   </main>
-
 
   <footer>
     <div class="container">
@@ -94,12 +88,11 @@
     </div>
   </footer>
 
+  <!-- ✅ Inline JS only for minor dynamic content -->
   <script>
-    // Footer Year and Last Modified Script
     document.getElementById("year").textContent = new Date().getFullYear();
     document.getElementById("last-modified").textContent = document.lastModified;
 
-    // Highlight current page in nav
     const currentPage = window.location.pathname.split("/").pop();
     document.querySelectorAll(".nav-menu a").forEach((link) => {
       if (link.getAttribute("href") === currentPage) {
@@ -107,6 +100,8 @@
       }
     });
   </script>
+
+  <!-- ✅ Only use inline style blocks in <head> or avoid entirely -->
   <style>
     .discover-container {
       display: flex;
@@ -127,7 +122,14 @@
       margin-bottom: 1rem;
       font-weight: bold;
     }
+    .visually-hidden {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
   </style>
- 
 </body>
 </html>
