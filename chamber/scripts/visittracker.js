@@ -1,26 +1,18 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const visitMessage = document.getElementById("visit-message");
-  if (!visitMessage) {
-    console.error("No element with id 'visit-message' found.");
-    return;
-  }
+const msg = document.getElementById("visit-message");
+const lastVisit = localStorage.getItem("lastVisit");
+const now = Date.now();
 
-  const lastVisit = localStorage.getItem("lastVisit");
-  const currentVisit = Date.now();
-  const msInDay = 24 * 60 * 60 * 1000;
-
-  if (!lastVisit) {
-    visitMessage.textContent = "🎉 Welcome! Let us know if you have any questions.";
+if (!lastVisit) {
+  msg.textContent = "Welcome! Let us know if you have any questions.";
+} else {
+  const diffDays = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
+  if (diffDays === 0) {
+    msg.textContent = "Back so soon! Awesome!";
+  } else if (diffDays === 1) {
+    msg.textContent = "You last visited 1 day ago.";
   } else {
-    const days = Math.floor((currentVisit - Number(lastVisit)) / msInDay);
-    if (days < 1) {
-      visitMessage.textContent = "👋 Back so soon! Awesome!";
-    } else if (days === 1) {
-      visitMessage.textContent = "📅 You last visited 1 day ago.";
-    } else {
-      visitMessage.textContent = `📅 You last visited ${days} days ago.`;
-    }
+    msg.textContent = `You last visited ${diffDays} days ago.`;
   }
+}
 
-  localStorage.setItem("lastVisit", currentVisit);
-});
+localStorage.setItem("lastVisit", now);
