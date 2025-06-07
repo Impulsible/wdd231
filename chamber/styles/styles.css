@@ -2053,4 +2053,31 @@ footer a:focus {
     padding: 1.5rem 3rem;
   }
 }
-
+    .discover-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      width: 300px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    #visit-message {
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    .visually-hidden {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+  
