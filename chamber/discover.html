@@ -27,23 +27,17 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap" rel="stylesheet">
 
+  <!-- Scripts -->
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/medium.css" media="(min-width: 641px)">
-
-
-  
-
-
-  <!-- Scripts -->
-  <script src="scripts/scripts.js" defer></script>
-  <script src="scripts/toggleview.js" defer></script>
+  <link rel="stylesheet" href="styles/large.css" media="(min-width: 1025px)">
   <script src="scripts/visittracker.js" defer></script>
   <script src="scripts/discover.js" defer></script>
 
   <meta name="theme-color" content="#3f80ff">
 </head>
 
-<body class="chamber-discover">
+<body class="discover-page">
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <header>
@@ -85,17 +79,13 @@
     </div>
   </section>
 
-  <div class="discover-layout">
-    <aside class="sidebar">
-      <div id="visit-message" class="visit-banner"></div>
-    </aside>
+<main class="main-content">
+    <aside id="visit-message" class="sidebar-message"></aside>
+    <section class="discover-container">
+      <!-- Cards will be populated here by JS -->
+    </section>
+  </main>
 
-    <section class="discover-grid" aria-label="Points of Interest">
-  <!-- Cards inserted by JS -->
-</section>
-
-  </div>
-</main>
 
   <footer>
     <div class="container">
@@ -117,21 +107,27 @@
       }
     });
   </script>
-
   <style>
-  @media (max-width: 640px) {
-    .discover-grid {
-      display: grid !important;
-      grid-template-columns: 1fr !important;
-      gap: 1rem !important;
+    .discover-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
     }
-
-    .discover-grid > .discover-card {
-      grid-area: auto !important;
-      width: 100% !important;
+    .card {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      width: 300px;
     }
-  }
-</style>
-
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    #visit-message {
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+  </style>
+ 
 </body>
 </html>
