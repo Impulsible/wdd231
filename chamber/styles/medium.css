@@ -703,3 +703,12 @@
   word-break: break-word;
   line-height: 1.5;
 }
+
+.sidebar-message {
+  padding: 1em;
+  background-color: #eef7ff;
+  margin: 1em 0;
+  border-left: 4px solid #007acc;
+  font-size: 1rem;
+  border-radius: 5px;
+}
