@@ -24,12 +24,6 @@
     "description": "Stroll through beautifully curated gardens showcasing native and exotic plant species."
   },
   {
-    "title": "Riverwalk Trail",
-    "image": "images/photo3.webp",
-    "address": "753 Riverbank St, Crescent City",
-    "description": "A scenic trail along the river, perfect for walking, jogging, and enjoying nature."
-  },
-  {
     "title": "Seaside Art Walk",
     "image": "images/premium2.webp",
     "address": "412 Coastal Blvd, Crescent City",
@@ -52,5 +46,11 @@
     "image": "images/photo7.webp",
     "address": "77 Festival Road, Crescent City",
     "description": "Enjoy lively performances of traditional dances and music in this vibrant pavilion that celebrates the city’s cultural heritage."
+  },
+{
+    "title": "The Haunted Hollow",
+    "image": "images/urn.webp",
+    "address": "13 Ravenwood Lane, Crescent City",
+    "description": "Step into this eerie forest attraction filled with ghost stories, haunted trails, and spine-chilling sound effects after dark. Not for the faint of heart!"
   }
 ]
