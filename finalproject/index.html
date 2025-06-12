@@ -37,13 +37,24 @@
     </nav>
   </header>
 <section class="hero">
- 
+  <picture>
+    <!-- Mobile image -->
+    <source srcset="images/photo.avif" media="(max-width: 600px)" type="image/webp">
+    
+    <!-- Tablet image -->
+    <source srcset="images/photo.avif" media="(max-width: 1024px)" type="image/webp">
+    
+    <!-- Default desktop image -->
+    <img src="images/photo2.avif" alt="Skyline of Lagos with people and markets" class="hero-img" loading="lazy">
+  </picture>
+
   <div class="hero-overlay">
     <h2>Discover the Heart of Lagos</h2>
     <p>Explore the cultural diversity and vibrant energy of Nigeria’s largest city.</p>
     <a href="people.html" class="btn btn-primary">Begin the Journey</a>
   </div>
 </section>
+
 
 <main>
   <!-- Your main content goes here -->
