@@ -21,33 +21,32 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-      <a href="index.html" class="logo" aria-label="Faces and Places of Lagos homepage">
-       <img src="images/logo.png" alt="Faces & Places of Lagos Logo" width="600" height="auto" />
-      </a>
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      <ul id="nav-menu" class="nav-menu">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="people.html">People & Markets</a></li>
-        <li><a href="explore.html">Explore Lagos</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Hero with Responsive Image and Text Below -->
-    <header class="hero">
-  <div class="hero-overlay">
-    <h1>DISCOVER<br>THE HEART OF LAGOS</h1>
-    <p>Explore the cultural diversity and vibrant energy of Lagos, Nigeria’s largest city.</p>
-    <a href="people.html" class="btn btn-primary" aria-label="Begin your journey through Lagos">Begin the Journey</a>
-  </div>
+ <header>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="logo" aria-label="Faces and Places of Lagos homepage">
+      <img src="images/logo.png" alt="Faces & Places of Lagos Logo" width="600" height="auto" />
+    </a>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+    <ul id="nav-menu" class="nav-menu">
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="people.html">People & Markets</a></li>
+      <li><a href="explore.html">Explore Lagos</a></li>
+    </ul>
+  </nav>
 </header>
+
+<main>
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>DISCOVER<br>THE HEART OF LAGOS</h1>
+      <p>Explore the cultural diversity and vibrant energy of Lagos, Nigeria’s largest city.</p>
+      <a href="people.html" class="btn btn-primary">Begin the Journey</a>
+    </div>
+  </section>
 
 
     <section class="intro">
@@ -135,7 +134,15 @@
     "Last Modified: " + document.lastModified;
 </script>
 
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navMenu = document.getElementById('nav-menu');
 
-  <script src="js/nav.js" defer></script>
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+    hamburger.setAttribute('aria-expanded', navMenu.classList.contains('show'));
+  });
+</script>
+
 </body>
 </html>
