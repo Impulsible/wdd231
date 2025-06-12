@@ -389,7 +389,7 @@ button:focus-visible {
 /* HERO */
 .hero {
   position: relative;
-  height: 150vh; /* tall on desktop */
+  height: 900px; /* tall on desktop */
   background: url('../images/photo.avif') center center / cover no-repeat;
   display: flex;
   align-items: center;
