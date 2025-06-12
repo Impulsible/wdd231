@@ -173,14 +173,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 });
 
+  const toggleButton = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.getElementById('nav-menu');
+  toggleButton.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    const expanded = toggleButton.getAttribute('aria-expanded') === 'true' || false;
+    toggleButton.setAttribute('aria-expanded', !expanded);
+  });
 
-hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('show');
-  hamburger.classList.toggle('active');
 
-  const expanded = navMenu.classList.contains('show');
-  hamburger.setAttribute('aria-expanded', expanded);
-});
