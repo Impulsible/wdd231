@@ -174,3 +174,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+  hamburger.classList.toggle('active');
+
+  const expanded = navMenu.classList.contains('show');
+  hamburger.setAttribute('aria-expanded', expanded);
+});
