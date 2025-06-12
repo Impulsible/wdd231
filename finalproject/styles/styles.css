@@ -1539,3 +1539,37 @@ main.confirmation {
     display: flex;
   }
 }
+
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    background-color: #111; /* Dark background for contrast */
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 100;
+  }
+
+  .nav-menu li a {
+    color: #f9f9f9; /* Light text for visibility */
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+}
+
+.nav-menu li a:hover {
+  color: #ffd700; /* Golden yellow or your site’s highlight color */
+}
