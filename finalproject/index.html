@@ -22,30 +22,24 @@
 
 <body>
 <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="Faces & Places of Lagos Logo" width="120" />
-      </a>
-      <!-- Hamburger icon -->
-      <button id="menu-toggle" class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">&#9776;</button>
-      <!-- Navigation menu -->
-      <ul id="nav-menu" class="nav-menu">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="people.html">People & Markets</a></li>
-        <li><a href="explore.html">Explore Lagos</a></li>
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="Faces & Places of Lagos Logo" width="120" />
+    </a>
+    <button id="menu-toggle" class="hamburger" aria-label="Toggle Navigation Menu">&#9776;</button>
+    <ul id="nav-menu" class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="people.html">People & Markets</a></li>
+      <li><a href="explore.html">Explore Lagos</a></li>
+    </ul>
+  </nav>
+</header>
+
 <section class="hero">
   <picture>
-    <!-- Mobile image -->
-    <source srcset="images/photo.avif" media="(max-width: 600px)" type="image/webp">
-    
-    <!-- Tablet image -->
-    <source srcset="images/photo.avif" media="(max-width: 1024px)" type="image/webp">
-    
-    <!-- Default desktop image -->
-    <img src="images/photo2.avif" alt="Skyline of Lagos with people and markets" class="hero-img" loading="lazy">
+    <source srcset="images/hero-mobile.webp" media="(max-width: 600px)" />
+    <source srcset="images/hero-tablet.webp" media="(max-width: 1024px)" />
+    <img src="images/photo3.avif" alt="Lagos Skyline" class="hero-img" />
   </picture>
 
   <div class="hero-overlay">
@@ -54,6 +48,7 @@
     <a href="people.html" class="btn btn-primary">Begin the Journey</a>
   </div>
 </section>
+
 
 
 <main>
