@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Faces & Places of Lagos | Home</title>
+  <meta name="description" content="Discover the soul of Lagos through poetic visuals and real stories of its people and markets." />
+  <meta name="author" content="Henry Osuagwu" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Faces & Places of Lagos | Home" />
+  <meta property="og:description" content="Explore Lagos through poetic visuals and real stories of its people and vibrant markets." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://facesoflagos.org/index.html" />
+  <meta property="og:image" content="images/og-home.jpg" />
+
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/styles.css" />
+  <script type="module" defer src="scripts/scripts.js"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="Faces and Places of Lagos homepage">
+       <img src="images/logo.png" alt="Faces & Places of Lagos Logo" width="600" height="auto" />
+      </a>
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="people.html">People & Markets</a></li>
+        <li><a href="explore.html">Explore Lagos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero with Responsive Image and Text Below -->
+    <header class="hero">
+  <div class="hero-overlay">
+    <h1>DISCOVER<br>THE HEART OF LAGOS</h1>
+    <p>Explore the cultural diversity and vibrant energy of Lagos, Nigeria’s largest city.</p>
+    <a href="people.html" class="btn btn-primary" aria-label="Begin your journey through Lagos">Begin the Journey</a>
+  </div>
+</header>
+
+
+    <section class="intro">
+      <h2>Welcome to Faces & Places of Lagos</h2>
+      <p>
+        Lagos is not just a place. It’s a heartbeat. A pulse carried in the footsteps of market women,
+        in the laughter of children by the roadside, and in the grit of artisans shaping dreams from rust and resilience.
+      </p>
+      <p>
+        This platform is a living gallery where humanity meets hustle, and every stall, smile, and street corner tells a tale.
+        Here, we document not just images, but memories; not just markets, but meaning.
+      </p>
+    </section>
+
+    <section class="spotlight-stories" aria-labelledby="spotlight-title">
+      <h2 id="spotlight-title">Spotlight Stories</h2>
+      <p>
+        Step into portraits of people who shape Lagos every day — traders, storytellers, food hawkers,
+        and silent heroes whose lives illuminate the city’s spirit.
+      </p>
+     <section class="spotlight-stories">
+  <h2>Featured Lagosians</h2>
+  <p class="subtext">Real faces, real voices — echoing from Balogun to Mushin.</p>
+
+  <div id="stories-container" class="stories-grid">
+    <!-- JavaScript will insert dynamic cards here -->
+  </div>
+
+  <div class="btn-wrapper">
+    <a href="people.html" class="btn btn-secondary" aria-label="Browse all stories of Lagosians">
+      See All Stories
+    </a>
+  </div>
+</section>
+
+<section class="call-to-action">
+  <div class="cta-content">
+    <h2><span class="accent-text">Every Face</span> is a Story</h2>
+    <p>
+      Some stories are whispered in Yoruba, others shouted in pidgin, and some painted in silence.  
+      Yet all are etched in the vibrant chaos of Lagos.
+    </p>
+    <a href="explore.html" class="btn btn-highlight" aria-label="Explore Lagos’s hidden gems">
+      Explore the City’s Corners
+    </a>
+  </div>
+</section>
+
+  </main>
+
+ <footer class="site-footer">
+  <div class="footer-flex">
+    
+    <!-- Left: Camera Icon -->
+    <div class="footer-left">
+      <div class="footer-camera-symbol" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Center: Text Info -->
+    <div class="footer-center">
+  <p>&copy; <span id="currentYear"></span> Faces & People. All rights reserved.</p>
+  <p id="lastModified"></p>
+</div>
+
+
+    <!-- Right: Watch Video Link -->
+    <div class="footer-right">
+      <a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Watch Our Project Story</a>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  // Set current year
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+  // Set last modified date
+  document.getElementById("lastModified").textContent = 
+    "Last Modified: " + document.lastModified;
+</script>
+
+
+  <script src="js/nav.js" defer></script>
+</body>
+</html>

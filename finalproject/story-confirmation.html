@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Story Confirmation – Faces & Places of Lagos</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <main class="confirmation">
+    <h1>Thank You for Sharing!</h1>
+    <div class="card" id="story-card">
+      <!-- Story content will be inserted here -->
+    </div>
+    <a href="explore.html" class="back-button">Back to Explore</a>
+  </main>
+
+  <script>
+    const latestStory = JSON.parse(localStorage.getItem("latestStory"));
+    const card = document.getElementById("story-card");
+
+    function formatTimestamp(iso) {
+      const date = new Date(iso);
+      return date.toLocaleString("en-NG", {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+    }
+
+    if (latestStory) {
+      // ✅ Show the confirmation story
+      card.innerHTML = `
+        ${latestStory.image ? `<img src="${latestStory.image}" alt="User uploaded photo" />` : ""}
+        <p><strong>Name:</strong> ${latestStory.name}</p>
+        <p><strong>Email:</strong> ${latestStory.email}</p>
+        <p><strong>Your Story:</strong></p>
+        <p>${latestStory.story}</p>
+        <p><strong>Submitted:</strong> ${formatTimestamp(latestStory.timestamp)}</p>
+      `;
+
+      // ✅ Save to communityStories array
+      const communityStories = JSON.parse(localStorage.getItem("communityStories")) || [];
+      communityStories.push(latestStory);
+      localStorage.setItem("communityStories", JSON.stringify(communityStories));
+
+      // Optional: clear latestStory to avoid duplicate submission
+      // localStorage.removeItem("latestStory");
+    } else {
+      card.innerHTML = `
+        <h2>Oops! No story found.</h2>
+        <p>Please return to the Explore page and submit your story again.</p>
+      `;
+    }
+  </script>
+</body>
+</html>
