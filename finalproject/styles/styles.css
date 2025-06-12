@@ -1552,19 +1552,18 @@ main.confirmation {
 .hero picture,
 .hero-img {
   width: 100%;
-  height: 100vh; /* Ensure image fills the hero section */
+  height: 120vh; /* Ensure image fills the hero section */
   object-fit: cover;
   display: block;
 }
 
 .hero {
-  height: 120vh; /* 120% of the screen height */
+  height: 100vh; /* 120% of the screen height */
 }
 .hero picture,
 .hero-img {
-  height: 120vh;
+  height: 100vh;
 }
-
 
 .hero-overlay {
   position: absolute;
@@ -1592,30 +1591,28 @@ main.confirmation {
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.hero-overlay {
+  position: absolute;
+  top: 60%;
+  left: 0%;
+  transform: translateY(-50%);
+  background-color: white; /* Solid white background */
+  color: #222; /* Dark text for contrast */
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  text-align: left;
+  z-index: 2;
 }
-
-html, body {
-  width: 100%;
-  height: 100%;
+@media (max-width: 768px) {
+  .hero-overlay {
+    top: 70%;
+    left: 5%;
+    padding: 1.5rem;
+    max-width: 90%;
+  }
 }
-
-.hero {
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  overflow: hidden;
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.hero picture,
-.hero-img {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  display: block;
+.hero-overlay {
+  border-left: 6px solid #ff6600; /* Or any brand color */
 }
