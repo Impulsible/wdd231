@@ -1486,3 +1486,47 @@ body {
   padding: 0;
   overflow-x: hidden;
 }
+
+@media (max-width: 768px) {
+  /* Remove spacing/gap issues on mobile */
+  body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  header,
+  .hero,
+  main,
+  main section:first-of-type {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .hero {
+    background: url('../images/hero.webp') center center / cover no-repeat;
+    background-size: cover;
+    width: 100%;
+  }
+
+  .hero-overlay {
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+
+  .hero-overlay .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
