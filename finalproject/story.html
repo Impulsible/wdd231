@@ -61,7 +61,7 @@
       }
 
       try {
-        const response = await fetch('data/people.json');
+        const response = await fetch('people.json');
         const data = await response.json();
         const person = data.find(p => p.name.toLowerCase().replace(/\s+/g, '-') === id);
 
@@ -85,3 +85,12 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
