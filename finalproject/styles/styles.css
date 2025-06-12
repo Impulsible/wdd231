@@ -1468,3 +1468,10 @@ main.confirmation {
   transform: rotate(-45deg);
   top: 13px;
 }
+
+.logo img {
+  max-width: 80px; /* small size for all devices */
+  height: auto;
+  display: block;
+}
+
