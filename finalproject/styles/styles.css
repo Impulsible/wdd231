@@ -398,10 +398,11 @@ button:focus-visible {
   overflow: hidden;
 }
 
-/* On smaller screens (mobile/tablet), reduce hero height */
 @media (max-width: 768px) {
   .hero {
-    height: 80vh; /* shorter hero on mobile */
+    height: 250px; /* fixed smaller height for mobile */
+    background-size: contain; /* make image fit rectangular width */
+    background-position: center top; /* align nicely */
   }
 }
 
