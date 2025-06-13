@@ -620,7 +620,6 @@ button:focus-visible {
   text-decoration: underline;
 }
 
-
 .story {
   max-width: 800px;
   margin: auto;
@@ -855,7 +854,7 @@ main.explore-main {
   grid-template-columns: 1fr 2fr;
   align-items: start;
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: rem;
 }
 
 .cultural-section img {
@@ -1823,9 +1822,10 @@ main.confirmation {
   margin: 0;
 }
 /* HERO */
+
 .hero {
   position: relative;
-  height: 120vh; /* tall on desktop */
+  height: 100vh; /* Tall for desktop */
   background: url('../images/view.avif') center center / cover no-repeat;
   display: flex;
   align-items: center;
@@ -1834,39 +1834,25 @@ main.confirmation {
   overflow: hidden;
 }
 
+/* 📱 Mobile View - Rectangle Hero Image */
 @media (max-width: 768px) {
   .hero {
-    height: 100vh; /* full screen height on mobile */
-    background-size: cover; /* make image fill entire area */
-    background-position: center center; /* center the image */
-    background-repeat: no-repeat;
+    height: 220px; /* Rectangular height */
+    background-size: cover; /* Cover entire section */
+    background-position: center center; /* Centered image */
   }
 }
-.hero-overlay h1 {
-  font-size: 2.5rem;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 0.5rem;
-}
-
-.hero-overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.hero-overlay .btn-primary {
-  background-color: #ffa500;
-  color: #f9fbf9;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-}
 @media (max-width: 768px) {
-  .hero {
-    height: 100vh; /* full screen height on mobile */
-    background-size: cover; /* make image fill entire area */
-    background-position: center center; /* center the image */
-    background-repeat: no-repeat;
+  .hero-overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .hero-overlay .btn-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
   }
 }
