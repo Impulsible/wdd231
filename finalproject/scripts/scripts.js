@@ -1,5 +1,5 @@
+// === Navigation & UI ===
 document.addEventListener('DOMContentLoaded', () => {
-  // Hamburger Menu Toggle
   const hamburger = document.querySelector('.hamburger');
   const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
 
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll to Top Button
   const scrollBtn = document.getElementById('scrollTopBtn');
   if (scrollBtn) {
     window.addEventListener('scroll', () => {
@@ -24,15 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Footer Dates
   const yearEl = document.getElementById('currentYear');
-  const modifiedEl = document.getElementById('last-modified');
+  const modifiedEl = document.getElementById('lastModified') || document.getElementById('last-modified');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
   if (modifiedEl) modifiedEl.textContent = `Last Modified: ${document.lastModified}`;
 
- 
+  const toggleButton = document.getElementById('menu-toggle');
+  if (toggleButton && navMenu) {
+    toggleButton.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      const expanded = toggleButton.getAttribute('aria-expanded') === 'true' || false;
+      toggleButton.setAttribute('aria-expanded', !expanded);
+    });
+  }
+});
 
-  // Story Submission (explore.html)
+// === Story Submission (explore.html) ===
+document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector("#story-form");
   if (form) {
     form.addEventListener("submit", async (e) => {
@@ -71,8 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = "story-confirmation.html";
     }
   }
+});
 
-  // Story Confirmation Page
+// === Story Confirmation ===
+document.addEventListener('DOMContentLoaded', () => {
   const latestStory = JSON.parse(localStorage.getItem("latestStory"));
   if (document.getElementById("user-name")) {
     if (latestStory) {
@@ -87,8 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }
   }
+});
 
-  // Community Stories Page
+// === Community Page Rendering ===
+document.addEventListener('DOMContentLoaded', () => {
   const communityContainer = document.getElementById("community-stories");
   if (communityContainer) {
     const stories = JSON.parse(localStorage.getItem("communityStories")) || [];
@@ -115,28 +126,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+// === People Page Logic ===
 document.addEventListener('DOMContentLoaded', async () => {
   const cardsContainer = document.getElementById('cards-container');
   const filterRadios = document.querySelectorAll('input[name="category"]');
   let peopleData = [];
 
-  // Load JSON data
   try {
     const response = await fetch('https://impulsible.github.io/wdd231/finalproject/people.json');
     peopleData = await response.json();
   } catch (error) {
-    cardsContainer.innerHTML = "<p>Error loading people data.</p>";
+    if (cardsContainer) cardsContainer.innerHTML = "<p>Error loading people data.</p>";
     console.error(error);
     return;
   }
 
-  // Helper to capitalize first letter
   function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
-  // Function to render cards filtered by category
   function renderCards(category = 'all') {
+    if (!cardsContainer) return;
     cardsContainer.innerHTML = '';
 
     const filteredPeople = category === 'all' ? peopleData :
@@ -162,35 +173,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Initial render: all categories
   renderCards();
 
-  // Listen for filter changes
   filterRadios.forEach(radio => {
     radio.addEventListener('change', () => {
       renderCards(radio.value);
     });
   });
 });
-
-  const toggleButton = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-
-  toggleButton.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    const expanded = toggleButton.getAttribute('aria-expanded') === 'true' || false;
-    toggleButton.setAttribute('aria-expanded', !expanded);
-  });
-
-
-fetch('people.json')
-  .then(res => {
-    if (!res.ok) throw new Error("Network response was not ok");
-    return res.json();
-  })
-  .then(data => {
-    console.log(data); // or renderPeople(data)
-  })
-  .catch(err => {
-    console.error("Fetch error:", err);
-  });
