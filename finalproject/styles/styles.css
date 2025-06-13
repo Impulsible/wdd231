@@ -1826,7 +1826,7 @@ main.confirmation {
 .hero {
   position: relative;
   height: 120vh; /* tall on desktop */
-  background: url('../images/lagos.webp') center center / cover no-repeat;
+  background: url('../images/view.avif') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1842,8 +1842,6 @@ main.confirmation {
     background-repeat: no-repeat;
   }
 }
-
-
 .hero-overlay h1 {
   font-size: 2.5rem;
   font-family: 'Playfair Display', serif;
@@ -1863,4 +1861,12 @@ main.confirmation {
   border-radius: 30px;
   font-weight: bold;
   text-decoration: none;
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 100vh; /* full screen height on mobile */
+    background-size: cover; /* make image fill entire area */
+    background-position: center center; /* center the image */
+    background-repeat: no-repeat;
+  }
 }
