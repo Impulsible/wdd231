@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Load JSON data
   try {
-    const response = await fetch('people.json');
+    const response = await fetch('https://impulsible.github.io/wdd231/finalproject/people.json');
     peopleData = await response.json();
   } catch (error) {
     cardsContainer.innerHTML = "<p>Error loading people data.</p>";
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       card.className = 'person-card';
 
       card.innerHTML = `
-        <img src="${person.image}" alt="Portrait of ${person.name}" loading="lazy" />
+        <img src="${person.image}" alt="Portrait of ${person.name}" loading="lazy">
         <h3>${person.name}</h3>
         <p class="market-category">${person.market} — ${capitalize(person.category)} Market</p>
         <a href="story.html?id=${encodeURIComponent(person.id)}" class="read-story-link" aria-label="Read story of ${person.name}">Read Story</a>
@@ -183,3 +183,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 
 
+fetch('people.json')
+  .then(res => {
+    if (!res.ok) throw new Error("Network response was not ok");
+    return res.json();
+  })
+  .then(data => {
+    console.log(data); // or renderPeople(data)
+  })
+  .catch(err => {
+    console.error("Fetch error:", err);
+  });
