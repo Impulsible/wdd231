@@ -1853,7 +1853,7 @@ main.confirmation {
 }
 @media (max-width: 768px) {
   .hero-overlay h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .hero-overlay p {
@@ -1861,8 +1861,112 @@ main.confirmation {
   }
 
   .hero-overlay .btn-primary {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
   }
 }
 
+
+.site-footer {
+
+  color: #fff;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.footer-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1 1 100%;
+}
+
+.footer-camera-symbol svg {
+  fill: currentColor;
+  margin: 0 auto;
+  display: block;
+}
+
+.footer-right a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Mobile-first layout - stack items */
+@media (min-width: 600px) {
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    flex: 1;
+    text-align: center;
+  }
+
+  .footer-flex {
+    flex-wrap: nowrap;
+  }
+
+  .footer-left {
+    text-align: left;
+  }
+
+  .footer-center {
+    text-align: center;
+  }
+
+  .footer-right {
+    text-align: right;
+  }
+}
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Horizontally center */
+  justify-content: center; /* Vertically center if needed */
+  text-align: center;
+  padding: 2rem 1rem;
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: #fff; /* Optional: for contrast */
+  font-family: 'Playfair Display', serif;
+}
+
+.hero-text h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text .btn-primary {
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-text .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+}
