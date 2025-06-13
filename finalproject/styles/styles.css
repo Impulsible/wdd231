@@ -44,7 +44,7 @@ p {
 
 /* Links and buttons */
 a {
-  color: #FF9800;
+  color: #603c05;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -79,13 +79,13 @@ a:focus {
 }
 
 .btn-secondary {
-  background-color: #FF9800;
+  background-color: #754804;
   color: white;
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus {
-  background-color: #cc7a00;
+  background-color: #12fa06;
 }
 
 /* Navbar */
@@ -123,13 +123,13 @@ a:focus {
 }
 
 .nav-menu li a[aria-current="page"] {
-  border-bottom: 2px solid #FF9800;
+  border-bottom: 2px solid #cf7d03;
   padding-bottom: 2px;
 }
 
 .nav-menu li a:hover,
 .nav-menu li a:focus {
-  color: #FF9800;
+  color: #c37602;
 }
 
 /* Hamburger */
@@ -262,7 +262,7 @@ a:focus {
 .story-card-content a {
   margin-top: 1em;
   font-weight: 600;
-  color: #FF9800;
+  color: #c77903;
   display: inline-block;
 }
 
@@ -277,18 +277,18 @@ footer {
 }
 
 footer a {
-  color: #FF9800;
+  color: #b56e03;
 }
 
 footer a:hover,
 footer a:focus {
-  color: #cc7a00;
+  color: #12fa06;
 }
 
 /* Focus visibility */
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid #FF9800;
+  outline: 3px solid #8a5504;
   outline-offset: 2px;
 }
 
@@ -339,7 +339,7 @@ button:focus-visible {
   padding: 4em 1.5em;
   text-align: center;
   margin-top: 3em;
-  border-top: 2px dashed #FF9800;
+  border-top: 2px dashed #8c5605;
 }
 
 .cta-content {
@@ -359,7 +359,7 @@ button:focus-visible {
 }
 
 .btn-highlight {
-  background-color: #FF9800;
+  background-color: #9d6004;
   color: white;
   padding: 0.7em 1.6em;
   font-weight: bold;
@@ -369,7 +369,7 @@ button:focus-visible {
 
 .btn-highlight:hover,
 .btn-highlight:focus {
-  background-color: #cc7a00;
+  background-color: #12fa06;
 }
 
 /* Accent styling */
@@ -1339,18 +1339,30 @@ main.confirmation {
 }
 
 .person-card {
+  width: 100%;                /* Make it responsive inside a grid or flex container */
+  max-width: 400px;           /* All cards get the same max width */
   border: 1px solid #ccc;
   padding: 1em;
   margin-bottom: 1em;
-  max-width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  box-sizing: border-box;
 }
 
+/* Image fits the card nicely */
 .person-card img {
   width: 100%;
-  height: auto;
+  height: 250px;             /* Fixed height for uniform look */
+  object-fit: cover;         /* Crop excess, fills image box */
   border-radius: 8px;
+  display: block;
+  background-color: #f0f0f0;
 }
 
+/* Text elements */
 .person-card h3 {
   margin: 0.5em 0 0.2em 0;
 }
@@ -1359,6 +1371,7 @@ main.confirmation {
   margin: 0 0 0.5em 0;
 }
 
+/* Story link styling */
 .story-link {
   color: #007acc;
   text-decoration: none;
@@ -1369,17 +1382,13 @@ main.confirmation {
   text-decoration: underline;
 }
 
-.person-card {
-  border: 1px solid #ccc;
-  padding: 1em;
-  margin-bottom: 1em;
-  max-width: 450px;  /* expanded width */
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  background: #fff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
+.cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center; /* or space-between */
 }
+
 
 /* Hamburger base style */
 .hamburger {
