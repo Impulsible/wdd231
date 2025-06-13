@@ -386,46 +386,7 @@ button:focus-visible {
   font-size: 1rem;
 }
 
-/* HERO */
-.hero {
-  position: relative;
-  height: 150vh; /* tall on desktop */
-  background: url('../images/photo3.avif') center center / cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
 
-@media (max-width: 768px) {
-  .hero {
-    height: 250px; /* fixed smaller height for mobile */
-    background-size: contain; /* make image fit rectangular width */
-    background-position: center top; /* align nicely */
-  }
-}
-
-.hero-overlay h1 {
-  font-size: 2.5rem;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 0.5rem;
-}
-
-.hero-overlay p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  font-family: 'Open Sans', sans-serif;
-}
-
-.hero-overlay .btn-primary {
-  background-color: #ffa500;
-  color: #fefefe;
-  padding: 0.75rem 1.5rem;
-  border-radius: 30px;
-  font-weight: bold;
-  text-decoration: none;
-}
 
 /* FOOTER */
 .site-footer {
@@ -658,6 +619,15 @@ button:focus-visible {
   color: #1e3d36;
   text-decoration: underline;
 }
+
+.person-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Ensures same width-height ratio */
+  object-fit: cover;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
 
 .story {
   max-width: 800px;
@@ -1759,4 +1729,144 @@ main.confirmation {
   .hero-text-overlay p {
     font-size: 1rem;
   }
+}
+
+.welcome-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.welcome-content p {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.welcome-content .btn-primary {
+  background-color: #035417;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.welcome-content .btn-primary:hover {
+  background-color: #1a252f;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 1rem;
+  z-index: 2;
+}
+
+.hero-text-overlay h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero-text-overlay h1 {
+    font-size: 2.25rem;
+  }
+}
+.hero-text-overlay h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #d9a60f; /* A warm, creamy gold that feels premium and visible */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+.intro h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero-text-overlay {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  text-align: center;
+  z-index: 2;
+  width: 90%;
+}
+
+.hero-text-overlay h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fbfbf9; /* Creamy gold for visibility */
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  margin: 0;
+}
+/* HERO */
+.hero {
+  position: relative;
+  height: 120vh; /* tall on desktop */
+  background: url('../images/heart.avif') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 250px; /* fixed smaller height for mobile */
+    background-size: contain; /* make image fit rectangular width */
+    background-position: center top; /* align nicely */
+  }
+}
+
+.hero-overlay h1 {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0.5rem;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.hero-overlay .btn-primary {
+  background-color: #ffa500;
+  color: #f9fbf9;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: bold;
+  text-decoration: none;
 }
