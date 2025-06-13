@@ -1824,7 +1824,7 @@ main.confirmation {
 
 .hero-text-overlay h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
   color: #fbfbf9; /* Creamy gold for visibility */
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
@@ -1832,36 +1832,36 @@ main.confirmation {
 }
 /* HERO */
 
+/* 🖥️ Desktop Hero */
 .hero {
-  position: relative;
-  height: 100vh; /* Tall for desktop */
+  width: 100%;
+  min-height: 100vh; /* safer than height for footer flow */
   background: url('../images/view.avif') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* 📱 Mobile View - Rectangle Hero Image */
+/* 📱 Mobile View - Rectangular Hero Image */
 @media (max-width: 768px) {
   .hero {
-    height: 220px; /* Rectangular height */
-    background-size: cover; /* Cover entire section */
-    background-position: center center; /* Centered image */
+    min-height: 220px; /* rectangular height */
+    background-size: cover;
+    background-position: center;
+    padding: 0;
   }
 }
-@media (max-width: 768px) {
-  .hero-overlay h1 {
-    font-size: 1.8rem;
-  }
 
-  .hero-overlay p {
-    font-size: 1rem;
-  }
-
-  .hero-overlay .btn-primary {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
-  }
+/* Optional: Only if you still have text overlay (in another section) */
+.hero-overlay h1 {
+  font-size: 2.2rem;
+}
+.hero-overlay p {
+  font-size: 1.1rem;
+}
+.hero-overlay .btn-primary {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.875rem;
 }
