@@ -12,9 +12,11 @@
   <meta property="og:description" content="Explore Lagos through poetic visuals and real stories of its people and vibrant markets.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://facesoflagos.org/index.html">
-  <meta property="og:image" content="images/meta.webp">
+  <meta property="og:url" content="https://impulsible.github.io/wdd231/finalproject/index.html">
+  <meta property="og:image" content="https://impulsible.github.io/wdd231/finalproject/images/lagos.webp">
 
   <link rel="icon" href="images/favicon.webp">
+  <link rel="icon" href="https://impulsible.github.io/wdd231/finalproject/images/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
   <script src="scripts/scripts.js" defer></script>
@@ -35,21 +37,19 @@
   </nav>
 
 </header>
-
 <section class="hero">
-  <picture>
-    <source srcset="images/view.avif" media="(max-width: 600px)">
-    <source srcset="images/view.avi" media="(max-width: 1024px)">
+  <picture class="hero-img">
+    <source srcset="images/view.avif" type="image/avif" media="(max-width: 600px)">
+    <source srcset="images/view.avif" type="image/avif" media="(max-width: 1024px)">
+   
   </picture>
-</section>
 
-
-<section class="welcome-message">
-  <div class="welcome-content">
-    <h2>DISCOVER THE HEART OF LAGOS</h2>
-    <p>Explore the cultural diversity and vibrant energy of Nigeria’s largest city. From the hum of marketplaces to the rhythm of daily life, Lagos invites you to see, feel, and discover.</p>
+  <div class="hero-text-overlay">
+    <h1>DISCOVER<br>THE HEART OF LAGOS</h1>
+    <p>Explore the cultural diversity and vibrant energy of Lagos, Nigeria’s largest city.</p>
     <a href="people.html" class="btn btn-primary">Begin the Journey</a>
   </div>
+</section>
 
 <main>
   <!-- Your main content goes here -->
@@ -113,8 +113,6 @@
   <p>&copy; <span id="currentYear"></span> Faces & People. All rights reserved.</p>
   <p id="lastModified"></p>
 </div>
-
-
     <!-- Right: Watch Video Link -->
     <div class="footer-right">
       <a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Watch Our Project Story</a>
