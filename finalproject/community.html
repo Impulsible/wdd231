@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community Stories – Faces & Places of Lagos</title>
   <link rel="stylesheet" href="styles/community.css">
-   <script type="module" defer src="scripts/scripts.js"></script>
+  <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
   <header>
@@ -43,7 +43,7 @@
       card.className = "story-card";
 
       card.innerHTML = `
-        ${story.image ? `<img src="${story.image}" alt="Story photo" onerror="this.style.display='none'" />` : ""}
+        ${story.image ? `<img src="${story.image}" alt="Story photo" onerror="this.style.display='none'">` : ""}
         <h3>${story.name}</h3>
         <p>${story.story}</p>
         <p class="timestamp">Submitted on: ${formatTimestamp(story.timestamp)}</p>
@@ -82,7 +82,7 @@
       <div class="footer-camera-symbol" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-            d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z" />
+            d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z">
         </svg>
       </div>
     </div>

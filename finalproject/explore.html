@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Faces & Places of Lagos | Explore Lagos</title>
-  <meta name="description" content="Learn about Lagos’s food, fashion, language, festivals and share your Lagos story." />
-  <meta property="og:title" content="Faces & Places of Lagos | Explore Lagos" />
-  <meta property="og:description" content="Discover the essence of Lagos culture and share your own story." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="images/og-explore.jpg" />
-  <link rel="icon" href="favicon.ico" />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles/styles.css" />
-  <script defer src="scripts/scripts.js">defer</script>
+  <meta name="description" content="Learn about Lagos’s food, fashion, language, festivals and share your Lagos story.">
+  <meta property="og:title" content="Faces & Places of Lagos | Explore Lagos">
+  <meta property="og:description" content="Discover the essence of Lagos culture and share your own story.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/meta.png">
+  <link rel="icon" href="images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
   <header>
      <nav class="navbar">
       <a href="index.html" class="logo">
-        <img src="images/logo.png" alt="Faces & Places of Lagos Logo" width="120" />
+        <img src="images/logo.png" alt="Faces & Places of Lagos Logo" width="120">
       </a>
       <!-- Hamburger icon -->
       <button id="menu-toggle" class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">&#9776;</button>
@@ -35,7 +35,7 @@
   <main class="explore-main">
   <section class="cultural-sections">
   <article class="cultural-section">
-    <img src="images/food.webp" alt="Lagos street food scene" loading="lazy">
+    <img src="images/food.jpg" alt="Lagos street food scene" loading="lazy">
     <div>
       <h2>Food</h2>
       <p>
@@ -45,7 +45,7 @@
   </article>
 
   <article class="cultural-section">
-    <img src="images/fashion.webp" alt="Lagos fashion street style" loading="lazy">
+    <img src="images/fashon.webp" alt="Lagos fashion street style" loading="lazy">
     <div>
       <h2>Fashion</h2>
       <p>
@@ -55,7 +55,7 @@
   </article>
 
   <article class="cultural-section">
-    <img src="images/language.webp" alt="Street signs and local speech in Lagos" loading="lazy">
+    <img src="images/road.jpg" alt="Street signs and local speech in Lagos" loading="lazy">
     <div>
       <h2>Language</h2>
       <p>
@@ -65,7 +65,7 @@
   </article>
 
   <article class="cultural-section">
-    <img src="images/festivals.webp" alt="Eyo festival dancers in Lagos" loading="lazy">
+    <img src="images/eyo.jpeg" alt="Eyo festival dancers in Lagos" loading="lazy">
     <div>
       <h2>Festivals</h2>
       <p>
@@ -81,14 +81,14 @@
     <h2>Share Your Lagos Story</h2>
     <form id="story-form" class="story-form" novalidate>
       <label for="image">Upload a Photo (optional):</label>
-      <input type="file" id="image" name="image" accept="image/*" />
+      <input type="file" id="image" name="image" accept="image/*">
       <div id="image-preview"></div>
 
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required minlength="2" />
+      <input type="text" id="name" name="name" required minlength="2">
 
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+      <input type="email" id="email" name="email" required>
 
       <label for="story">Your Story:</label>
       <textarea id="story" name="story" rows="5" required minlength="20"></textarea>
@@ -125,7 +125,7 @@
       <div class="footer-camera-symbol" aria-hidden="true">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-            d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z" />
+            d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z">
         </svg>
       </div>
     </div>
@@ -155,7 +155,7 @@
     if (file) {
       const reader = new FileReader();
       reader.onload = function () {
-        imagePreview.innerHTML = `<img src="${reader.result}" alt="Preview" style="max-width: 100%; border-radius: 8px;" />`;
+        imagePreview.innerHTML = `<img src="${reader.result}" alt="Preview" style="max-width: 100%; border-radius: 8px;">`;
       };
       reader.readAsDataURL(file);
     } else {
