@@ -1832,36 +1832,37 @@ main.confirmation {
 }
 /* HERO */
 
-/* 🖥️ Desktop Hero */
 .hero {
-  width: 100%;
-  min-height: 100vh; /* safer than height for footer flow */
+  position: relative;
+  height: 100vh; /* Tall for desktop */
   background: url('../images/view.avif') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-sizing: border-box;
+  overflow: hidden;
 }
 
-/* 📱 Mobile View - Rectangular Hero Image */
+/* 📱 Mobile View - Rectangle Hero Image */
 @media (max-width: 768px) {
   .hero {
-    min-height: 220px; /* rectangular height */
-    background-size: cover;
-    background-position: center;
-    padding: 0;
+    height: 220px; /* Rectangular height */
+    background-size: cover; /* Cover entire section */
+    background-position: center center; /* Centered image */
+  }
+}
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .hero-overlay .btn-primary {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.5rem;
   }
 }
 
-/* Optional: Only if you still have text overlay (in another section) */
-.hero-overlay h1 {
-  font-size: 2.2rem;
-}
-.hero-overlay p {
-  font-size: 1.1rem;
-}
-.hero-overlay .btn-primary {
-  padding: 0.6rem 1.4rem;
-  font-size: 0.875rem;
-}
