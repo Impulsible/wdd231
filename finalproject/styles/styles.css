@@ -21,7 +21,7 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Playfair Display', serif;
-  margin: 0 0 0.5em;
+  margin: 0 0 0.4em;
   color: #1B5E20;
 }
 
@@ -29,7 +29,7 @@ h1 { font-size: 2.5rem; }
 h2 { font-size: 2rem; }
 
 p {
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
   color: #333;
 }
 
@@ -93,14 +93,19 @@ button,
 
 .btn-wrapper {
   text-align: center;
-  margin-top: 2em;
+  margin-top: 1rem;
 }
 
+/* Section spacing */
+section {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
 
 /* Spotlight Section */
 .spotlight-stories {
   max-width: 960px;
-  margin: 4rem auto;
+  margin: 2rem auto;
   padding: 0 1rem;
   text-align: center;
 }
@@ -118,40 +123,34 @@ button,
 .spotlight-stories .subtext {
   font-style: italic;
   color: #555;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Stories Grid Placeholder */
+/* Stories Grid */
 .stories-grid {
   display: grid;
-  gap: 1.5rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-top: 1rem;
   justify-content: center;
 }
 
 /* Call to Action Section */
 .call-to-action {
- 
   color: white;
   text-align: center;
-  padding: 4rem 1rem;
-  margin-top: 4rem;
-}
-
-.cta-content {
-  max-width: 800px;
-  margin: 0 auto;
+  padding: 2.5rem 1rem;
+  margin-top: 2rem;
 }
 
 .call-to-action h2 {
   color: white;
   font-size: 2.2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .call-to-action p {
   font-size: 1.1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 .call-to-action .btn-highlight {
@@ -165,6 +164,33 @@ button,
 .call-to-action .btn-highlight:hover {
   background-color: #f4b400;
   color: #fcf9f9;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .call-to-action {
+    padding: 2rem 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .spotlight-stories {
+    margin: 1.5rem auto;
+  }
+
+  .btn-wrapper {
+    margin-top: 0.8rem;
+  }
+
+  section {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
 
