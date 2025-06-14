@@ -15,7 +15,8 @@
   <meta property="og:image" content="https://impulsible.github.io/wdd231/finalproject/images/lagos.webp">
  
 <link rel="icon" href="images/favicon.webp" type="image/x-icon">
-
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
   <script src="scripts/people.js" defer></script>
@@ -23,18 +24,13 @@
 
 <body>
   <header>
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+  <nav class="navbar">
       <a href="index.html" class="logo">
         <img src="images/logo.webp" alt="Faces & Places of Lagos Logo" width="120">
       </a>
-      <button
-        id="menu-toggle"
-        class="hamburger"
-        aria-label="Toggle Navigation Menu"
-        aria-expanded="false"
-      >
-        &#9776;
-      </button>
+      <!-- Hamburger icon -->
+      <button id="menu-toggle" class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">&#9776;</button>
+      <!-- Navigation menu -->
       <ul id="nav-menu" class="nav-menu">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="people.html">People & Markets</a></li>
@@ -48,7 +44,6 @@
     <picture class="hero-img">
       <source srcset="images/view.avif" type="image/avif" media="(max-width: 600px)">
       <source srcset="images/view.avif" type="image/avif" media="(max-width: 1024px)">
-  
 </section>
 
     </picture>
