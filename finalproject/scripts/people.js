@@ -343,8 +343,6 @@ window.addEventListener('storage', (e) => {
     displayCommunityStories();
   }
 });
-
-
     // Set current year
     document.getElementById("currentYear").textContent = new Date().getFullYear();
 
