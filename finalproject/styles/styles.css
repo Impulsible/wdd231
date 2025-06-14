@@ -96,6 +96,78 @@ button,
   margin-top: 2em;
 }
 
+
+/* Spotlight Section */
+.spotlight-stories {
+  max-width: 960px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.spotlight-stories h2,
+.spotlight-stories h3 {
+  color: #1B5E20;
+}
+
+.spotlight-stories p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.spotlight-stories .subtext {
+  font-style: italic;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Stories Grid Placeholder */
+.stories-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+/* Call to Action Section */
+.call-to-action {
+ 
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+  margin-top: 4rem;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.call-to-action h2 {
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.call-to-action p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.call-to-action .btn-highlight {
+  background-color: #04822c;
+  color: #f8f4f4;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+}
+
+.call-to-action .btn-highlight:hover {
+  background-color: #f4b400;
+  color: #fcf9f9;
+}
+
+
 /* Navbar container */
 .navbar {
   background-color: #1B5E20; /* Primary green */
@@ -468,7 +540,7 @@ button,
 }
 
 .footer-right a {
-  color: #ffcc00;
+  color: #02702e;
   text-decoration: none;
   font-weight: bold;
 }
@@ -525,6 +597,85 @@ button:focus-visible {
   }
 }
 
+/* Existing styles remain unchanged above this */
+
+.footer-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: column; /* Stack by default (mobile-first) */
+}
+
+/* Footer sections default to stacked */
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5rem 0;
+  text-align: center;
+  flex-direction: column;
+}
+
+/* Footer camera icon stays aligned to left */
+.footer-left {
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+
+/* Center content stacked nicely */
+.footer-center {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer-center p {
+  margin: 0.3rem 0;
+}
+
+/* Footer right (e.g., links or buttons) centered on mobile */
+.footer-right {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Responsive for wider screens */
+@media (min-width: 600px) {
+  .footer-flex {
+    flex-direction: row;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    flex: 1;
+    margin: 0;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-left {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .footer-right {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .footer-center {
+    flex-direction: column;
+  }
+}
 
 /* ===========================
    People Grid Layout Container
