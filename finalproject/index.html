@@ -8,11 +8,12 @@
   <meta name="author" content="Henry Osuagwu">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Faces & Places of Lagos | Home>
+  <meta property="og:title" content="Faces & Places of Lagos | Home">
   <meta property="og:description" content="Explore Lagos through poetic visuals and real stories of its people and vibrant markets.">
-  <meta property="og:type" content="website>
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://impulsible.github.io/wdd231/finalproject/index.html">
   <meta property="og:image" content="https://impulsible.github.io/wdd231/finalproject/images/lagos.webp">
+
  
 <link rel="icon" href="images/favicon.webp" type="image/x-icon">
  <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,14 +41,12 @@
   </header>
 
   <!-- Hero Section: Image only -->
-  <section class="hero">
-    <picture class="hero-img">
-      <source srcset="images/view.avif" type="image/avif" media="(max-width: 600px)">
-      <source srcset="images/view.avif" type="image/avif" media="(max-width: 1024px)">
+ <section class="hero">
+  <picture class="hero-img">
+    <source srcset="images/view.avif" type="image/avif" media="(max-width: 1024px)">
+    <img src="images/view.avif" alt="Lagos cityscape view">
+  </picture>
 </section>
-
-    </picture>
-  </section>
 
   <main role="main">
     <h1 class="center-title">DISCOVER THE HEART OF LAGOS</h1>
@@ -139,21 +138,7 @@
   </footer>
 
   <script>
-    // Set current year
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-    // Set last modified date
-    document.getElementById("lastModified").textContent =
-      "Last Modified: " + document.lastModified;
-
-    // Navigation toggle
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.getElementById("nav-menu");
-
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
-      hamburger.setAttribute("aria-expanded", navMenu.classList.contains("show"));
-    });
+    
   </script>
 </body>
 </html>
