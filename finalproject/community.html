@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Community Stories – Faces & Places of Lagos</title>
   <link rel="stylesheet" href="styles/community.css">
-  <script src="scripts/scripts.js" defer></script>
+  <script src="scripts/people.js" defer></script>
 </head>
 <body>
   <header>
@@ -18,98 +18,106 @@
       <!-- Stories will be inserted here -->
     </div>
   </main>
-<script>
-  const container = document.getElementById("stories-container");
-  let stories = JSON.parse(localStorage.getItem("communityStories")) || [];
 
-  function formatTimestamp(iso) {
-    const date = new Date(iso);
-    return date.toLocaleString("en-NG", {
-      dateStyle: "medium",
-      timeStyle: "short"
-    });
-  }
+  <footer class="site-footer">
+    <div class="footer-flex">
+      <!-- Left: Camera Icon -->
+      <div class="footer-left">
+        <div class="footer-camera-symbol" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z"
+            ></path>
+          </svg>
+        </div>
+      </div>
 
-  function renderStories() {
-    container.innerHTML = "";
+      <!-- Center: Text Info -->
+      <div class="footer-center">
+        <p>&copy; <span id="currentYear"></span> Faces & People. All rights reserved.</p>
+        <p id="lastModified"></p>
+      </div>
 
-    if (stories.length === 0) {
-      container.innerHTML = `<p class="empty-message">No stories yet. Be the first to share yours!</p>`;
-      return;
-    }
-
-    stories.slice().reverse().forEach((story, index) => {
-      const card = document.createElement("div");
-      card.className = "story-card";
-
-      card.innerHTML = `
-        ${story.image ? `<img src="${story.image}" alt="Story photo" onerror="this.style.display='none'">` : ""}
-        <h3>${story.name}</h3>
-        <p>${story.story}</p>
-        <p class="timestamp">Submitted on: ${formatTimestamp(story.timestamp)}</p>
-        <button class="delete-btn" onclick="deleteStory(${index})">🗑️ Delete</button>
-      `;
-
-      container.appendChild(card);
-    });
-  }
-
-  function deleteStory(index) {
-    if (confirm("Delete this story?")) {
-      const actualIndex = stories.length - 1 - index; // reverse order
-      stories.splice(actualIndex, 1);
-      localStorage.setItem("communityStories", JSON.stringify(stories));
-      renderStories();
-    }
-  }
-
-  function clearStories() {
-    if (confirm("Are you sure you want to delete all community stories?")) {
-      localStorage.removeItem("communityStories");
-      stories = [];
-      renderStories();
-    }
-  }
-
-  renderStories();
-</script>
-
-<footer class="site-footer">
-  <div class="footer-flex">
-    
-    <!-- Left: Camera Icon -->
-    <div class="footer-left">
-      <div class="footer-camera-symbol" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-            d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z">
-        </svg>
+      <!-- Right: Watch Video Link -->
+      <div class="footer-right">
+        <a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">
+          Watch Our Project Story
+        </a>
       </div>
     </div>
-
-    <!-- Center: Text Info -->
-    <div class="footer-center">
-  <p>&copy; <span id="currentYear"></span> Faces & People. All rights reserved.</p>
-  <p id="lastModified"></p>
-</div>
-
-    <!-- Right: Watch Video Link -->
-    <div class="footer-right">
-      <a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Watch Our Project Story</a>
-    </div>
-
-  </div>
+  </footer>
 
   <script>
-  // Set current year
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
+    // Set current year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
 
-  // Set last modified date
-  document.getElementById("lastModified").textContent = 
-    "Last Modified: " + document.lastModified;
-</script>
+    // Set last modified date
+    document.getElementById("lastModified").textContent =
+      "Last Modified: " + document.lastModified;
 
-</footer>
+    const container = document.getElementById("stories-container");
+    let stories = JSON.parse(localStorage.getItem("communityStories")) || [];
 
+    function formatTimestamp(iso) {
+      const date = new Date(iso);
+      return date.toLocaleString("en-NG", {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+    }
+
+    function renderStories() {
+      container.innerHTML = "";
+
+      if (stories.length === 0) {
+        container.innerHTML = `<p class="empty-message">No stories yet. Be the first to share yours!</p>`;
+        return;
+      }
+
+      stories.slice().reverse().forEach((story, index) => {
+        const card = document.createElement("div");
+        card.className = "story-card";
+
+        card.innerHTML = `
+          ${story.image ? `<img src="${story.image}" alt="Story photo" onerror="this.style.display='none'">` : ""}
+          <h3>${story.name}</h3>
+          <p>${story.story}</p>
+          <p class="timestamp">Submitted on: ${formatTimestamp(story.timestamp)}</p>
+          <button class="delete-btn" onclick="deleteStory(${index})">🗑️ Delete</button>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function deleteStory(index) {
+      if (confirm("Delete this story?")) {
+        const actualIndex = stories.length - 1 - index; // reverse order
+        stories.splice(actualIndex, 1);
+        localStorage.setItem("communityStories", JSON.stringify(stories));
+        renderStories();
+      }
+    }
+
+    function clearStories() {
+      if (confirm("Are you sure you want to delete all community stories?")) {
+        localStorage.removeItem("communityStories");
+        stories = [];
+        renderStories();
+      }
+    }
+
+    renderStories();
+  </script>
 </body>
 </html>
