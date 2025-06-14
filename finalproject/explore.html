@@ -144,69 +144,7 @@
 
   </div>
 </footer>
-<script>
-  const form = document.querySelector("#story-form");
-  const imageInput = document.querySelector("#image");
-  const imagePreview = document.querySelector("#image-preview");
 
-  // Live image preview
-  imageInput.addEventListener("change", function () {
-    const file = imageInput.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function () {
-        imagePreview.innerHTML = `<img src="${reader.result}" alt="Preview" style="max-width: 100%; border-radius: 8px;">`;
-      };
-      reader.readAsDataURL(file);
-    } else {
-      imagePreview.innerHTML = "";
-    }
-  });
-
-  // Handle form submission
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const name = document.querySelector("#name").value.trim();
-    const email = document.querySelector("#email").value.trim();
-    const story = document.querySelector("#story").value.trim();
-    const file = imageInput.files[0];
-
-    const newStory = {
-      name,
-      email,
-      story,
-      timestamp: new Date().toISOString()
-    };
-
-    // Handle image (if uploaded)
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function () {
-        newStory.image = reader.result;
-
-        saveAndRedirect(newStory);
-      };
-      reader.readAsDataURL(file);
-    } else {
-      newStory.image = null;
-      saveAndRedirect(newStory);
-    }
-  });
-
-  function saveAndRedirect(storyData) {
-    // Save latest story for confirmation page
-    localStorage.setItem("latestStory", JSON.stringify(storyData));
-
-    // Save to community story list
-    const stories = JSON.parse(localStorage.getItem("communityStories")) || [];
-    stories.push(storyData);
-    localStorage.setItem("communityStories", JSON.stringify(stories));
-
-    // Redirect to confirmation page
-    window.location.href = "story-confirmation.html";
-  }
-</script>
 <script>
   // Set current year
   document.getElementById("currentYear").textContent = new Date().getFullYear();
@@ -214,34 +152,6 @@
   // Set last modified date
   document.getElementById("lastModified").textContent = 
     "Last Modified: " + document.lastModified;
-</script>
-<script>
-function loadRecentStories() {
-  const container = document.getElementById('recent-stories-carousel');
-  if (!container) return;
-
-  const stories = JSON.parse(localStorage.getItem("communityStories")) || [];
-  const recent = stories.slice(-6).reverse(); // Latest 6 stories
-
-  if (recent.length === 0) {
-    container.innerHTML = "<p>No stories yet. Be the first to share!</p>";
-    return;
-  }
-
-  recent.forEach(story => {
-    const card = document.createElement('div');
-    card.className = 'story-card';
-    card.innerHTML = `
-      ${story.image ? `<img src="${story.image}" alt="Story image">` : ''}
-      <h4>${story.name}</h4>
-      <p>${story.story.slice(0, 100)}...</p>
-    `;
-    container.appendChild(card);
-  });
-}
-
-document.addEventListener("DOMContentLoaded", loadRecentStories);
-
 </script>
 
 </body>
