@@ -8,31 +8,25 @@
   <meta name="author" content="Henry Osuagwu">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Faces & Places of Lagos | Home>
+  <meta property="og:title" content="Faces & Places of Lagos | Home">
   <meta property="og:description" content="Explore Lagos through poetic visuals and real stories of its people and vibrant markets.">
-  <meta property="og:type" content="website>
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://impulsible.github.io/wdd231/finalproject/index.html">
   <meta property="og:image" content="https://impulsible.github.io/wdd231/finalproject/images/lagos.webp">
- 
-<link rel="icon" href="images/favicon.webp" type="image/x-icon">
 
+  <link rel="icon" href="images/favicon.webp" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
-  <script src="scripts/scripts.js" defer></script>
+  <script src="scripts/people.js" defer></script>
 </head>
 
 <body>
   <header>
-    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <nav class="navbar" aria-label="Main Navigation">
       <a href="index.html" class="logo">
         <img src="images/logo.webp" alt="Faces & Places of Lagos Logo" width="120">
       </a>
-      <button
-        id="menu-toggle"
-        class="hamburger"
-        aria-label="Toggle Navigation Menu"
-        aria-expanded="false"
-      >
+      <button id="menu-toggle" class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
         &#9776;
       </button>
       <ul id="nav-menu" class="nav-menu">
@@ -43,22 +37,21 @@
     </nav>
   </header>
 
-  <!-- Hero Section: Image only -->
+  <!-- Hero Section -->
   <section class="hero">
-    <picture class="hero-img">
-      <source srcset="images/view.avif" type="image/avif" media="(max-width: 600px)">
-      <source srcset="images/view.avif" type="image/avif" media="(max-width: 1024px)">
-  
+  <picture class="hero-img">
+    <source srcset="images/view.avif" type="image/avif" media="(max-width: 1024px)">
+    <img src="images/view.jpg" alt="Lagos cityscape view" loading="lazy" style="display: none;">
+  </picture>
 </section>
 
-    </picture>
-  </section>
 
-  <main role="main">
+  <main>
     <h1 class="center-title">DISCOVER THE HEART OF LAGOS</h1>
 
-    <!-- Text Section (below hero image) -->
+    <!-- Text Section -->
     <section class="hero-text">
+      <h2 class="visually-hidden">Lagos Introduction</h2>
       <p>Explore the cultural diversity and vibrant energy of Lagos, Nigeria’s largest city.</p>
       <a href="people.html" class="btn btn-primary">Begin the Journey</a>
     </section>
@@ -92,9 +85,10 @@
     </section>
   </main>
 
+  <!-- Call to Action -->
   <section class="call-to-action">
     <div class="cta-content">
-      <h2><span class="accent-text">Every Face is a Story</h2>
+      <h2><span class="accent-text">Every Face is a Story</span></h2>
       <p>
         Some stories are whispered in Yoruba, others shouted in pidgin, and some painted in silence.  
         Yet all are etched in the vibrant chaos of Lagos.
@@ -105,25 +99,15 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-flex">
       <!-- Left: Camera Icon -->
       <div class="footer-left">
         <div class="footer-camera-symbol" aria-hidden="true">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="28"
-            height="28"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="1.5"
-              d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z"
-            >
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z"/>
           </svg>
         </div>
       </div>
@@ -136,29 +120,9 @@
 
       <!-- Right: Watch Video Link -->
       <div class="footer-right">
-        <a href="https://youtu.be/your-video-link" target="_blank" rel="noopener"
-          >Watch Our Project Story</a
-        >
+        <a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Watch Our Project Story</a>
       </div>
     </div>
   </footer>
-
-  <script>
-    // Set current year
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-    // Set last modified date
-    document.getElementById("lastModified").textContent =
-      "Last Modified: " + document.lastModified;
-
-    // Navigation toggle
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.getElementById("nav-menu");
-
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
-      hamburger.setAttribute("aria-expanded", navMenu.classList.contains("show"));
-    });
-  </script>
 </body>
 </html>
