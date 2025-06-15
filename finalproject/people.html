@@ -14,11 +14,16 @@
   <meta property="og:url" content="https://impulsible.github.io/wdd231/finalproject/index.html">
   <meta property="og:image" content="https://impulsible.github.io/wdd231/finalproject/images/lagos.webp">
 
-  <link rel="icon" href="images/favicon.webp">
-  <link rel="icon" href="https://impulsible.github.io/wdd231/finalproject/images/favicon.ico" type="image/x-icon">
+  <!-- Favicon -->
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
   <script src="scripts/people.js" defer></script>
+
+  <!-- Accessibility helper class -->
+
 </head>
 <body>
   <header>
@@ -52,7 +57,7 @@
     </section>
 
     <!-- Modal Dialog -->
-    <dialog id="detail-modal" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+    <dialog id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
       <button id="modal-close" aria-label="Close details">×</button>
       <h3 id="modal-title">Title</h3>
       <img id="modal-image" src="images/placeholder.jpg" alt="Selected story image">
@@ -60,6 +65,7 @@
     </dialog>
 
     <section id="story-container">
+      <h2 class="visually-hidden">Detailed Story View</h2>
       <!-- Person’s story will be injected here -->
     </section>
   </main>
