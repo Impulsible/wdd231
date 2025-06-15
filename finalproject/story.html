@@ -40,50 +40,6 @@
     <div class="footer-right">
       <a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Watch Our Project Story</a>
     </div>
-
-   <script>
-  // Set current year
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
-
-  // Set last modified date
-  document.getElementById("lastModified").textContent = 
-    "Last Modified: " + document.lastModified;
-</script>
-
-
-  <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get('id');
-
-      if (!id) {
-        document.getElementById('story-main').innerHTML = "<p>Story not found.</p>";
-        return;
-      }
-
-      try {
-        const response = await fetch('people.json');
-        const data = await response.json();
-        const person = data.find(p => p.name.toLowerCase().replace(/\s+/g, '-') === id);
-
-        if (!person) {
-          document.getElementById('story-main').innerHTML = "<p>Person not found.</p>";
-          return;
-        }
-
-        document.getElementById('story-name').textContent = person.name;
-        document.getElementById('story-market-category').textContent =
-          `${person.market} — ${person.category.charAt(0).toUpperCase() + person.category.slice(1)} Market`;
-        document.getElementById('story-image').src = person.image;
-        document.getElementById('story-image').alt = `Portrait of ${person.name}`;
-        document.getElementById('story-text').textContent = person.story;
-
-      } catch (error) {
-        document.getElementById('story-main').innerHTML = "<p>Error loading story.</p>";
-        console.error(error);
-      }
-    });
-  </script>
 </body>
 </html>
 
