@@ -158,6 +158,24 @@ section {
   padding: 0 0.5rem;
 }
 
+/* Prevent horizontal scroll globally */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Optional: ensure sections don’t go wide */
+main, section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+
 /* === NAVIGATION === */
 :root {
   --color-btn-bg: #1a1a1a; /* Dark background */
