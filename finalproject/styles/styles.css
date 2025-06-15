@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* === RESET & BASE === */
 *,
 *::before,
 *::after {
@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-primary);
   background-color: #fdfdfb;
   color: #222;
   margin: 0;
@@ -20,9 +20,9 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-accent);
   margin: 0 0 0.4em;
-  color: #1B5E20;
+  color: var(--color-text-primary);
 }
 
 h1 { font-size: 2.5rem; }
@@ -45,10 +45,8 @@ a:focus {
   outline: none;
 }
 
-/* Utility Classes */
-.text-center {
-  text-align: center;
-}
+/* === UTILITY CLASSES === */
+.text-center { text-align: center; }
 
 .section-wrapper {
   max-width: 960px;
@@ -56,31 +54,32 @@ a:focus {
   padding: 0 1rem;
 }
 
-.padded-section {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+.padded-section,
+section {
+  padding: 1.5rem 0;
 }
 
 .btn {
   display: inline-block;
-  padding: 0.6em 1.4em;
-  font-weight: 600;
-  border-radius: 4px;
+  padding: var(--btn-padding);
+  font-weight: var(--btn-font-weight);
+  border-radius: var(--btn-border-radius);
   border: none;
   cursor: pointer;
   text-align: center;
-  transition: background-color 0.3s ease;
   text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
+/* === BUTTON VARIANTS === */
 .btn-primary {
-  background-color: #1B5E20;
+  background-color: var(--color-btn-bg);
   color: white;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: #145214;
+  background-color: var(--color-btn-bg-hover);
 }
 
 .btn-secondary {
@@ -89,17 +88,18 @@ a:focus {
 }
 
 .btn-secondary:hover,
-.btn-secondary:focus {
+.btn-secondary:focus,
+.btn-green:hover {
   background-color: #12fa06;
 }
 
 .btn-orange {
-  background-color: #f4b400;
+  background-color: var(--color-btn-alt-bg);
   color: #fcf9f9;
 }
 
 .btn-orange:hover {
-  background-color: #cc7a00;
+  background-color: var(--color-btn-alt-bg-hover);
 }
 
 .btn-green {
@@ -107,26 +107,14 @@ a:focus {
   color: #f8f4f4;
 }
 
-.btn-green:hover {
-  background-color: #12fa06;
-}
-
-.btn-rounded {
-  border-radius: 2rem;
-}
+.btn-rounded { border-radius: 2rem; }
 
 .btn-wrapper {
   text-align: center;
   margin-top: 1rem;
 }
 
-/* Section Spacing */
-section {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-/* Spotlight Section */
+/* === SPOTLIGHT === */
 .spotlight-stories {
   text-align: center;
 }
@@ -137,7 +125,7 @@ section {
   margin-bottom: 1.5rem;
 }
 
-/* Stories Grid */
+/* === GRID LAYOUTS === */
 .stories-grid {
   display: grid;
   gap: 1rem;
@@ -145,12 +133,13 @@ section {
   justify-content: center;
 }
 
-/* Call to Action Section */
+/* === CALL TO ACTION === */
 .call-to-action {
   color: white;
   text-align: center;
   padding: 2.5rem 1rem;
   margin-top: 2rem;
+  background-color: var(--color-hero-bg);
 }
 
 .call-to-action h2 {
@@ -169,20 +158,9 @@ section {
   padding: 0 0.5rem;
 }
 
-/* Responsive Tweaks */
-@media (max-width: 600px) {
-  .call-to-action,
-  .spotlight-stories,
-  .btn-wrapper,
-  section {
-    padding: 1rem;
-    margin-top: 1rem;
-  }
-}
-
-/* Navbar Base */
+/* === NAVIGATION === */
 .navbar {
-  background-color: #1B5E20;
+  background-color: var(--color-btn-bg);
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -193,11 +171,10 @@ section {
   z-index: 100;
 }
 
-/* Logo */
 .logo {
   display: flex;
   align-items: center;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-accent);
   font-size: 1.6rem;
   color: #fff;
   text-decoration: none;
@@ -209,7 +186,6 @@ section {
   margin-right: 0.5rem;
 }
 
-/* Navigation Menu */
 .nav-menu {
   display: flex;
   list-style: none;
@@ -222,7 +198,6 @@ section {
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
-  text-decoration: none;
   transition: color 0.3s ease;
 }
 
@@ -236,7 +211,7 @@ section {
   padding-bottom: 2px;
 }
 
-/* Hamburger Button */
+/* === HAMBURGER === */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -275,11 +250,9 @@ section {
   top: 13px;
 }
 
-/* Responsive Navigation */
+/* === RESPONSIVE STYLES === */
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
+  .hamburger { display: flex; }
 
   .nav-menu {
     display: none;
@@ -296,9 +269,7 @@ section {
     z-index: 100;
   }
 
-  .nav-menu.active {
-    display: flex;
-  }
+  .nav-menu.active { display: flex; }
 
   .nav-menu li {
     margin: 0.5rem 0;
@@ -307,9 +278,17 @@ section {
   .nav-menu a {
     color: #f9f9f9;
   }
+
+  .call-to-action,
+  .spotlight-stories,
+  .btn-wrapper,
+  section {
+    padding: 1rem;
+    margin-top: 1rem;
+  }
 }
 
-/* Root Variables */
+/* === ROOT VARIABLES === */
 :root {
   --color-hero-bg: #e6e9e9;
   --color-btn-bg: #0a5c2c;
@@ -325,7 +304,11 @@ section {
   --font-accent: 'Playfair Display', serif;
 }
 
-/* Hero Section */
+
+
+
+
+/* ========== Hero Section ========== */
 .hero {
   position: relative;
   width: 100%;
@@ -338,14 +321,8 @@ section {
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .hero {
-    height: 220px;
-  }
-}
-
-.hero picture img,
 .hero-img,
+.hero picture img,
 .hero img {
   width: 100%;
   height: 100%;
@@ -355,15 +332,16 @@ section {
   border-radius: 8px;
 }
 
+/* Hero Text */
 .hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   padding: 0 1.5rem;
-  max-width: 800px;
   margin: 0 auto 3rem;
+  max-width: 800px;
+  text-align: center;
   font-family: var(--font-accent);
   color: var(--color-text-primary);
 }
@@ -380,7 +358,8 @@ section {
   margin-bottom: 1.5rem;
 }
 
-.hero-text .btn-primary {
+.btn,
+.btn-primary {
   background-color: var(--color-btn-bg);
   color: white;
   padding: var(--btn-padding);
@@ -392,30 +371,24 @@ section {
   display: inline-block;
 }
 
-.hero-text .btn-primary:hover {
+.btn:hover,
+.btn-primary:hover {
   background-color: var(--color-btn-bg-hover);
 }
 
-@media (max-width: 768px) {
-  .hero-text {
-    padding: 2rem 1rem;
-    margin: 2rem 1rem;
-  }
-
-  .hero-text h1 {
-    font-size: 1.2rem;
-  }
-
-  .hero-text p {
-    font-size: 1rem;
-  }
-
-  .hero-text .btn-primary {
-    font-size: 0.95rem;
-    padding: 0.6rem 1.3rem;
-  }
+/* ========== Reusable Layouts ========== */
+.flex-center-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+.text-center {
+  text-align: center;
+}
+
+/* ========== Intro & CTA ========== */
 .intro,
 .cta-content {
   max-width: 900px;
@@ -424,13 +397,9 @@ section {
   font-size: 1.1rem;
   color: #444;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
-/* Footer Styles */
+/* ========== Footer ========== */
 .site-footer {
   background-color: #f9f9f9;
   padding: 1.5rem 1rem;
@@ -452,39 +421,25 @@ section {
   flex-direction: column;
 }
 
-.footer-left,
-.footer-center,
-.footer-right {
+.footer-section {
   flex: 1 1 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0.5rem 0;
   text-align: center;
-  flex-direction: column;
 }
 
 .footer-left {
-  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   text-align: left;
+  flex-direction: row;
 }
 
 .footer-center {
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
   color: #444;
 }
 
 .footer-center p {
   margin: 0.3rem 0;
-}
-
-.footer-right {
-  justify-content: center;
-  text-align: center;
 }
 
 .footer-right a {
@@ -508,6 +463,7 @@ section {
   color: #2e7d32;
 }
 
+/* ========== Typography Utilities ========== */
 .accent-text {
   color: #1B5E20;
   font-weight: 700;
@@ -528,11 +484,36 @@ section {
   margin-top: 2rem;
 }
 
-/* Accessibility focus styles */
+/* ========== Accessibility ========== */
 a:focus-visible,
 button:focus-visible {
   outline: 3px solid #8a5504;
   outline-offset: 2px;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .hero {
+    height: 220px;
+  }
+
+  .hero-text {
+    padding: 2rem 1rem;
+    margin: 2rem 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.3rem;
+  }
 }
 
 @media (min-width: 600px) {
@@ -540,9 +521,7 @@ button:focus-visible {
     flex-direction: row;
   }
 
-  .footer-left,
-  .footer-center,
-  .footer-right {
+  .footer-section {
     flex: 1;
     margin: 0;
     flex-direction: row;
@@ -565,9 +544,7 @@ button:focus-visible {
   }
 }
 
-/* ===========================
-   People Grid Layout Container
-   =========================== */
+/* ========== People Grid Layout ========== */
 .people-grid-layout {
   display: grid;
   grid-template-areas:
@@ -579,9 +556,15 @@ button:focus-visible {
   margin: auto;
 }
 
-/* ===========================
-   Filters Panel Styling
-   =========================== */
+/* Responsive grid layout for larger screens */
+@media (min-width: 901px) {
+  .people-grid-layout {
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: "filters cards";
+  }
+}
+
+/* ========== Filters Panel ========== */
 .filters {
   grid-area: filters;
   background: #f9fdfa;
@@ -591,6 +574,16 @@ button:focus-visible {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
+}
+
+@media (min-width: 901px) {
+  .filters {
+    position: sticky;
+    top: 2rem;
+    margin: 0;
+    max-width: 100%;
+    text-align: left;
+  }
 }
 
 .filters h2 {
@@ -634,9 +627,7 @@ button:focus-visible {
   outline: none;
 }
 
-/* ===========================
-   Cards Container Grid
-   =========================== */
+/* ========== Cards Grid ========== */
 .cards-container {
   grid-area: cards;
   display: grid;
@@ -646,24 +637,17 @@ button:focus-visible {
   padding: 1rem 0;
 }
 
-/* ===========================
-   Person Card Styling
-   =========================== */
+/* ========== Person Card ========== */
 .person-card {
   background: #fff;
   border-radius: 1.25rem;
-  box-shadow:
-    0 6px 18px rgba(0, 0, 0, 0.08),
-    0 0 0 4px #f9f9f9;
-  overflow: visible;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08), 0 0 0 4px #f9f9f9;
   display: flex;
   flex-direction: column;
-  height: 100%;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   cursor: pointer;
   width: 100%;
   box-sizing: border-box;
-  margin: 0;
 }
 
 .person-card:hover {
@@ -677,12 +661,10 @@ button:focus-visible {
   width: 129%;
   height: 260px;
   object-fit: cover;
-  border-top-left-radius: 1.25rem;
-  border-top-right-radius: 1.25rem;
+  border-radius: 1.25rem 1.25rem 0 0;
   background-color: #e9f5f1;
   border: 5px solid #fff;
   box-sizing: border-box;
-  flex-shrink: 0;
   transition: transform 0.3s ease;
 }
 
@@ -690,6 +672,7 @@ button:focus-visible {
   transform: scale(1.05);
 }
 
+/* ========== Card Content ========== */
 .card-text {
   padding: 1.25rem 1.5rem;
   display: flex;
@@ -697,7 +680,6 @@ button:focus-visible {
   gap: 0.6rem;
   flex-grow: 1;
   min-height: 0;
-  overflow-wrap: break-word;
   word-break: break-word;
 }
 
@@ -713,12 +695,10 @@ button:focus-visible {
   font-size: 1rem;
   line-height: 1.5;
   flex-grow: 1;
-  overflow-wrap: break-word;
 }
 
 .card-text a {
   align-self: flex-start;
-  display: inline-block;
   margin-top: auto;
   padding: 0.9rem 1.25rem;
   background-color: #2ecc71;
@@ -742,23 +722,6 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* ===========================
-   Responsive Filters and Layout
-   =========================== */
-@media (min-width: 901px) {
-  .people-grid-layout {
-    grid-template-columns: 1fr 3fr;
-    grid-template-areas: "filters cards";
-  }
-
-  .filters {
-    position: sticky;
-    top: 2rem;
-    margin: 0;
-    max-width: 100%;
-    text-align: left;
-  }
-}
 
 /* === story.html specific styles === */
 .story,
@@ -1157,6 +1120,19 @@ main.confirmation {
   }
 }
 
+.btn-highlight {
+  background-color: #FFA500; /* or whatever theme color fits */
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-highlight:hover {
+  background-color: #e69500;
+}
 
 
 
