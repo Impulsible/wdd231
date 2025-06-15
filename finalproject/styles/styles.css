@@ -337,7 +337,7 @@ main, section {
   position: relative;
   width: 100%;
   height: 70vh;
-  background: url('../images/view.avif') center center / cover no-repeat;
+  background: url('../images/view.webp') center center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1158,6 +1158,16 @@ main.confirmation {
   background-color: #e69500;
 }
 
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0;
+    }
 
 
 
