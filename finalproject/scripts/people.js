@@ -362,3 +362,141 @@ window.addEventListener('storage', (e) => {
         menuToggle.setAttribute("aria-expanded", !expanded);
       });
     });
+
+  
+    const latestStory = JSON.parse(localStorage.getItem("latestStory"));
+    const card = document.getElementById("story-card");
+
+    function formatTimestamp(iso) {
+      const date = new Date(iso);
+      return date.toLocaleString("en-NG", {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+    }
+
+    if (latestStory) {
+      // ✅ Show the confirmation story
+      card.innerHTML = `
+        ${latestStory.image ? `<img src="${latestStory.image}" alt="User uploaded photo">` : ""}
+        <p><strong>Name:</strong> ${latestStory.name}</p>
+        <p><strong>Email:</strong> ${latestStory.email}</p>
+        <p><strong>Your Story:</strong></p>
+        <p>${latestStory.story}</p>
+        <p><strong>Submitted:</strong> ${formatTimestamp(latestStory.timestamp)}</p>
+      `;
+
+      // ✅ Save to communityStories array
+      const communityStories = JSON.parse(localStorage.getItem("communityStories")) || [];
+      communityStories.push(latestStory);
+      localStorage.setItem("communityStories", JSON.stringify(communityStories));
+
+      // Optional: clear latestStory to avoid duplicate submission
+      // localStorage.removeItem("latestStory");
+    } else {
+      card.innerHTML = `
+        <h2>Oops! No story found.</h2>
+        <p>Please return to the Explore page and submit your story again.</p>
+      `;
+}
+    
+    // Set current year
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+    // Set last modified date
+    document.getElementById("lastModified").textContent =
+      "Last Modified: " + document.lastModified;
+
+    const container = document.getElementById("stories-container");
+    let stories = JSON.parse(localStorage.getItem("communityStories")) || [];
+
+    function formatTimestamp(iso) {
+      const date = new Date(iso);
+      return date.toLocaleString("en-NG", {
+        dateStyle: "medium",
+        timeStyle: "short"
+      });
+    }
+
+    function renderStories() {
+      container.innerHTML = "";
+
+      if (stories.length === 0) {
+        container.innerHTML = `<p class="empty-message">No stories yet. Be the first to share yours!</p>`;
+        return;
+      }
+
+      stories.slice().reverse().forEach((story, index) => {
+        const card = document.createElement("div");
+        card.className = "story-card";
+
+        card.innerHTML = `
+          ${story.image ? `<img src="${story.image}" alt="Story photo" onerror="this.style.display='none'">` : ""}
+          <h3>${story.name}</h3>
+          <p>${story.story}</p>
+          <p class="timestamp">Submitted on: ${formatTimestamp(story.timestamp)}</p>
+          <button class="delete-btn" onclick="deleteStory(${index})">🗑️ Delete</button>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    function deleteStory(index) {
+      if (confirm("Delete this story?")) {
+        const actualIndex = stories.length - 1 - index; // reverse order
+        stories.splice(actualIndex, 1);
+        localStorage.setItem("communityStories", JSON.stringify(stories));
+        renderStories();
+      }
+    }
+
+    function clearStories() {
+      if (confirm("Are you sure you want to delete all community stories?")) {
+        localStorage.removeItem("communityStories");
+        stories = [];
+        renderStories();
+      }
+    }
+
+renderStories();
+    
+  // Set current year
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+  // Set last modified date
+  document.getElementById("lastModified").textContent = 
+    "Last Modified: " + document.lastModified;
+
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get('id');
+
+      if (!id) {
+        document.getElementById('story-main').innerHTML = "<p>Story not found.</p>";
+        return;
+      }
+
+      try {
+        const response = await fetch('people.json');
+        const data = await response.json();
+        const person = data.find(p => p.name.toLowerCase().replace(/\s+/g, '-') === id);
+
+        if (!person) {
+          document.getElementById('story-main').innerHTML = "<p>Person not found.</p>";
+          return;
+        }
+
+        document.getElementById('story-name').textContent = person.name;
+        document.getElementById('story-market-category').textContent =
+          `${person.market} — ${person.category.charAt(0).toUpperCase() + person.category.slice(1)} Market`;
+        document.getElementById('story-image').src = person.image;
+        document.getElementById('story-image').alt = `Portrait of ${person.name}`;
+        document.getElementById('story-text').textContent = person.story;
+
+      } catch (error) {
+        document.getElementById('story-main').innerHTML = "<p>Error loading story.</p>";
+        console.error(error);
+      }
+    });
