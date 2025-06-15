@@ -350,11 +350,24 @@ window.addEventListener('storage', (e) => {
     document.getElementById("lastModified").textContent =
       "Last Modified: " + document.lastModified;
 
-    // Navigation toggle
-    const hamburger = document.querySelector(".hamburger");
-    const navMenu = document.getElementById("nav-menu");
 
-    hamburger.addEventListener("click", () => {
-      navMenu.classList.toggle("show");
-      hamburger.setAttribute("aria-expanded", navMenu.classList.contains("show"));
+  const toggleBtn = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  toggleBtn.addEventListener('click', () => {
+    toggleBtn.classList.toggle('active');
+    navMenu.classList.toggle('active');
+
+    const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    toggleBtn.setAttribute('aria-expanded', !expanded);
+  });
+
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggleBtn.classList.remove('active');
+      navMenu.classList.remove('active');
+      toggleBtn.setAttribute('aria-expanded', 'false');
     });
+  });
+
+
