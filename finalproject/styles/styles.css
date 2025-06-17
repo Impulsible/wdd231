@@ -797,3 +797,19 @@ button {
   object-fit: cover;
 }
 
+/* === Fix: btn-primary Compatibility === */
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+}
