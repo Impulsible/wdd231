@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // === Load JSON Data and Handle Pages ===
   try {
-    const res = await fetch("people.json");
+    const res = await fetch("https://impulsible.github.io/wdd231/finalproject/people.json");
     const data = await res.json();
 
     // === Page: people.html - Render Cards ===
