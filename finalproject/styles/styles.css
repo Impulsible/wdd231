@@ -1,17 +1,16 @@
 :root {
-  --primary-color: #08662b;       /* Deep green - AA/AAA compliant */
-  --accent-color: #9b5e18;        /* Deep, rich orange */
-  --accent-hover: #A65300;        /* Slightly darker for hover */
-  --background-color: #ffffff;    
-  --text-color: #111111;          
+  --primary-color: #08662b;
+  --accent-color: #9b5e18;
+  --accent-hover: #A65300;
+  --background-color: #ffffff;
+  --text-color: #111111;
   --white: #ffffff;
   --gray: #888888;
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Open Sans', sans-serif;
 }
 
-
-/* === Base Reset === */
+/* === Base Reset & Typography === */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -37,15 +36,15 @@ h1, h2, h3 {
 
 /* === Navigation === */
 .navbar {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   color: var(--white);
-  padding: 1rem 1rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   position: relative;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
 }
 
 .logo img {
@@ -64,8 +63,12 @@ h1, h2, h3 {
   font-weight: 600;
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
-  transition: color 0.3s, border-bottom 0.3s;
+  transition: color 0.3s;
   position: relative;
+}
+
+.nav-menu a:hover {
+  color: var(--accent-color);
 }
 
 .nav-menu a[aria-current="page"]::after {
@@ -75,20 +78,16 @@ h1, h2, h3 {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--accent-color);
+  background: var(--accent-color);
   border-radius: 1px;
 }
 
-.nav-menu a:hover {
-  color: var(--accent-color);
-}
-
 .hamburger {
+  display: none;
   background: none;
   border: none;
   font-size: 1.75rem;
   color: var(--white);
-  display: none;
   position: absolute;
   top: 0.25rem;
   right: 1rem;
@@ -98,12 +97,12 @@ h1, h2, h3 {
   .nav-menu {
     display: none;
     flex-direction: column;
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     position: absolute;
     top: 45px;
     right: 1rem;
-    border: 1px solid var(--gray);
     padding: 1rem;
+    border: 1px solid var(--gray);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
@@ -116,7 +115,7 @@ h1, h2, h3 {
   }
 }
 
-/* === Main Content Area === */
+/* === Layout === */
 main {
   max-width: 1100px;
   margin: auto;
@@ -126,27 +125,16 @@ main {
 /* === Hero Section === */
 .hero {
   position: relative;
-  aspect-ratio: 16 / 9;  /* Maintain 16:9 ratio */
+  aspect-ratio: 16 / 9;
   width: 100%;
   max-height: 90vh;
   overflow: hidden;
-  background-color: transparent;
 }
 
 .hero-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  border-radius: 0;
-}
-
-
-.center-title {
-  font-size: 2.2rem;
-  margin-top: 2rem;
-  color: var(--primary-color);
-  text-align: center;
 }
 
 .hero-text {
@@ -154,45 +142,46 @@ main {
   padding: 1.5rem;
 }
 
-.hero-text p {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+.center-title {
+  font-size: 2.2rem;
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--primary-color);
 }
 
-/* === Overview / Section Titles === */
+.hero-text p {
+  font-size: 1.1rem;
+  margin: 0 auto 1rem;
+  max-width: 700px;
+}
+
+/* === Sections === */
 section h2 {
   font-size: 1.9rem;
   margin: 2rem 0 1rem;
-  color: var(--primary-color);
-  font-family: var(--font-heading);
 }
 
-/* === Intro Section === */
 .intro {
   padding: 2rem;
-  background-color: #f2f2f2;
+  background: #f2f2f2;
   text-align: center;
   border-radius: 8px;
 }
 
-/* === Spotlight Stories === */
 .spotlight-stories {
   padding: 2rem;
 }
 
 .stories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   margin-top: 1rem;
 }
 
 /* === Call to Action === */
 .call-to-action {
-  background-color: var(--accent-color);
+  background: var(--accent-color);
   color: var(--white);
   padding: 3rem 2rem;
   text-align: center;
@@ -209,18 +198,33 @@ section h2 {
   font-weight: bold;
 }
 
+
 /* === Buttons === */
+/* === Typography Utility === */
+.subtext {
+  font-size: 0.9rem;
+  color: var(--gray, #888);
+  margin-top: 0.25rem;
+}
+
+/* === Button Base === */
+.btn,
+.btn-highlight,
+.btn-secondary {
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* === Button Variants === */
 .btn {
   background-color: var(--primary-color);
   color: var(--white);
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.3s;
-  text-decoration: none;
-  display: inline-block;
 }
 
 .btn:hover {
@@ -242,12 +246,6 @@ section h2 {
   background-color: var(--white);
   color: var(--accent-color);
   border: 2px solid var(--accent-color);
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 .btn-highlight:hover {
@@ -256,6 +254,14 @@ section h2 {
   border-color: var(--accent-hover);
 }
 
+/* === Button Wrapper === */
+.btn-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  justify-content: center;
+}
 
 /* === Footer === */
 .site-footer {
@@ -272,9 +278,9 @@ section h2 {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  width: 100%;
   max-width: 1200px;
   margin: auto;
+  width: 100%;
 }
 
 .footer-left,
@@ -286,19 +292,26 @@ section h2 {
 }
 
 .footer-right a {
-  color: var(--white); /* White for strong contrast */
+  color: var(--white);
   text-decoration: underline;
   font-weight: 600;
   transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 .footer-right a:hover {
-  color: var(--accent-color); /* Orange on hover */
+  color: var(--accent-color);
   text-decoration: none;
 }
 
+.footer-camera-symbol {
+  color: var(--accent-color, #976021);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
 
-/* === Accessibility & Utility === */
+/* === Accessibility Utility === */
 .visually-hidden {
   position: absolute;
   left: -10000px;
@@ -307,6 +320,7 @@ section h2 {
   height: 1px;
   overflow: hidden;
 }
+
 
 /* === JavaScript Dynamic Footer === */
 #currentYear::after {
@@ -470,23 +484,20 @@ section h2 {
 
 /* === Mobile Responsive === */
 @media (max-width: 768px) {
-  .story-container {
-    padding: 1.5rem;
-  }
-
-  .story-container h1 {
-    font-size: 2rem;
-  }
-
-  .story-container h2 {
-    font-size: 1rem;
-  }
-
-  .story-container p {
-    font-size: 1rem;
-  }
+.story-container {
+  padding: 1.5rem;
 }
 
+.story-container h1 {
+  font-size: 2rem;
+}
+
+.story-container h2,
+.story-container p {
+  font-size: 1rem;
+}
+
+/* Small devices */
 @media (max-width: 480px) {
   .story-container {
     padding: 1rem;
@@ -499,6 +510,7 @@ section h2 {
   .story-container img.story-image {
     max-height: 300px;
   }
+}
 }
 .confirmation-container {
   max-width: 700px;
@@ -656,21 +668,23 @@ button {
 }
 
 /* ========== Share Form Section ========== */
+/* ========== Share Form Container ========== */
 .share-form {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-  margin: 3rem auto 2rem auto;
+  margin: 3rem auto 2rem;
   max-width: 720px;
   font-family: 'Open Sans', sans-serif;
 }
 
-/* ========== Story Form ========== */
+/* ========== Story Form Layout ========== */
 .story-form {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .story-form label {
@@ -678,6 +692,7 @@ button {
   color: #08662b;
 }
 
+/* Inputs and Textarea */
 .story-form input[type="text"],
 .story-form input[type="email"],
 .story-form textarea {
@@ -688,15 +703,10 @@ button {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
   text-align: justify;
 }
 
-.story-form textarea {
-  min-height: 140px;
-  resize: vertical;
-}
-
+/* File Input */
 .story-form input[type="file"] {
   padding: 0.5rem;
   font-size: 0.9rem;
@@ -705,6 +715,13 @@ button {
   background-color: #f8f8f8;
 }
 
+/* Textarea Specific */
+.story-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* Focus States */
 .story-form input:focus,
 .story-form textarea:focus {
   border-color: #3498db;
@@ -712,9 +729,10 @@ button {
   box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
 }
 
+/* Submit Button */
 .story-form button {
   background-color: #064f24;
-  color: white;
+  color: #fff;
   border: none;
   padding: 0.75rem 1rem;
   font-size: 1rem;
@@ -728,6 +746,7 @@ button {
   background-color: #27ae60;
 }
 
+/* Image Preview */
 #image-preview {
   font-size: 0.9rem;
   margin-top: -0.5rem;
@@ -735,6 +754,7 @@ button {
 }
 
 /* ========== Submitted Stories ========== */
+/* ========== Story Entry Container ========== */
 .story-entry {
   display: grid;
   gap: 2rem;
@@ -743,6 +763,7 @@ button {
   padding: 0 1rem;
 }
 
+/* ========== Story Card ========== */
 .story-card {
   background-color: #fdfdfd;
   border-left: 6px solid #075026;
@@ -776,45 +797,3 @@ button {
   object-fit: cover;
 }
 
-/* === Missing Classes Fix === */
-
-/* Primary Button */
-.btn-primary {
-  background-color: var(--primary-color, #08662b);
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-primary:hover {
-  background-color: var(--accent-hover, #A65300);
-}
-
-/* Subtext for small helper notes */
-.subtext {
-  font-size: 0.9rem;
-  color: var(--gray, #888888);
-  margin-top: 0.25rem;
-}
-
-/* Button Wrapper */
-.btn-wrapper {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 1.25rem;
-  justify-content: center;
-}
-
-/* Footer Camera Icon Style */
-.footer-camera-symbol {
-  color: var(--accent-color, #976021);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 1rem;
-}
