@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faces & Places of Lagos | Home</title>
+  <meta name="description" content="Discover the soul of Lagos through poetic visuals and real stories of its people and markets.">
+  <meta name="author" content="Henry Osuagwu">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Faces & Places of Lagos | Home">
+  <meta property="og:description" content="Explore Lagos through poetic visuals and real stories of its people and vibrant markets.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://impulsible.github.io/wdd231/finalproject/index.html">
+  <meta property="og:image" content="https://impulsible.github.io/wdd231/finalproject/images/lagos.webp">
+
+  <link rel="icon" href="images/favicon.webp" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/main.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Faces & Places of Lagos Logo" width="120">
+      </a>
+      <button id="menu-toggle" class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">&#9776;</button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="people.html">People & Markets</a></li>
+        <li><a href="explore.html">Explore Lagos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="hero" role="banner">
+    <picture class="hero-img">
+      <source srcset="images/view.webp" type="image/webp" media="(max-width: 1024px)">
+      <img src="images/view.webp" alt="Lagos cityscape view">
+    </picture>
+  </div>
+
+  <main>
+    <h1 class="center-title">DISCOVER THE HEART OF LAGOS</h1>
+
+    <section class="hero-text">
+      <h2 class="visually-hidden">Introduction</h2>
+      <p>Explore the cultural diversity and vibrant energy of Lagos, Nigeria’s largest city.</p>
+      <a href="people.html" class="btn btn-primary">Begin the Journey</a>
+    </section>
+
+    <section class="intro">
+      <h2>Welcome to Faces & Places of Lagos</h2>
+      <p>Lagos is not just a place. It’s a heartbeat. A pulse carried in the footsteps of market women, in the laughter of children by the roadside, and in the grit of artisans shaping dreams from rust and resilience.</p>
+      <p>This platform is a living gallery where humanity meets hustle, and every stall, smile, and street corner tells a tale. Here, we document not just images, but memories; not just markets, but meaning.</p>
+    </section>
+
+    <section class="spotlight-stories" aria-labelledby="spotlight-title">
+      <h2 id="spotlight-title">Spotlight Stories</h2>
+      <p>Step into portraits of people who shape Lagos every day...</p>
+      <h3>Featured Lagosians</h3>
+      <p class="subtext">Real faces, real voices — echoing from Balogun to Mushin.</p>
+      <div id="stories-container" class="stories-grid"></div>
+      <div class="btn-wrapper">
+        <a href="people.html" class="btn btn-secondary">See All Stories</a>
+      </div>
+    </section>
+  </main>
+
+  <section class="call-to-action">
+    <h2 class="visually-hidden">Call to Action</h2>
+    <div class="cta-content">
+      <h2><span class="accent-text">Every Face</span> is a Story</h2>
+      <p>Some stories are whispered in Yoruba, others shouted in pidgin, and some painted in silence. Yet all are etched in the vibrant chaos of Lagos.</p>
+      <a href="explore.html" class="btn btn-highlight" aria-label="Explore Lagos’s hidden gems">Explore the City’s Corners</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-flex">
+      <div class="footer-left">
+        <div class="footer-camera-symbol" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="footer-center">
+        <p>&copy; <span id="currentYear"></span> Faces & People. All rights reserved.</p>
+        <p id="lastModified"></p>
+      </div>
+
+      <div class="footer-right">
+        <a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Watch Our Project Story</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

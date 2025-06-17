@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faces & Places of Lagos | Story Confirmation</title>
+  <meta name="description" content="Story confirmation page for Faces & Places of Lagos.">
+  <meta name="author" content="Henry Osuagwu">
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" href="images/favicon.webp" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/styles.css">
+
+
+  <!-- Scripts -->
+  <script src="scripts/main.js" defer></script>
+
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/logo.webp" alt="Faces & Places of Lagos Logo" width="120">
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html">People & Markets</a></li>
+        <li><a href="explore.html">Explore Lagos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="confirmation-container">
+      <div class="checkmark-circle">
+        <div class="checkmark"></div>
+      </div>
+      <h1>Thank You for Sharing!</h1>
+      <p>Your Lagos story has been received and saved.</p>
+
+      <div class="story-entry"></div>
+
+      <div class="button-group">
+        <button class="btn-home" onclick="window.location.href='index.html'">Back to Home</button>
+        <button class="btn-reset" id="resetBtn">Submit Another Story</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-flex">
+      <div class="footer-left">
+        <div class="footer-camera-symbol" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 7h2l1-2h12l1 2h2v12H3V7zm9 3a3 3 0 110 6 3 3 0 010-6z" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="footer-center">
+        <p>&copy; <span id="currentYear" data-year="2025"></span> Faces & People. All rights reserved.</p>
+        <p id="lastModified" data-lastmodified="Last modified: June 16, 2025"></p>
+      </div>
+
+      <div class="footer-right">
+        <a href="https://youtu.be/your-video-link" target="_blank" rel="noopener">Watch Our Project Story</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
