@@ -330,6 +330,7 @@ section h2 {
 #lastModified::after {
   content: " " attr(data-lastmodified);
 }
+
 .people-grid-layout {
   display: grid;
   grid-template-areas: "filters cards";
@@ -345,6 +346,23 @@ section h2 {
   background-color: #f7f7f7;
   padding: 1rem;
   border-radius: 1rem;
+}
+
+/* ✅ Added for Missing Class Error Fix */
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.filter-options label {
+  cursor: pointer;
+}
+
+.filter-options input[type="radio"] {
+  margin-right: 0.5rem;
 }
 
 .cards-container {
@@ -426,6 +444,7 @@ section h2 {
     margin-bottom: 2rem;
   }
 }
+
 
 /* === Story Page Styles === */
 .story-container {
