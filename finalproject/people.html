@@ -27,7 +27,7 @@
 <body>
   <header>
     <nav class="navbar">
-        <img src="images/logo.webp" alt="Faces & Places of Lagos Logo" width="120" loading="lazy">
+      <img src="images/logo.webp" alt="Faces & Places of Lagos Logo" width="120" loading="lazy">
       <button id="menu-toggle" class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">&#9776;</button>
       <ul id="nav-menu" class="nav-menu">
         <li><a href="index.html">Home</a></li>
@@ -37,24 +37,30 @@
     </nav>
   </header>
 
-<main class="people-grid-layout">
-  <h1>Faces & Places of Lagos: People & Markets</h1>
-
-  <section class="filters">
-    <h2>Filter by Category</h2>
-    <div class="filter-options" role="radiogroup" aria-label="Market Categories">
-      <label><input type="radio" name="category" value="all" checked> All</label>
-      <label><input type="radio" name="category" value="traditional"> Traditional</label>
-      <label><input type="radio" name="category" value="modern"> Modern</label>
-      <label><input type="radio" name="category" value="streetlife"> Street Life</label>
-      <label><input type="radio" name="category" value="suburban"> Suburban</label>
+  <main class="people-grid-layout">
+    <!-- Header Block for Page Title and Subtitle -->
+    <div class="page-header">
+      <h1 class="text-center">Faces & Places of Lagos: People & Markets</h1>
+      <h2 class="text-center">Faces of Lagos Resilience</h2>
     </div>
-  </section>
 
-  <section id="cards-container" class="cards-container" aria-live="polite" aria-relevant="additions removals">
-    <!-- JS will insert cards here -->
-  </section>
-</main>
+    <!-- Filter Sidebar -->
+    <section class="filters">
+      <h2>Filter by Category</h2>
+      <div class="filter-options" role="radiogroup" aria-label="Market Categories">
+        <label><input type="radio" name="category" value="all" checked> All</label>
+        <label><input type="radio" name="category" value="traditional"> Traditional</label>
+        <label><input type="radio" name="category" value="modern"> Modern</label>
+        <label><input type="radio" name="category" value="streetlife"> Street Life</label>
+        <label><input type="radio" name="category" value="suburban"> Suburban</label>
+      </div>
+    </section>
+
+    <!-- Cards Container -->
+    <section id="cards-container" class="cards-container" aria-live="polite" aria-relevant="additions removals">
+      <!-- JavaScript will insert cards here -->
+    </section>
+  </main>
 
   <footer class="site-footer">
     <div class="footer-flex">
