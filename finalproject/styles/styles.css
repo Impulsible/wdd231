@@ -324,17 +324,14 @@ section h2 {
 
 
 /* === JavaScript Dynamic Footer === */
-#currentYear::after {
-  content: " " attr(data-year);
-}
+/* === PEOPLE GRID LAYOUT SECTION === */
 
-#lastModified::after {
-  content: " " attr(data-lastmodified);
-}
-
+/* Layout Grid */
 .people-grid-layout {
   display: grid;
-  grid-template-areas: "filters cards";
+  grid-template-areas:
+    "heading heading"
+    "filters cards";
   grid-template-columns: 250px 1fr;
   gap: 2rem;
   padding: 2rem;
@@ -342,26 +339,42 @@ section h2 {
   margin: auto;
 }
 
-.page-heading {
-  grid-column: 1 / -1; /* Span across both columns */
-  font-size: 2.2rem;
-  color: var(--primary-color);
+/* Centered Headings */
+.text-center {
   text-align: center;
-  margin-bottom: 1.5rem;
-  padding: 0 1rem;
-  font-family: var(--font-heading);
-  border-bottom: 2px solid var(--accent-color);
+}
+
+.page-header {
+  grid-area: heading;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.page-header h1 {
+  font-size: 2.4rem;
+  color: var(--primary-color, #08662b);
+  margin-bottom: 0.3rem;
+  font-family: var(--font-heading, 'Playfair Display', serif);
+  border-bottom: 2px solid var(--accent-color, #9b5e18);
   padding-bottom: 0.5rem;
 }
 
+.page-header h2 {
+  font-size: 1.6rem;
+  color: #444;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 0.5rem;
+}
+
+/* Filters Sidebar */
 .filters {
   grid-area: filters;
   background-color: #f7f7f7;
   padding: 1rem;
   border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* ✅ Added for Missing Class Error Fix */
 .filter-options {
   display: flex;
   flex-direction: column;
@@ -372,12 +385,14 @@ section h2 {
 
 .filter-options label {
   cursor: pointer;
+  color: #333;
 }
 
 .filter-options input[type="radio"] {
   margin-right: 0.5rem;
 }
 
+/* Cards Layout */
 .cards-container {
   grid-area: cards;
   display: grid;
@@ -385,8 +400,9 @@ section h2 {
   gap: 1.5rem;
 }
 
+/* Person Card */
 .person-card {
-  background: #ffffff;
+  background: #fff;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -425,6 +441,7 @@ section h2 {
   color: #555;
 }
 
+/* Read More Button */
 .read-more {
   margin-top: 1rem;
   align-self: start;
@@ -440,10 +457,11 @@ section h2 {
   background-color: #228b22;
 }
 
-/* Mobile Responsive Layout */
+/* Responsive Layout */
 @media (max-width: 768px) {
   .people-grid-layout {
     grid-template-areas:
+      "heading"
       "filters"
       "cards";
     grid-template-columns: 1fr;
@@ -865,4 +883,25 @@ button {
 
 .btn-primary:hover {
   background-color: var(--accent-color);
+}
+.page-header {
+  grid-area: heading;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  background-color: #ffffff;
+}
+
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #064f24;
+  margin-bottom: 0.5rem;
+}
+
+.page-header h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.25rem;
+  color: #444;
+  font-weight: 400;
 }
